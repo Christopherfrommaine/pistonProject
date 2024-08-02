@@ -1,10 +1,11 @@
 def fixQuasiconnectivity(moves, originalState):
     o = []
-    for m in moves:
+    for mi, m in enumerate(moves):
         if isinstance(m, tuple):
             # Observer move
             observer, = m
             for i in range(observer, -2):
+                state = originalState.originalState.applyMoves(moves[:mi])
                 if originalState.p[i] == ' ':
                     o += [(i,)]
                 else:
@@ -27,7 +28,7 @@ def translateToPistonLayoutOriginal(m, originalState):
         else:
             # TODO: May not work in cases where the non-quasi piston powers first.
             # state is passed in, so I should be able to do checks, but idk. Itll probably be hard to figure out
-            print("The lower piston translation isnt really working right. IDK you should probably work on it")
+            raise Warning("The lower piston translation isnt really working right. IDK you should probably work on it")
             
             # -7 -> 6
             # -8 -> 5
@@ -39,7 +40,7 @@ def translateToPistonLayoutOriginal(m, originalState):
 
 
 
-def translateToPistonLayout(moves, originalState, layout='original'):
+def translateToPistonLayout(moves, originalState, layout='originalLayout'):
     o = []
     for m in moves:
         match layout:
@@ -49,10 +50,10 @@ def translateToPistonLayout(moves, originalState, layout='original'):
                 raise Exception("Nonexistent Layout Specified")
     return o
 
+
 def writeToFile(string, path='output.txt'):
     with open(path, "w") as file:
-        source_code = file.write(str(string))
-
+        file.write(str(string))
 
 
 def fullTranslation(moves, state, layout='original', filePath='output.txt'):
@@ -66,10 +67,9 @@ if __name__ == "__main__":
     moveBlockTo(4, 0, door)
     moves = door.moves
     print('original moves: ', moves)
-    moves = fixQuasiconnectivity(moves, door.originalState)
+    moves = fixQuasiconnectivity(moves, state('ppppppppppp   f   b  '))
     print('fixed quasiconnectivity: ', moves)
-    moves = translateToPistonLayout(moves, door.originalState)
+    moves = translateToPistonLayout(moves, state('ppppppppppp   f   b  '))
     print('original layout: ', moves)
-    writeToFile(moves)
 
 

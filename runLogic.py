@@ -23,7 +23,7 @@ def runBeforeManualCorrections(door, pistonLayout='original', logging=False):
         # Numerical Layout Translation
         layoutNumberedRules = conversion.toLayoutMoves(correctedMoves, pistonLayout)
 
-        log += f'layout numbered rules: {layoutNumberedRules}'
+        log += f'layout numbered rules: {layoutNumberedRules}\n'
 
         writeToFile(layoutNumberedRules, 'algorithmOutput.txt')
 

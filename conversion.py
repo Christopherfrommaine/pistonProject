@@ -2,14 +2,11 @@ import layouts.original
 
 
 def toLayoutMoves(moves, layout):
-    o = []
-    for m in moves:
-        match layout:
-            case 'original':
-                o += layouts.original.toLayoutMove(m)
-            case _:
-                raise Exception('unsupported layout')
-    return o
+    match layout:
+        case 'original':
+            return layouts.original.toLayoutMove(moves)
+        case _:
+            raise Exception('unsupported layout')
 
 
 def toLayoutCommands(moves, layout, *args):
@@ -20,8 +17,7 @@ def toLayoutCommands(moves, layout, *args):
             raise Exception('unsupported layout')
 
 
-def applyCorrections(moves, originalState):
-    state = originalState
+def applyCorrections(moves, state):
     o = []
     for m in moves:
         if isinstance(m, tuple):

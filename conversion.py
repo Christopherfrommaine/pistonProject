@@ -39,13 +39,8 @@ def applyCorrections(moves, state):
                 if state.p[m + 1] == ' ':
                     o += [m + 1]
                 else:
-                    if state.p[m - 1] == 'p':
-                        o += [m - 1, m - 1]
-                    elif state.p[m - 2] == 'p' and state.p[m - 3] == 'p':
-                        o += [m - 3, m - 1, m - 1, m - 3]
-                    else:
-                        o += 'manualinterventionneededhere'
-                        print(f'shoot! the lower piston pushing doesnt work out easily. Manual intervention needed around {len(o)}\nwell... um, here is you piston state: {state.fullRepr()}, \n and here are your output moves so far: {o}')
+                    o += 'manualinterventionneededhere'
+                    print(f'shoot! the lower piston pushing doesnt work out easily. Manual intervention needed around {len(o)}\nwell... um, here is you piston state: {state.fullRepr()}, \n and here are your output moves so far: {o}')
 
         state.applyMove(m)
     return o

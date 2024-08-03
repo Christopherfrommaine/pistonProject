@@ -18,9 +18,20 @@ class State:
     def basicRepr(self):
         return ''.join(self.p.values())
 
+    def basicReprWithF(self):
+        newp = self.p.copy()
+        if newp[0] == ' ':
+            newp[0] = 'f'
+        return ''.join(newp.values())
+
+    def fullRepr(self):
+        return ''.join(self.p.values()) + 100 * ' ' + '\n' + (
+                    ' ' * (min(self.observers.keys()) - min(self.p.keys()))) + ''.join(
+            reversed(self.observers.values())) + '  f\n'
+
     def __repr__(self):
-        return ''.join(self.p.values()) + 100 * ' ' + '\n' + (' ' * (min(self.observers.keys()) - min(self.p.keys()))) + ''.join(reversed(self.observers.values())) + '  f\n'
-    
+        return self.basicReprWithF()
+
     @property
     def originalState(self):
         return State(*self._originalInputs)
@@ -149,7 +160,14 @@ def powerPiston(piston, state):
     assert isinstance(state, State)
 
     if piston <= -2:
-        state.applyMove(piston)
+        if piston < -6 and piston % 2:
+            if state.p[piston + 1] == ' ':
+                state.applyMove(piston)
+            else:
+                state.applyMove(piston - 1)
+
+        else:
+            state.applyMove(piston)
         return
 
     topmostObserver = state.getTopmostObserver(below=piston)

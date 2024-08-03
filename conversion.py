@@ -6,7 +6,7 @@ def toLayoutMoves(moves, layout):
     for m in moves:
         match layout:
             case 'original':
-                o.append(layouts.original.toLayoutMove(m))
+                o += layouts.original.toLayoutMove(m)
             case _:
                 raise Exception('unsupported layout')
     return o
@@ -23,7 +23,7 @@ def toLayoutCommands(moves, layout, *args):
 def applyCorrections(moves, originalState):
     state = originalState
     o = []
-    for mi, m in enumerate(moves):
+    for m in moves:
         if isinstance(m, tuple):
             # Observer move
             observer, = m
@@ -31,6 +31,7 @@ def applyCorrections(moves, originalState):
                 if state.p[i] == ' ':
                     o += [(i,)]
                 else:
+                    o += [(i,)]
                     break
         else:
             # Piston Moves TODO

@@ -9,6 +9,12 @@ def runWithoutManualCorrection(door, pistonLayout='original', logging=False):
 
 def runBeforeManualCorrections(door, pistonLayout='original', logging=False):
     log = ''
+    if logging:
+        odoor = door.originalState
+        log += str(odoor) + '\n'
+        for m in door.moves:
+            odoor.applyMove(m)
+            log += str(odoor) + '\n'
 
     try:
         originalMoves = door.moves
@@ -58,3 +64,4 @@ def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromF
 
     if logging:
         writeToFile(log, 'debugging/log.txt')
+

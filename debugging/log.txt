@@ -1,5 +1,512 @@
+ppppppppppppppppppp      b                                                                                                      
+               oooo  f
+
+pppppppppppppppppp p     b                                                                                                      
+               oooo  f
+
+ppppppppppppppppp pp     b                                                                                                      
+               oooo  f
+
+ppppppppppppppppp p p    b                                                                                                      
+               oooo  f
+
+pppppppppppppppp pp p    b                                                                                                      
+               oooo  f
+
+pppppppppppppppp p pp    b                                                                                                      
+               oooo  f
+
+pppppppppppppppp p p p   b                                                                                                      
+               oooo  f
+
+ppppppppppppppp pp p p   b                                                                                                      
+               oooo  f
+
+ppppppppppppppp p pp p   b                                                                                                      
+               oooo  f
+
+ppppppppppppppp p p pp   b                                                                                                      
+               oooo  f
+
+ppppppppppppppp pp  pp   b                                                                                                      
+               oooo  f
+
+ppppppppppppppp ppo pp   b                                                                                                      
+               ooo   f
+
+ppppppppppppppp pp op p  b                                                                                                      
+               ooo   f
+
+ppppppppppppppp ppo p p  b                                                                                                      
+               ooo   f
+
+ppppppppppppppp pp  p p  b                                                                                                      
+               oooo  f
+
+ppppppppppppppp p p p p  b                                                                                                      
+               oooo  f
+
+pppppppppppppp pp p p p  b                                                                                                      
+               oooo  f
+
+pppppppppppppp p pp p p  b                                                                                                      
+               oooo  f
+
+pppppppppppppp p p pp p  b                                                                                                      
+               oooo  f
+
+pppppppppppppp p p p pp  b                                                                                                      
+               oooo  f
+
+pppppppppppppp p pp  pp  b                                                                                                      
+               oooo  f
+
+pppppppppppppp pp p  pp  b                                                                                                      
+               oooo  f
+
+pppppppppppppp ppp   pp  b                                                                                                      
+               oooo  f
+
+pppppppppppppp pppo  pp  b                                                                                                      
+               ooo   f
+
+pppppppppppppp ppp o pp  b                                                                                                      
+               ooo   f
+
+pppppppppppppp pp po pp  b                                                                                                      
+               ooo   f
+
+pppppppppppppp pp p op p b                                                                                                      
+               ooo   f
+
+pppppppppppppp pp po p p b                                                                                                      
+               ooo   f
+
+pppppppppppppp ppp o p p b                                                                                                      
+               ooo   f
+
+pppppppppppppp pppo  p p b                                                                                                      
+               ooo   f
+
+pppppppppppppp ppp   p p b                                                                                                      
+               oooo  f
+
+pppppppppppppp pp p  p p b                                                                                                      
+               oooo  f
+
+pppppppppppppp p pp  p p b                                                                                                      
+               oooo  f
+
+pppppppppppppp p p p p p b                                                                                                      
+               oooo  f
+
+pppppppppppppp p p pp  p b                                                                                                      
+               oooo  f
+
+pppppppppppppp p pp p  p b                                                                                                      
+               oooo  f
+
+pppppppppppppp p ppp   p b                                                                                                      
+               oooo  f
+
+pppppppppppppp pp pp   p b                                                                                                      
+               oooo  f
+
+pppppppppppppp ppp p   p b                                                                                                      
+               oooo  f
+
+pppppppppppppp pppp    p b                                                                                                      
+               oooo  f
+
+ppppppppppppppp ppp    p b                                                                                                      
+               oooo  f
+
+pppppppppppppppp pp    p b                                                                                                      
+               oooo  f
+
+ppppppppppppppppp p    p b                                                                                                      
+               oooo  f
+
+pppppppppppppppppp     p b                                                                                                      
+               oooo  f
+
+ppppppppppppppppppo    p b                                                                                                      
+               ooo   f
+
+pppppppppppppppppp o   p b                                                                                                      
+               ooo   f
+
+ppppppppppppppppp po   p b                                                                                                      
+               ooo   f
+
+ppppppppppppppppp p o  p b                                                                                                      
+               ooo   f
+
+pppppppppppppppp pp o  p b                                                                                                      
+               ooo   f
+
+pppppppppppppppp p po  p b                                                                                                      
+               ooo   f
+
+pppppppppppppppp p p o p b                                                                                                      
+               ooo   f
+
+ppppppppppppppp pp p o p b                                                                                                      
+               ooo   f
+
+ppppppppppppppp p pp o p b                                                                                                      
+               ooo   f
+
+ppppppppppppppp p p po p b                                                                                                      
+               ooo   f
+
+ppppppppppppppp pp  po p b                                                                                                      
+               ooo   f
+
+pppppppppppppppp p  po p b                                                                                                      
+               ooo   f
+
+ppppppppppppppppp   po p b                                                                                                      
+               ooo   f
+
+pppppppppppppppppo  po p b                                                                                                      
+               oo    f
+
+ppppppppppppppppp o po p b                                                                                                      
+               oo    f
+
+pppppppppppppppp po po p b                                                                                                      
+               oo    f
+
+pppppppppppppppp p op opb                                                                                                       
+               oo    f
+
+pppppppppppppppp po p opb                                                                                                       
+               oo    f
+
+ppppppppppppppppp o p opb                                                                                                       
+               oo    f
+
+pppppppppppppppppo  p opb                                                                                                       
+               oo    f
+
+ppppppppppppppppp   p opb                                                                                                       
+               ooo   f
+
+pppppppppppppppppo  p opb                                                                                                       
+               oo    f
+
+ppppppppppppppppp o p opb                                                                                                       
+               oo    f
+
+pppppppppppppppp po p opb                                                                                                       
+               oo    f
+
+pppppppppppppppp p opo pb                                                                                                       
+               oo    f
+
+pppppppppppppppp po po pb                                                                                                       
+               oo    f
+
+ppppppppppppppppp o po pb                                                                                                       
+               oo    f
+
+pppppppppppppppppo  po pb                                                                                                       
+               oo    f
+
+ppppppppppppppppp   po pb                                                                                                       
+               ooo   f
+
+pppppppppppppppp p  po pb                                                                                                       
+               ooo   f
+
+ppppppppppppppp pp  po pb                                                                                                       
+               ooo   f
+
+ppppppppppppppp p p po pb                                                                                                       
+               ooo   f
+
+ppppppppppppppp p pp o pb                                                                                                       
+               ooo   f
+
+ppppppppppppppp p ppo  pb                                                                                                       
+               ooo   f
+
+ppppppppppppppp pp po  pb                                                                                                       
+               ooo   f
+
+ppppppppppppppp ppp o  pb                                                                                                       
+               ooo   f
+
+ppppppppppppppp pppo   pb                                                                                                       
+               ooo   f
+
+pppppppppppppppp ppo   pb                                                                                                       
+               ooo   f
+
+ppppppppppppppppp po   pb                                                                                                       
+               ooo   f
+
+pppppppppppppppppp o   pb                                                                                                       
+               ooo   f
+
+ppppppppppppppppppo    pb                                                                                                       
+               ooo   f
+
+pppppppppppppppppp     pb                                                                                                       
+               oooo  f
+
+ppppppppppppppppp p    pb                                                                                                       
+               oooo  f
+
+pppppppppppppppp pp    pb                                                                                                       
+               oooo  f
+
+pppppppppppppppp p p   pb                                                                                                       
+               oooo  f
+
+ppppppppppppppp pp p   pb                                                                                                       
+               oooo  f
+
+ppppppppppppppp p pp   pb                                                                                                       
+               oooo  f
+
+ppppppppppppppp p p p  pb                                                                                                       
+               oooo  f
+
+pppppppppppppp pp p p  pb                                                                                                       
+               oooo  f
+
+pppppppppppppp p pp p  pb                                                                                                       
+               oooo  f
+
+pppppppppppppp p p pp  pb                                                                                                       
+               oooo  f
+
+pppppppppppppp p p p p pb                                                                                                       
+               oooo  f
+
+pppppppppppppp p pp  p pb                                                                                                       
+               oooo  f
+
+pppppppppppppp pp p  p pb                                                                                                       
+               oooo  f
+
+pppppppppppppp ppp   p pb                                                                                                       
+               oooo  f
+
+pppppppppppppp pppo  p pb                                                                                                       
+               ooo   f
+
+pppppppppppppp ppp o p pb                                                                                                       
+               ooo   f
+
+pppppppppppppp pp po p pb                                                                                                       
+               ooo   f
+
+pppppppppppppp pp p opp b                                                                                                       
+               ooo   f
+
+pppppppppppppp pp po pp b                                                                                                       
+               ooo   f
+
+pppppppppppppp ppp o pp b                                                                                                       
+               ooo   f
+
+pppppppppppppp pppo  pp b                                                                                                       
+               ooo   f
+
+pppppppppppppp ppp   pp b                                                                                                       
+               oooo  f
+
+pppppppppppppp pp p  pp b                                                                                                       
+               oooo  f
+
+pppppppppppppp p pp  pp b                                                                                                       
+               oooo  f
+
+pppppppppppppp p p p pp b                                                                                                       
+               oooo  f
+
+pppppppppppppp p p pp p b                                                                                                       
+               oooo  f
+
+pppppppppppppp p pp p p b                                                                                                       
+               oooo  f
+
+pppppppppppppp p ppp  p b                                                                                                       
+               oooo  f
+
+pppppppppppppp pp pp  p b                                                                                                       
+               oooo  f
+
+pppppppppppppp ppp p  p b                                                                                                       
+               oooo  f
+
+pppppppppppppp pppp   p b                                                                                                       
+               oooo  f
+
+ppppppppppppppp ppp   p b                                                                                                       
+               oooo  f
+
+pppppppppppppppp pp   p b                                                                                                       
+               oooo  f
+
+ppppppppppppppppp p   p b                                                                                                       
+               oooo  f
+
+pppppppppppppppppp    p b                                                                                                       
+               oooo  f
+
+ppppppppppppppppppo   p b                                                                                                       
+               ooo   f
+
+pppppppppppppppppp o  p b                                                                                                       
+               ooo   f
+
+ppppppppppppppppp po  p b                                                                                                       
+               ooo   f
+
+ppppppppppppppppp p o p b                                                                                                       
+               ooo   f
+
+pppppppppppppppp pp o p b                                                                                                       
+               ooo   f
+
+pppppppppppppppp p po p b                                                                                                       
+               ooo   f
+
+pppppppppppppppp p p opb                                                                                                        
+               ooo   f
+
+pppppppppppppppp p po pb                                                                                                        
+               ooo   f
+
+pppppppppppppppp pp o pb                                                                                                        
+               ooo   f
+
+pppppppppppppppp ppo  pb                                                                                                        
+               ooo   f
+
+ppppppppppppppppp po  pb                                                                                                        
+               ooo   f
+
+pppppppppppppppppp o  pb                                                                                                        
+               ooo   f
+
+ppppppppppppppppppo   pb                                                                                                        
+               ooo   f
+
+pppppppppppppppppp    pb                                                                                                        
+               oooo  f
+
+ppppppppppppppppp p   pb                                                                                                        
+               oooo  f
+
+pppppppppppppppp pp   pb                                                                                                        
+               oooo  f
+
+pppppppppppppppp p p  pb                                                                                                        
+               oooo  f
+
+ppppppppppppppp pp p  pb                                                                                                        
+               oooo  f
+
+ppppppppppppppp p pp  pb                                                                                                        
+               oooo  f
+
+ppppppppppppppp p p p pb                                                                                                        
+               oooo  f
+
+ppppppppppppppp pp  p pb                                                                                                        
+               oooo  f
+
+ppppppppppppppp ppo p pb                                                                                                        
+               ooo   f
+
+ppppppppppppppp pp opp b                                                                                                        
+               ooo   f
+
+ppppppppppppppp ppo pp b                                                                                                        
+               ooo   f
+
+ppppppppppppppp pp  pp b                                                                                                        
+               oooo  f
+
+ppppppppppppppp p p pp b                                                                                                        
+               oooo  f
+
+ppppppppppppppp p pp p b                                                                                                        
+               oooo  f
+
+ppppppppppppppp pp p p b                                                                                                        
+               oooo  f
+
+ppppppppppppppp ppp  p b                                                                                                        
+               oooo  f
+
+pppppppppppppppp pp  p b                                                                                                        
+               oooo  f
+
+ppppppppppppppppp p  p b                                                                                                        
+               oooo  f
+
+pppppppppppppppppp   p b                                                                                                        
+               oooo  f
+
+ppppppppppppppppppo  p b                                                                                                        
+               ooo   f
+
+pppppppppppppppppp o p b                                                                                                        
+               ooo   f
+
+ppppppppppppppppp po p b                                                                                                        
+               ooo   f
+
+ppppppppppppppppp p opb                                                                                                         
+               ooo   f
+
+ppppppppppppppppp po pb                                                                                                         
+               ooo   f
+
+pppppppppppppppppp o pb                                                                                                         
+               ooo   f
+
+ppppppppppppppppppo  pb                                                                                                         
+               ooo   f
+
+pppppppppppppppppp   pb                                                                                                         
+               oooo  f
+
+ppppppppppppppppp p  pb                                                                                                         
+               oooo  f
+
+pppppppppppppppp pp  pb                                                                                                         
+               oooo  f
+
+pppppppppppppppp p p pb                                                                                                         
+               oooo  f
+
+pppppppppppppppp p pp b                                                                                                         
+               oooo  f
+
+pppppppppppppppp pp p b                                                                                                         
+               oooo  f
+
+ppppppppppppppppp p p b                                                                                                         
+               oooo  f
+
+pppppppppppppppppp  p b                                                                                                         
+               oooo  f
+
+ppppppppppppppppppo p b                                                                                                         
+               ooo   f
+
+pppppppppppppppppp opb                                                                                                          
+               ooo   f
+
 original moves: [-4, -5, -3, -6, -4, -2, -7, -5, -3, -5, (-3,), -4, -4, (-3,), -5, -8, -6, -4, -2, -4, -6, -5, (-3,), -4, -5, -3, -3, -5, -4, (-3,), -5, -6, -4, -2, -4, -3, -6, -5, -4, -8, -7, -6, -5, (-3,), -4, -5, -3, -6, -4, -2, -7, -5, -3, -5, -7, -6, (-4,), -5, -6, -4, -4, -6, -5, (-4,), (-4,), -5, -6, -4, -4, -6, -5, (-4,), -6, -7, -5, -3, -2, -5, -4, -3, -7, -6, -5, -4, (-3,), -5, -6, -4, -7, -5, -3, -8, -6, -4, -2, -4, -6, -5, (-3,), -4, -5, -3, -3, -5, -4, (-3,), -5, -6, -4, -2, -4, -3, -6, -5, -4, -8, -7, -6, -5, (-3,), -4, -5, -3, -6, -4, -2, -2, -4, -3, -6, -5, -4, (-3,), -5, -6, -4, -7, -5, -3, -5, (-3,), -4, -4, (-3,), -5, -3, -5, -4, -7, -6, -5, (-3,), -4, -5, -3, -3, -5, -4, (-3,), -5, -6, -4, -2, -4, -6, -5, (-3,), -4]
-corrected moves: [-4, -5, -3, -6, -4, -2, -8, -8, -5, -3, -5, (-3,), -4, -4, -5, -8, -6, -4, -2, -4, -6, -5, (-3,), -4, -5, -3, -3, -5, -4, -5, -6, -4, -2, -4, -3, -6, -5, -4, -8, -6, -6, -5, (-3,), -4, -5, -3, -6, -4, -2, -8, -8, -5, -3, -5, -6, -6, (-4,), (-3,), -5, -6, -4, -4, -6, -5, (-4,), (-3,), -5, -6, -4, -4, -6, -5, -6, -8, -8, -5, -3, -2, -5, -4, -3, -6, -6, -5, -4, -5, -6, -4, -8, -8, -5, -3, -8, -6, -4, -2, -4, -6, -5, (-3,), -4, -5, -3, -3, -5, -4, -5, -6, -4, -2, -4, -3, -6, -5, -4, -8, -6, -6, -5, (-3,), -4, -5, -3, -6, -4, -2, -2, -4, -3, -6, -5, -4, -5, -6, -4, -8, -8, -5, -3, -5, (-3,), -4, -4, -5, -3, -5, -4, -6, -6, -5, (-3,), -4, -5, -3, -3, -5, -4, -5, -6, -4, -2, -4, -6, -5, (-3,), -4]
-layout numbered rules: [[8], [7], [9], [6], [8], [10], [5], [5], [7], [9], [7], [15], [8], [8], [7], [5], [6], [8], [10], [8], [6], [7], [15], [8], [7], [9], [9], [7], [8], [7], [6], [8], [10], [8], [9], [6], [7], [8], [5], [6], [6], [7], [15], [8], [7], [9], [6], [8], [10], [5], [5], [7], [9], [7], [6], [6], [14], [15], [7], [6], [8], [8], [6], [7], [14], [15], [7], [6], [8], [8], [6], [7], [6], [5], [5], [7], [9], [10], [7], [8], [9], [6], [6], [7], [8], [7], [6], [8], [5], [5], [7], [9], [5], [6], [8], [10], [8], [6], [7], [15], [8], [7], [9], [9], [7], [8], [7], [6], [8], [10], [8], [9], [6], [7], [8], [5], [6], [6], [7], [15], [8], [7], [9], [6], [8], [10], [10], [8], [9], [6], [7], [8], [7], [6], [8], [5], [5], [7], [9], [7], [15], [8], [8], [7], [9], [7], [8], [6], [6], [7], [15], [8], [7], [9], [9], [7], [8], [7], [6], [8], [10], [8], [6], [7], [15], [8]]
-manually corrected moves: [8, 8, 7, 7, 9, 9, 6, 6, 8, 8, 10, 10, 5, 5, 5, 5, 7, 7, 9, 9, 7, 7, 15, 15, 8, 8, 8, 8, 7, 7, 5, 5, 6, 6, 8, 8, 10, 10, 8, 8, 6, 6, 7, 7, 15, 15, 8, 8, 7, 7, 9, 9, 9, 9, 7, 7, 8, 8, 7, 7, 6, 6, 8, 8, 10, 10, 8, 8, 9, 9, 6, 6, 7, 7, 8, 8, 5, 5, 6, 6, 6, 6, 7, 7, 15, 15, 8, 8, 7, 7, 9, 9, 6, 6, 8, 8, 10, 10, 5, 5, 5, 5, 7, 7, 9, 9, 7, 7, 6, 6, 6, 6, 14, 14, 15, 15, 7, 7, 6, 6, 8, 8, 8, 8, 6, 6, 7, 7, 14, 14, 15, 15, 7, 7, 6, 6, 8, 8, 8, 8, 6, 6, 7, 7, 6, 6, 5, 5, 5, 5, 7, 7, 9, 9, 10, 10, 7, 7, 8, 8, 9, 9, 6, 6, 6, 6, 7, 7, 8, 8, 7, 7, 6, 6, 8, 8, 5, 5, 5, 5, 7, 7, 9, 9, 5, 5, 6, 6, 8, 8, 10, 10, 8, 8, 6, 6, 7, 7, 15, 15, 8, 8, 7, 7, 9, 9, 9, 9, 7, 7, 8, 8, 7, 7, 6, 6, 8, 8, 10, 10, 8, 8, 9, 9, 6, 6, 7, 7, 8, 8, 5, 5, 6, 6, 6, 6, 7, 7, 15, 15, 8, 8, 7, 7, 9, 9, 6, 6, 8, 8, 10, 10, 10, 10, 8, 8, 9, 9, 6, 6, 7, 7, 8, 8, 7, 7, 6, 6, 8, 8, 5, 5, 5, 5, 7, 7, 9, 9, 7, 7, 15, 15, 8, 8, 8, 8, 7, 7, 9, 9, 7, 7, 8, 8, 6, 6, 6, 6, 7, 7, 15, 15, 8, 8, 7, 7, 9, 9, 9, 9, 7, 7, 8, 8, 7, 7, 6, 6, 8, 8, 10, 10, 8, 8, 6, 6, 7, 7, 15, 15, 8, 8]
-outputted commands: ['/setblock -103 250 -76 composter[level=2]', '/setblock -103 250 -75 composter[level=2]', '/setblock -103 250 -74 composter[level=2]', '/setblock -103 250 -73 composter[level=2]', '/setblock -103 250 -72 composter[level=1]', '/setblock -103 250 -71 composter[level=2]', '/setblock -103 250 -70 composter[level=1]', '/setblock -103 250 -69 composter[level=2]', '/setblock -103 250 -68 composter[level=3]', '/setblock -103 250 -67 composter[level=2]', '/setblock -103 250 -66 composter[level=3]', '/setblock -103 250 -65 composter[level=2]', '/setblock -103 250 -64 composter[level=7]', '/setblock -103 250 -63 composter[level=1]', '/setblock -103 250 -62 composter[level=7]', '/setblock -103 250 -61 composter[level=1]', '/setblock -103 250 -60 composter[level=2]', '/setblock -103 250 -59 composter[level=2]', '/setblock -103 250 -58 composter[level=2]', '/setblock -103 250 -57 composter[level=2]', '/setblock -103 250 -56 composter[level=4]', '/setblock -103 250 -55 composter[level=2]', '/setblock -103 250 -54 composter[level=4]', '/setblock -103 250 -53 composter[level=2]', '/setblock -103 250 -52 composter[level=6]', '/setblock -103 250 -51 composter[level=1]', '/setblock -103 250 -50 composter[level=6]', '/setblock -103 250 -49 composter[level=1]', '/setblock -103 250 -48 composter[level=6]', '/setblock -103 250 -47 composter[level=1]', '/setblock -103 250 -46 composter[level=6]', '/setblock -103 250 -45 composter[level=1]', '/setblock -103 250 -44 composter[level=1]', '/setblock -103 250 -43 composter[level=2]', '/setblock -103 250 -42 composter[level=1]', '/setblock -103 250 -41 composter[level=2]', '/setblock -103 250 -40 composter[level=3]', '/setblock -103 250 -39 composter[level=2]', '/setblock -103 250 -38 composter[level=3]', '/setblock -103 250 -37 composter[level=2]', '/setblock -103 250 -36 composter[level=1]', '/setblock -103 250 -35 composter[level=2]', '/setblock -103 250 -34 composter[level=1]', '/setblock -103 250 -33 composter[level=2]', '/setblock -103 250 -32 composter[level=2]', '/setblock -103 250 -31 composter[level=3]', '/setblock -103 250 -30 composter[level=2]', '/setblock -103 250 -29 composter[level=3]', '/setblock -103 250 -28 composter[level=2]', '/setblock -103 250 -27 composter[level=2]', '/setblock -103 250 -26 composter[level=2]', '/setblock -103 250 -25 composter[level=2]', '/setblock -103 250 -24 composter[level=2]', '/setblock -103 250 -23 composter[level=2]', '/setblock -103 250 -22 composter[level=2]', '/setblock -103 250 -21 composter[level=2]', '/setblock -103 250 -20 composter[level=1]', '/setblock -103 250 -19 composter[level=2]', '/setblock -103 250 -18 composter[level=1]', '/setblock -103 250 -17 composter[level=2]', '/setblock -104 250 -76 composter[level=6]', '/setblock -104 250 -75 composter[level=1]', '/setblock -104 250 -74 composter[level=6]', '/setblock -104 250 -73 composter[level=1]', '/setblock -104 250 -72 composter[level=7]', '/setblock -104 250 -71 composter[level=1]', '/setblock -104 250 -70 composter[level=7]', '/setblock -104 250 -69 composter[level=1]', '/setblock -104 250 -68 composter[level=2]', '/setblock -104 250 -67 composter[level=2]', '/setblock -104 250 -66 composter[level=2]', '/setblock -104 250 -65 composter[level=2]', '/setblock -104 250 -64 composter[level=4]', '/setblock -104 250 -63 composter[level=2]', '/setblock -104 250 -62 composter[level=4]', '/setblock -104 250 -61 composter[level=2]', '/setblock -104 250 -60 composter[level=2]', '/setblock -104 250 -59 composter[level=2]', '/setblock -104 250 -58 composter[level=2]', '/setblock -104 250 -57 composter[level=2]', '/setblock -104 250 -56 composter[level=7]', '/setblock -104 250 -55 composter[level=1]', '/setblock -104 250 -54 composter[level=7]', '/setblock -104 250 -53 composter[level=1]', '/setblock -104 250 -52 composter[level=1]', '/setblock -104 250 -51 composter[level=2]', '/setblock -104 250 -50 composter[level=1]', '/setblock -104 250 -49 composter[level=2]', '/setblock -104 250 -48 composter[level=2]', '/setblock -104 250 -47 composter[level=3]', '/setblock -104 250 -46 composter[level=2]', '/setblock -104 250 -45 composter[level=3]', '/setblock -104 250 -44 composter[level=2]', '/setblock -104 250 -43 composter[level=2]', '/setblock -104 250 -42 composter[level=2]', '/setblock -104 250 -41 composter[level=2]', '/setblock -104 250 -40 composter[level=1]', '/setblock -104 250 -39 composter[level=2]', '/setblock -104 250 -38 composter[level=1]', '/setblock -104 250 -37 composter[level=2]', '/setblock -104 250 -36 composter[level=3]', '/setblock -104 250 -35 composter[level=2]', '/setblock -104 250 -34 composter[level=3]', '/setblock -104 250 -33 composter[level=2]', '/setblock -104 250 -32 composter[level=3]', '/setblock -104 250 -31 composter[level=2]', '/setblock -104 250 -30 composter[level=3]', '/setblock -104 250 -29 composter[level=2]', '/setblock -104 250 -28 composter[level=1]', '/setblock -104 250 -27 composter[level=2]', '/setblock -104 250 -26 composter[level=1]', '/setblock -104 250 -25 composter[level=2]', '/setblock -104 250 -24 composter[level=2]', '/setblock -104 250 -23 composter[level=2]', '/setblock -104 250 -22 composter[level=2]', '/setblock -104 250 -21 composter[level=2]', '/setblock -104 250 -20 composter[level=1]', '/setblock -104 250 -19 composter[level=2]', '/setblock -104 250 -18 composter[level=1]', '/setblock -104 250 -17 composter[level=2]', '/setblock -105 250 -76 composter[level=7]', '/setblock -105 250 -75 composter[level=1]', '/setblock -105 250 -74 composter[level=7]', '/setblock -105 250 -73 composter[level=1]', '/setblock -105 250 -72 composter[level=2]', '/setblock -105 250 -71 composter[level=2]', '/setblock -105 250 -70 composter[level=2]', '/setblock -105 250 -69 composter[level=2]', '/setblock -105 250 -68 composter[level=4]', '/setblock -105 250 -67 composter[level=2]', '/setblock -105 250 -66 composter[level=4]', '/setblock -105 250 -65 composter[level=2]', '/setblock -105 250 -64 composter[level=2]', '/setblock -105 250 -63 composter[level=2]', '/setblock -105 250 -62 composter[level=2]', '/setblock -105 250 -61 composter[level=2]', '/setblock -105 250 -60 composter[level=3]', '/setblock -105 250 -59 composter[level=2]', '/setblock -105 250 -58 composter[level=3]', '/setblock -105 250 -57 composter[level=2]', '/setblock -105 250 -56 composter[level=7]', '/setblock -105 250 -55 composter[level=1]', '/setblock -105 250 -54 composter[level=7]', '/setblock -105 250 -53 composter[level=1]', '/setblock -105 250 -52 composter[level=1]', '/setblock -105 250 -51 composter[level=2]', '/setblock -105 250 -50 composter[level=1]', '/setblock -105 250 -49 composter[level=2]', '/setblock -105 250 -48 composter[level=2]', '/setblock -105 250 -47 composter[level=2]', '/setblock -105 250 -46 composter[level=2]', '/setblock -105 250 -45 composter[level=2]', '/setblock -105 250 -44 composter[level=6]', '/setblock -105 250 -43 composter[level=1]', '/setblock -105 250 -42 composter[level=6]', '/setblock -105 250 -41 composter[level=1]', '/setblock -105 250 -40 composter[level=7]', '/setblock -105 250 -39 composter[level=1]', '/setblock -105 250 -38 composter[level=7]', '/setblock -105 250 -37 composter[level=1]', '/setblock -105 250 -36 composter[level=7]', '/setblock -105 250 -35 composter[level=1]', '/setblock -105 250 -34 composter[level=7]', '/setblock -105 250 -33 composter[level=1]', '/setblock -105 250 -32 composter[level=1]', '/setblock -105 250 -31 composter[level=2]', '/setblock -105 250 -30 composter[level=1]', '/setblock -105 250 -29 composter[level=2]', '/setblock -105 250 -28 composter[level=2]', '/setblock -105 250 -27 composter[level=3]', '/setblock -105 250 -26 composter[level=2]', '/setblock -105 250 -25 composter[level=3]', '/setblock -105 250 -24 composter[level=2]', '/setblock -105 250 -23 composter[level=2]', '/setblock -105 250 -22 composter[level=2]', '/setblock -105 250 -21 composter[level=2]', '/setblock -105 250 -20 composter[level=1]', '/setblock -105 250 -19 composter[level=2]', '/setblock -105 250 -18 composter[level=1]', '/setblock -105 250 -17 composter[level=2]', '/setblock -106 250 -76 composter[level=3]', '/setblock -106 250 -75 composter[level=2]', '/setblock -106 250 -74 composter[level=3]', '/setblock -106 250 -73 composter[level=2]', '/setblock -106 250 -72 composter[level=7]', '/setblock -106 250 -71 composter[level=1]', '/setblock -106 250 -70 composter[level=7]', '/setblock -106 250 -69 composter[level=1]', '/setblock -106 250 -68 composter[level=2]', '/setblock -106 250 -67 composter[level=2]', '/setblock -106 250 -66 composter[level=2]', '/setblock -106 250 -65 composter[level=2]', '/setblock -106 250 -64 composter[level=4]', '/setblock -106 250 -63 composter[level=2]', '/setblock -106 250 -62 composter[level=4]', '/setblock -106 250 -61 composter[level=2]', '/setblock -106 250 -60 composter[level=6]', '/setblock -106 250 -59 composter[level=1]', '/setblock -106 250 -58 composter[level=6]', '/setblock -106 250 -57 composter[level=1]', '/setblock -106 250 -56 composter[level=6]', '/setblock -106 250 -55 composter[level=1]', '/setblock -106 250 -54 composter[level=6]', '/setblock -106 250 -53 composter[level=1]', '/setblock -106 250 -52 composter[level=1]', '/setblock -106 250 -51 composter[level=2]', '/setblock -106 250 -50 composter[level=1]', '/setblock -106 250 -49 composter[level=2]', '/setblock -106 250 -48 composter[level=3]', '/setblock -106 250 -47 composter[level=2]', '/setblock -106 250 -46 composter[level=3]', '/setblock -106 250 -45 composter[level=2]', '/setblock -106 250 -44 composter[level=1]', '/setblock -106 250 -43 composter[level=2]', '/setblock -106 250 -42 composter[level=1]', '/setblock -106 250 -41 composter[level=2]', '/setblock -106 250 -40 composter[level=7]', '/setblock -106 250 -39 composter[level=1]', '/setblock -106 250 -38 composter[level=7]', '/setblock -106 250 -37 composter[level=1]', '/setblock -106 250 -36 composter[level=7]', '/setblock -106 250 -35 composter[level=1]', '/setblock -106 250 -34 composter[level=7]', '/setblock -106 250 -33 composter[level=1]', '/setblock -106 250 -32 composter[level=1]', '/setblock -106 250 -31 composter[level=3]', '/setblock -106 250 -30 composter[level=1]', '/setblock -106 250 -29 composter[level=3]', '/setblock -106 250 -28 composter[level=2]', '/setblock -106 250 -27 composter[level=3]', '/setblock -106 250 -26 composter[level=2]', '/setblock -106 250 -25 composter[level=3]', '/setblock -106 250 -24 composter[level=1]', '/setblock -106 250 -23 composter[level=2]', '/setblock -106 250 -22 composter[level=1]', '/setblock -106 250 -21 composter[level=2]', '/setblock -106 250 -20 composter[level=7]', '/setblock -106 250 -19 composter[level=1]', '/setblock -106 250 -18 composter[level=7]', '/setblock -106 250 -17 composter[level=1]', '/setblock -107 250 -76 composter[level=2]', '/setblock -107 250 -75 composter[level=2]', '/setblock -107 250 -74 composter[level=2]', '/setblock -107 250 -73 composter[level=2]', '/setblock -107 250 -72 composter[level=2]', '/setblock -107 250 -71 composter[level=2]', '/setblock -107 250 -70 composter[level=2]', '/setblock -107 250 -69 composter[level=2]', '/setblock -107 250 -68 composter[level=7]', '/setblock -107 250 -67 composter[level=1]', '/setblock -107 250 -66 composter[level=7]', '/setblock -107 250 -65 composter[level=1]', '/setblock -107 250 -64 composter[level=1]', '/setblock -107 250 -63 composter[level=2]', '/setblock -107 250 -62 composter[level=1]', '/setblock -107 250 -61 composter[level=2]', '/setblock -107 250 -60 composter[level=1]', '/setblock -107 250 -59 composter[level=3]', '/setblock -107 250 -58 composter[level=1]', '/setblock -107 250 -57 composter[level=3]', '/setblock -107 250 -56 composter[level=2]', '/setblock -107 250 -55 composter[level=3]', '/setblock -107 250 -54 composter[level=2]', '/setblock -107 250 -53 composter[level=3]', '/setblock -107 250 -52 composter[level=1]', '/setblock -107 250 -51 composter[level=2]', '/setblock -107 250 -50 composter[level=1]', '/setblock -107 250 -49 composter[level=2]', '/setblock -107 250 -48 composter[level=7]', '/setblock -107 250 -47 composter[level=1]', '/setblock -107 250 -46 composter[level=7]', '/setblock -107 250 -45 composter[level=1]', '/setblock -107 250 -44 composter[level=2]', '/setblock -107 250 -43 composter[level=2]', '/setblock -107 250 -42 composter[level=2]', '/setblock -107 250 -41 composter[level=2]', '/setblock -107 250 -40 composter[level=2]', '/setblock -107 250 -39 composter[level=2]', '/setblock -107 250 -38 composter[level=2]', '/setblock -107 250 -37 composter[level=2]', '/setblock -107 250 -36 composter[level=7]', '/setblock -107 250 -35 composter[level=1]', '/setblock -107 250 -34 composter[level=7]', '/setblock -107 250 -33 composter[level=1]', '/setblock -107 250 -32 composter[level=1]', '/setblock -107 250 -31 composter[level=2]', '/setblock -107 250 -30 composter[level=1]', '/setblock -107 250 -29 composter[level=2]', '/setblock -107 250 -28 composter[level=7]', '/setblock -107 250 -27 composter[level=1]', '/setblock -107 250 -26 composter[level=7]', '/setblock -107 250 -25 composter[level=1]', '/setblock -107 250 -24 composter[level=6]', '/setblock -107 250 -23 composter[level=1]', '/setblock -107 250 -22 composter[level=6]', '/setblock -107 250 -21 composter[level=1]', '/setblock -107 250 -20 composter[level=6]', '/setblock -107 250 -19 composter[level=1]', '/setblock -107 250 -18 composter[level=6]', '/setblock -107 250 -17 composter[level=1]', '/setblock -108 250 -76 composter[level=1]', '/setblock -108 250 -75 composter[level=2]', '/setblock -108 250 -74 composter[level=1]', '/setblock -108 250 -73 composter[level=2]', '/setblock -108 250 -72 composter[level=3]', '/setblock -108 250 -71 composter[level=2]', '/setblock -108 250 -70 composter[level=3]', '/setblock -108 250 -69 composter[level=2]', '/setblock -108 250 -68 composter[level=4]', '/setblock -108 250 -67 composter[level=2]', '/setblock -108 250 -66 composter[level=4]', '/setblock -108 250 -65 composter[level=2]', '/setblock -108 250 -64 composter[level=1]', '/setblock -108 250 -63 composter[level=2]', '/setblock -108 250 -62 composter[level=1]', '/setblock -108 250 -61 composter[level=2]', '/setblock -108 250 -60 composter[level=2]', '/setblock -108 250 -59 composter[level=2]', '/setblock -108 250 -58 composter[level=2]', '/setblock -108 250 -57 composter[level=2]', '/setblock -108 250 -56 composter[level=3]', '/setblock -108 250 -55 composter[level=2]', '/setblock -108 250 -54 composter[level=3]', '/setblock -108 250 -53 composter[level=2]', '/setblock -108 250 -52 composter[level=7]', '/setblock -108 250 -51 composter[level=1]', '/setblock -108 250 -50 composter[level=7]', '/setblock -108 250 -49 composter[level=1]', '/setblock -108 250 -48 composter[level=7]', '/setblock -108 250 -47 composter[level=1]', '/setblock -108 250 -46 composter[level=7]', '/setblock -108 250 -45 composter[level=1]', '/setblock -108 250 -44 composter[level=1]', '/setblock -108 250 -43 composter[level=2]', '/setblock -108 250 -42 composter[level=1]', '/setblock -108 250 -41 composter[level=2]', '/setblock -108 250 -40 composter[level=2]', '/setblock -108 250 -39 composter[level=2]', '/setblock -108 250 -38 composter[level=2]', '/setblock -108 250 -37 composter[level=2]', '/setblock -108 250 -36 composter[level=1]', '/setblock -108 250 -35 composter[level=2]', '/setblock -108 250 -34 composter[level=1]', '/setblock -108 250 -33 composter[level=2]', '/setblock -108 250 -32 composter[level=7]', '/setblock -108 250 -31 composter[level=1]', '/setblock -108 250 -30 composter[level=7]', '/setblock -108 250 -29 composter[level=1]', '/setblock -108 250 -28 composter[level=2]', '/setblock -108 250 -27 composter[level=2]', '/setblock -108 250 -26 composter[level=2]', '/setblock -108 250 -25 composter[level=2]', '/setblock -108 250 -24 composter[level=6]', '/setblock -108 250 -23 composter[level=1]', '/setblock -108 250 -22 composter[level=6]', '/setblock -108 250 -21 composter[level=1]', '/setblock -108 250 -20 composter[level=6]', '/setblock -108 250 -19 composter[level=1]', '/setblock -108 250 -18 composter[level=6]', '/setblock -108 250 -17 composter[level=1]', '/setblock -109 250 -76 composter[level=1]', '/setblock -109 250 -75 composter[level=2]', '/setblock -109 250 -74 composter[level=1]', '/setblock -109 250 -73 composter[level=2]', '/setblock -109 250 -72 composter[level=3]', '/setblock -109 250 -71 composter[level=2]', '/setblock -109 250 -70 composter[level=3]', '/setblock -109 250 -69 composter[level=2]', '/setblock -109 250 -68 composter[level=6]', '/setblock -109 250 -67 composter[level=1]', '/setblock -109 250 -66 composter[level=6]', '/setblock -109 250 -65 composter[level=1]', '/setblock -109 250 -64 composter[level=7]', '/setblock -109 250 -63 composter[level=1]', '/setblock -109 250 -62 composter[level=7]', '/setblock -109 250 -61 composter[level=1]', '/setblock -109 250 -60 composter[level=2]', '/setblock -109 250 -59 composter[level=2]', '/setblock -109 250 -58 composter[level=2]', '/setblock -109 250 -57 composter[level=2]', '/setblock -109 250 -56 composter[level=4]', '/setblock -109 250 -55 composter[level=2]', '/setblock -109 250 -54 composter[level=4]', '/setblock -109 250 -53 composter[level=2]', '/setblock -109 250 -52 composter[level=2]', '/setblock -109 250 -51 composter[level=2]', '/setblock -109 250 -50 composter[level=2]', '/setblock -109 250 -49 composter[level=2]', '/setblock -109 250 -48 composter[level=7]', '/setblock -109 250 -47 composter[level=1]', '/setblock -109 250 -46 composter[level=7]', '/setblock -109 250 -45 composter[level=1]', '/setblock -109 250 -44 composter[level=1]', '/setblock -109 250 -43 composter[level=2]', '/setblock -109 250 -42 composter[level=1]', '/setblock -109 250 -41 composter[level=2]', '/setblock -109 250 -40 composter[level=2]', '/setblock -109 250 -39 composter[level=3]', '/setblock -109 250 -38 composter[level=2]', '/setblock -109 250 -37 composter[level=3]', '/setblock -109 250 -36 composter[level=2]', '/setblock -109 250 -35 composter[level=2]', '/setblock -109 250 -34 composter[level=2]', '/setblock -109 250 -33 composter[level=2]', '/setblock -109 250 -32 composter[level=1]', '/setblock -109 250 -31 composter[level=2]', '/setblock -109 250 -30 composter[level=1]', '/setblock -109 250 -29 composter[level=2]', '/setblock -109 250 -28 composter[level=3]', '/setblock -109 250 -27 composter[level=2]', '/setblock -109 250 -26 composter[level=3]', '/setblock -109 250 -25 composter[level=2]', '/setblock -109 250 -24 composter[level=3]', '/setblock -109 250 -23 composter[level=2]', '/setblock -109 250 -22 composter[level=3]', '/setblock -109 250 -21 composter[level=2]', '/setblock -109 250 -20 composter[level=1]', '/setblock -109 250 -19 composter[level=2]', '/setblock -109 250 -18 composter[level=1]', '/setblock -109 250 -17 composter[level=2]', '/setblock -110 250 -76 composter[level=2]', '/setblock -110 250 -75 composter[level=2]', '/setblock -110 250 -74 composter[level=2]', '/setblock -110 250 -73 composter[level=2]', '/setblock -110 250 -72 composter[level=1]', '/setblock -110 250 -71 composter[level=2]', '/setblock -110 250 -70 composter[level=1]', '/setblock -110 250 -69 composter[level=2]', '/setblock -110 250 -68 composter[level=7]', '/setblock -110 250 -67 composter[level=1]', '/setblock -110 250 -66 composter[level=7]', '/setblock -110 250 -65 composter[level=1]', '/setblock -110 250 -64 composter[level=2]', '/setblock -110 250 -63 composter[level=2]', '/setblock -110 250 -62 composter[level=2]', '/setblock -110 250 -61 composter[level=2]', '/setblock -110 250 -60 composter[level=4]', '/setblock -110 250 -59 composter[level=2]', '/setblock -110 250 -58 composter[level=4]', '/setblock -110 250 -57 composter[level=2]', '/setblock -110 250 -56 composter[level=2]', '/setblock -110 250 -55 composter[level=2]', '/setblock -110 250 -54 composter[level=2]', '/setblock -110 250 -53 composter[level=2]', '/setblock -110 250 -52 composter[level=3]', '/setblock -110 250 -51 composter[level=2]', '/setblock -110 250 -50 composter[level=3]', '/setblock -110 250 -49 composter[level=2]', '/setblock -110 250 -48 composter[level=7]', '/setblock -110 250 -47 composter[level=1]', '/setblock -110 250 -46 composter[level=7]', '/setblock -110 250 -45 composter[level=1]', '/setblock -110 250 -44 composter[level=1]', '/setblock -110 250 -43 composter[level=2]', '/setblock -110 250 -42 composter[level=1]', '/setblock -110 250 -41 composter[level=2]', '/setblock -110 250 -40 composter[level=2]', '/setblock -110 250 -39 composter[level=2]', '/setblock -110 250 -38 composter[level=2]', '/setblock -110 250 -37 composter[level=2]', '/setblock -110 250 -36 composter[level=6]', '/setblock -110 250 -35 composter[level=1]', '/setblock -110 250 -34 composter[level=6]', '/setblock -110 250 -33 composter[level=1]', '/setblock -110 250 -32 composter[level=7]', '/setblock -110 250 -31 composter[level=1]', '/setblock -110 250 -30 composter[level=7]', '/setblock -110 250 -29 composter[level=1]', '/setblock -110 250 -28 composter[level=7]', '/setblock -110 250 -27 composter[level=1]', '/setblock -110 250 -26 composter[level=7]', '/setblock -110 250 -25 composter[level=1]', '/setblock -110 250 -24 composter[level=1]', '/setblock -110 250 -23 composter[level=2]', '/setblock -110 250 -22 composter[level=1]', '/setblock -110 250 -21 composter[level=2]', '/setblock -110 250 -20 composter[level=2]', '/setblock -110 250 -19 composter[level=3]', '/setblock -110 250 -18 composter[level=2]', '/setblock -110 250 -17 composter[level=3]', '/setblock -111 250 -76 composter[level=2]', '/setblock -111 250 -75 composter[level=2]', '/setblock -111 250 -74 composter[level=2]', '/setblock -111 250 -73 composter[level=2]', '/setblock -111 250 -72 composter[level=1]', '/setblock -111 250 -71 composter[level=2]', '/setblock -111 250 -70 composter[level=1]', '/setblock -111 250 -69 composter[level=2]', '/setblock -111 250 -68 composter[level=3]', '/setblock -111 250 -67 composter[level=2]', '/setblock -111 250 -66 composter[level=3]', '/setblock -111 250 -65 composter[level=2]', '/setblock -111 250 -64 composter[level=7]', '/setblock -111 250 -63 composter[level=1]', '/setblock -111 250 -62 composter[level=7]', '/setblock -111 250 -61 composter[level=1]', '/setblock -111 250 -60 composter[level=2]', '/setblock -111 250 -59 composter[level=2]', '/setblock -111 250 -58 composter[level=2]', '/setblock -111 250 -57 composter[level=2]', '/setblock -111 250 -56 composter[level=4]', '/setblock -111 250 -55 composter[level=2]', '/setblock -111 250 -54 composter[level=4]', '/setblock -111 250 -53 composter[level=2]', '/setblock -111 250 -52 composter[level=4]', '/setblock -111 250 -51 composter[level=2]', '/setblock -111 250 -50 composter[level=4]', '/setblock -111 250 -49 composter[level=2]', '/setblock -111 250 -48 composter[level=2]', '/setblock -111 250 -47 composter[level=2]', '/setblock -111 250 -46 composter[level=2]', '/setblock -111 250 -45 composter[level=2]', '/setblock -111 250 -44 composter[level=3]', '/setblock -111 250 -43 composter[level=2]', '/setblock -111 250 -42 composter[level=3]', '/setblock -111 250 -41 composter[level=2]', '/setblock -111 250 -40 composter[level=7]', '/setblock -111 250 -39 composter[level=1]', '/setblock -111 250 -38 composter[level=7]', '/setblock -111 250 -37 composter[level=1]', '/setblock -111 250 -36 composter[level=1]', '/setblock -111 250 -35 composter[level=2]', '/setblock -111 250 -34 composter[level=1]', '/setblock -111 250 -33 composter[level=2]', '/setblock -111 250 -32 composter[level=2]', '/setblock -111 250 -31 composter[level=2]', '/setblock -111 250 -30 composter[level=2]', '/setblock -111 250 -29 composter[level=2]', '/setblock -111 250 -28 composter[level=1]', '/setblock -111 250 -27 composter[level=2]', '/setblock -111 250 -26 composter[level=1]', '/setblock -111 250 -25 composter[level=2]', '/setblock -111 250 -24 composter[level=7]', '/setblock -111 250 -23 composter[level=1]', '/setblock -111 250 -22 composter[level=7]', '/setblock -111 250 -21 composter[level=1]', '/setblock -111 250 -20 composter[level=2]', '/setblock -111 250 -19 composter[level=2]', '/setblock -111 250 -18 composter[level=2]', '/setblock -111 250 -17 composter[level=2]', '/setblock -112 250 -76 composter[level=6]', '/setblock -112 250 -75 composter[level=1]', '/setblock -112 250 -74 composter[level=6]', '/setblock -112 250 -73 composter[level=1]', '/setblock -112 250 -72 composter[level=6]', '/setblock -112 250 -71 composter[level=1]', '/setblock -112 250 -70 composter[level=6]', '/setblock -112 250 -69 composter[level=1]', '/setblock -112 250 -68 composter[level=1]', '/setblock -112 250 -67 composter[level=2]', '/setblock -112 250 -66 composter[level=1]', '/setblock -112 250 -65 composter[level=2]', '/setblock -112 250 -64 composter[level=3]', '/setblock -112 250 -63 composter[level=2]', '/setblock -112 250 -62 composter[level=3]', '/setblock -112 250 -61 composter[level=2]', '/setblock -112 250 -60 composter[level=1]', '/setblock -112 250 -59 composter[level=2]', '/setblock -112 250 -58 composter[level=1]', '/setblock -112 250 -57 composter[level=2]', '/setblock -112 250 -56 composter[level=2]', '/setblock -112 250 -55 composter[level=3]', '/setblock -112 250 -54 composter[level=2]', '/setblock -112 250 -53 composter[level=3]', '/setblock -112 250 -52 composter[level=2]', '/setblock -112 250 -51 composter[level=2]', '/setblock -112 250 -50 composter[level=2]', '/setblock -112 250 -49 composter[level=2]', '/setblock -112 250 -48 composter[level=2]', '/setblock -112 250 -47 composter[level=2]', '/setblock -112 250 -46 composter[level=2]', '/setblock -112 250 -45 composter[level=2]', '/setblock -112 250 -44 composter[level=1]', '/setblock -112 250 -43 composter[level=2]', '/setblock -112 250 -42 composter[level=1]', '/setblock -112 250 -41 composter[level=2]', '/setblock -112 250 -40 composter[level=3]', '/setblock -112 250 -39 composter[level=2]', '/setblock -112 250 -38 composter[level=3]', '/setblock -112 250 -37 composter[level=2]', '/setblock -112 250 -36 composter[level=1]', '/setblock -112 250 -35 composter[level=2]', '/setblock -112 250 -34 composter[level=1]', '/setblock -112 250 -33 composter[level=2]', '/setblock -112 250 -32 composter[level=2]', '/setblock -112 250 -31 composter[level=2]', '/setblock -112 250 -30 composter[level=2]', '/setblock -112 250 -29 composter[level=2]', '/setblock -112 250 -28 composter[level=7]', '/setblock -112 250 -27 composter[level=1]', '/setblock -112 250 -26 composter[level=7]', '/setblock -112 250 -25 composter[level=1]', '/setblock -112 250 -24 composter[level=7]', '/setblock -112 250 -23 composter[level=1]', '/setblock -112 250 -22 composter[level=7]', '/setblock -112 250 -21 composter[level=1]', '/setblock -112 250 -20 composter[level=1]', '/setblock -112 250 -19 composter[level=2]', '/setblock -112 250 -18 composter[level=1]', '/setblock -112 250 -17 composter[level=2]', '/setblock -113 250 -76 composter[level=2]', '/setblock -113 250 -75 composter[level=3]', '/setblock -113 250 -74 composter[level=2]', '/setblock -113 250 -73 composter[level=3]', '/setblock -113 250 -72 composter[level=2]', '/setblock -113 250 -71 composter[level=2]', '/setblock -113 250 -70 composter[level=2]', '/setblock -113 250 -69 composter[level=2]', '/setblock -113 250 -68 composter[level=1]', '/setblock -113 250 -67 composter[level=2]', '/setblock -113 250 -66 composter[level=1]', '/setblock -113 250 -65 composter[level=2]', '/setblock -113 250 -64 composter[level=3]', '/setblock -113 250 -63 composter[level=2]', '/setblock -113 250 -62 composter[level=3]', '/setblock -113 250 -61 composter[level=2]', '/setblock -113 250 -60 composter[level=3]', '/setblock -113 250 -59 composter[level=2]', '/setblock -113 250 -58 composter[level=3]', '/setblock -113 250 -57 composter[level=2]', '/setblock -113 250 -56 composter[level=1]', '/setblock -113 250 -55 composter[level=2]', '/setblock -113 250 -54 composter[level=1]', '/setblock -113 250 -53 composter[level=2]', '/setblock -113 250 -52 composter[level=2]', '/setblock -113 250 -51 composter[level=2]', '/setblock -113 250 -50 composter[level=2]', '/setblock -113 250 -49 composter[level=2]', '/setblock -113 250 -48 composter[level=1]', '/setblock -113 250 -47 composter[level=2]', '/setblock -113 250 -46 composter[level=1]', '/setblock -113 250 -45 composter[level=2]', '/setblock -113 250 -44 composter[level=7]', '/setblock -113 250 -43 composter[level=1]', '/setblock -113 250 -42 composter[level=7]', '/setblock -113 250 -41 composter[level=1]', '/setblock -113 250 -40 composter[level=2]', '/setblock -113 250 -39 composter[level=2]', '/setblock -113 250 -38 composter[level=2]', '/setblock -113 250 -37 composter[level=2]', '/setblock -113 250 -36 composter[level=4]', '/setblock -113 250 -35 composter[level=2]', '/setblock -113 250 -34 composter[level=4]', '/setblock -113 250 -33 composter[level=2]', '/setblock -113 250 -32 composter[level=2]', '/setblock -113 250 -31 composter[level=2]', '/setblock -113 250 -30 composter[level=2]', '/setblock -113 250 -29 composter[level=2]', '/setblock -113 250 -28 composter[level=7]', '/setblock -113 250 -27 composter[level=1]', '/setblock -113 250 -26 composter[level=7]', '/setblock -113 250 -25 composter[level=1]', '/setblock -113 250 -24 composter[level=1]', '/setblock -113 250 -23 composter[level=2]', '/setblock -113 250 -22 composter[level=1]', '/setblock -113 250 -21 composter[level=2]', '/setblock -113 250 -20 composter[level=2]', '/setblock -113 250 -19 composter[level=3]', '/setblock -113 250 -18 composter[level=2]', '/setblock -113 250 -17 composter[level=3]', '/setblock -114 250 -76 composter[level=2]', '/setblock -114 250 -75 composter[level=2]', '/setblock -114 250 -74 composter[level=2]', '/setblock -114 250 -73 composter[level=2]', '/setblock -114 250 -16 gold_block']
+corrected moves: [-4, -5, -3, -6, -4, -2, -8, -8, -5, -3, -5, (-3,), -4, -4, (-3,), -5, -8, -6, -4, -2, -4, -6, -5, (-3,), -4, -5, -3, -3, -5, -4, (-3,), -5, -6, -4, -2, -4, -3, -6, -5, -4, -8, -6, -6, -5, (-3,), -4, -5, -3, -6, -4, -2, -8, -8, -5, -3, -5, -6, -6, (-4,), (-3,), -5, -6, -4, -4, -6, -5, (-4,), (-4,), (-3,), -5, -6, -4, -4, -6, -5, (-4,), -6, -8, -8, -5, -3, -2, -5, -4, -3, -6, -6, -5, -4, (-3,), -5, -6, -4, -8, -8, -5, -3, -8, -6, -4, -2, -4, -6, -5, (-3,), -4, -5, -3, -3, -5, -4, (-3,), -5, -6, -4, -2, -4, -3, -6, -5, -4, -8, -6, -6, -5, (-3,), -4, -5, -3, -6, -4, -2, -2, -4, -3, -6, -5, -4, (-3,), -5, -6, -4, -8, -8, -5, -3, -5, (-3,), -4, -4, (-3,), -5, -3, -5, -4, -6, -6, -5, (-3,), -4, -5, -3, -3, -5, -4, (-3,), -5, -6, -4, -2, -4, -6, -5, (-3,), -4]
+layout numbered rules: [8, 7, 9, 6, 8, 10, 5, 5, 7, 9, 7, 15, 8, 8, 15, 7, 5, 6, 8, 10, 8, 6, 7, 15, 8, 7, 9, 9, 7, 8, 15, 7, 6, 8, 10, 8, 9, 6, 7, 8, 5, 6, 6, 7, 15, 8, 7, 9, 6, 8, 10, 5, 5, 7, 9, 7, 6, 6, 14, 15, 7, 6, 8, 8, 6, 7, 14, 14, 15, 7, 6, 8, 8, 6, 7, 14, 6, 5, 5, 7, 9, 10, 7, 8, 9, 6, 6, 7, 8, 15, 7, 6, 8, 5, 5, 7, 9, 5, 6, 8, 10, 8, 6, 7, 15, 8, 7, 9, 9, 7, 8, 15, 7, 6, 8, 10, 8, 9, 6, 7, 8, 5, 6, 6, 7, 15, 8, 7, 9, 6, 8, 10, 10, 8, 9, 6, 7, 8, 15, 7, 6, 8, 5, 5, 7, 9, 7, 15, 8, 8, 15, 7, 9, 7, 8, 6, 6, 7, 15, 8, 7, 9, 9, 7, 8, 15, 7, 6, 8, 10, 8, 6, 7, 15, 8]
+manually corrected moves: [8, 7, 9, 6, 8, 10, 5, 5, 7, 9, 7, 15, 8, 8, 15, 7, 5, 6, 8, 10, 8, 6, 7, 15, 8, 7, 9, 9, 7, 8, 15, 7, 6, 8, 10, 8, 9, 6, 7, 8, 5, 6, 6, 7, 15, 8, 7, 9, 6, 8, 10, 5, 5, 7, 9, 7, 6, 6, 14, 15, 7, 6, 8, 8, 6, 7, 14, 14, 15, 7, 6, 8, 8, 6, 7, 14, 6, 5, 5, 7, 9, 10, 7, 8, 9, 6, 6, 7, 8, 15, 7, 6, 8, 5, 5, 7, 9, 5, 6, 8, 10, 8, 6, 7, 15, 8, 7, 9, 9, 7, 8, 15, 7, 6, 8, 10, 8, 9, 6, 7, 8, 5, 6, 6, 7, 15, 8, 7, 9, 6, 8, 10, 10, 8, 9, 6, 7, 8, 15, 7, 6, 8, 5, 5, 7, 9, 7, 15, 8, 8, 15, 7, 9, 7, 8, 6, 6, 7, 15, 8, 7, 9, 9, 7, 8, 15, 7, 6, 8, 10, 8, 6, 7, 15, 8]
+outputted commands: ['/setblock -103 250 -76 composter[level=2]', '/setblock -103 250 -75 composter[level=2]', '/setblock -103 250 -74 composter[level=1]', '/setblock -103 250 -73 composter[level=2]', '/setblock -103 250 -72 composter[level=3]', '/setblock -103 250 -71 composter[level=2]', '/setblock -103 250 -70 composter[level=7]', '/setblock -103 250 -69 composter[level=1]', '/setblock -103 250 -68 composter[level=2]', '/setblock -103 250 -67 composter[level=2]', '/setblock -103 250 -66 composter[level=4]', '/setblock -103 250 -65 composter[level=2]', '/setblock -103 250 -64 composter[level=6]', '/setblock -103 250 -63 composter[level=1]', '/setblock -103 250 -62 composter[level=6]', '/setblock -103 250 -61 composter[level=1]', '/setblock -103 250 -60 composter[level=1]', '/setblock -103 250 -59 composter[level=2]', '/setblock -103 250 -58 composter[level=3]', '/setblock -103 250 -57 composter[level=2]', '/setblock -103 250 -56 composter[level=1]', '/setblock -103 250 -55 composter[level=2]', '/setblock -103 250 -54 composter[level=2]', '/setblock -103 250 -53 composter[level=3]', '/setblock -103 250 -52 composter[level=2]', '/setblock -103 250 -51 composter[level=2]', '/setblock -103 250 -50 composter[level=2]', '/setblock -103 250 -49 composter[level=2]', '/setblock -103 250 -48 composter[level=2]', '/setblock -103 250 -47 composter[level=3]', '/setblock -103 250 -46 composter[level=1]', '/setblock -103 250 -45 composter[level=2]', '/setblock -103 250 -44 composter[level=6]', '/setblock -103 250 -43 composter[level=1]', '/setblock -103 250 -42 composter[level=7]', '/setblock -103 250 -41 composter[level=1]', '/setblock -103 250 -40 composter[level=2]', '/setblock -103 250 -39 composter[level=2]', '/setblock -103 250 -38 composter[level=4]', '/setblock -103 250 -37 composter[level=2]', '/setblock -103 250 -36 composter[level=2]', '/setblock -103 250 -35 composter[level=2]', '/setblock -103 250 -34 composter[level=7]', '/setblock -103 250 -33 composter[level=1]', '/setblock -103 250 -32 composter[level=1]', '/setblock -103 250 -31 composter[level=2]', '/setblock -103 250 -30 composter[level=2]', '/setblock -103 250 -29 composter[level=3]', '/setblock -103 250 -28 composter[level=2]', '/setblock -103 250 -27 composter[level=2]', '/setblock -103 250 -26 composter[level=1]', '/setblock -103 250 -25 composter[level=2]', '/setblock -103 250 -24 composter[level=3]', '/setblock -103 250 -23 composter[level=2]', '/setblock -103 250 -22 composter[level=3]', '/setblock -103 250 -21 composter[level=2]', '/setblock -103 250 -20 composter[level=1]', '/setblock -103 250 -19 composter[level=2]', '/setblock -103 250 -18 composter[level=2]', '/setblock -103 250 -17 composter[level=2]', '/setblock -104 250 -76 composter[level=2]', '/setblock -104 250 -75 composter[level=3]', '/setblock -104 250 -74 composter[level=1]', '/setblock -104 250 -73 composter[level=2]', '/setblock -104 250 -72 composter[level=7]', '/setblock -104 250 -71 composter[level=1]', '/setblock -104 250 -70 composter[level=2]', '/setblock -104 250 -69 composter[level=2]', '/setblock -104 250 -68 composter[level=4]', '/setblock -104 250 -67 composter[level=2]', '/setblock -104 250 -66 composter[level=2]', '/setblock -104 250 -65 composter[level=2]', '/setblock -104 250 -64 composter[level=3]', '/setblock -104 250 -63 composter[level=2]', '/setblock -104 250 -62 composter[level=7]', '/setblock -104 250 -61 composter[level=1]', '/setblock -104 250 -60 composter[level=1]', '/setblock -104 250 -59 composter[level=2]', '/setblock -104 250 -58 composter[level=2]', '/setblock -104 250 -57 composter[level=2]', '/setblock -104 250 -56 composter[level=6]', '/setblock -104 250 -55 composter[level=1]', '/setblock -104 250 -54 composter[level=7]', '/setblock -104 250 -53 composter[level=1]', '/setblock -104 250 -52 composter[level=7]', '/setblock -104 250 -51 composter[level=1]', '/setblock -104 250 -50 composter[level=1]', '/setblock -104 250 -49 composter[level=2]', '/setblock -104 250 -48 composter[level=2]', '/setblock -104 250 -47 composter[level=3]', '/setblock -104 250 -46 composter[level=2]', '/setblock -104 250 -45 composter[level=2]', '/setblock -104 250 -44 composter[level=1]', '/setblock -104 250 -43 composter[level=2]', '/setblock -104 250 -42 composter[level=3]', '/setblock -104 250 -41 composter[level=2]', '/setblock -104 250 -40 composter[level=7]', '/setblock -104 250 -39 composter[level=1]', '/setblock -104 250 -38 composter[level=2]', '/setblock -104 250 -37 composter[level=2]', '/setblock -104 250 -36 composter[level=4]', '/setblock -104 250 -35 composter[level=2]', '/setblock -104 250 -34 composter[level=6]', '/setblock -104 250 -33 composter[level=1]', '/setblock -104 250 -32 composter[level=6]', '/setblock -104 250 -31 composter[level=1]', '/setblock -104 250 -30 composter[level=1]', '/setblock -104 250 -29 composter[level=2]', '/setblock -104 250 -28 composter[level=3]', '/setblock -104 250 -27 composter[level=2]', '/setblock -104 250 -26 composter[level=1]', '/setblock -104 250 -25 composter[level=2]', '/setblock -104 250 -24 composter[level=7]', '/setblock -104 250 -23 composter[level=1]', '/setblock -104 250 -22 composter[level=7]', '/setblock -104 250 -21 composter[level=1]', '/setblock -104 250 -20 composter[level=1]', '/setblock -104 250 -19 composter[level=3]', '/setblock -104 250 -18 composter[level=2]', '/setblock -104 250 -17 composter[level=3]', '/setblock -105 250 -76 composter[level=1]', '/setblock -105 250 -75 composter[level=2]', '/setblock -105 250 -74 composter[level=7]', '/setblock -105 250 -73 composter[level=1]', '/setblock -105 250 -72 composter[level=2]', '/setblock -105 250 -71 composter[level=2]', '/setblock -105 250 -70 composter[level=2]', '/setblock -105 250 -69 composter[level=2]', '/setblock -105 250 -68 composter[level=7]', '/setblock -105 250 -67 composter[level=1]', '/setblock -105 250 -66 composter[level=1]', '/setblock -105 250 -65 composter[level=2]', '/setblock -105 250 -64 composter[level=1]', '/setblock -105 250 -63 composter[level=3]', '/setblock -105 250 -62 composter[level=1]', '/setblock -105 250 -61 composter[level=3]', '/setblock -105 250 -60 composter[level=2]', '/setblock -105 250 -59 composter[level=3]', '/setblock -105 250 -58 composter[level=1]', '/setblock -105 250 -57 composter[level=2]', '/setblock -105 250 -56 composter[level=7]', '/setblock -105 250 -55 composter[level=1]', '/setblock -105 250 -54 composter[level=2]', '/setblock -105 250 -53 composter[level=2]', '/setblock -105 250 -52 composter[level=2]', '/setblock -105 250 -51 composter[level=2]', '/setblock -105 250 -50 composter[level=7]', '/setblock -105 250 -49 composter[level=1]', '/setblock -105 250 -48 composter[level=1]', '/setblock -105 250 -47 composter[level=2]', '/setblock -105 250 -46 composter[level=1]', '/setblock -105 250 -45 composter[level=3]', '/setblock -105 250 -44 composter[level=7]', '/setblock -105 250 -43 composter[level=1]', '/setblock -105 250 -42 composter[level=6]', '/setblock -105 250 -41 composter[level=1]', '/setblock -105 250 -40 composter[level=6]', '/setblock -105 250 -39 composter[level=1]', '/setblock -105 250 -38 composter[level=1]', '/setblock -105 250 -37 composter[level=2]', '/setblock -105 250 -36 composter[level=3]', '/setblock -105 250 -35 composter[level=2]', '/setblock -105 250 -34 composter[level=4]', '/setblock -105 250 -33 composter[level=2]', '/setblock -105 250 -32 composter[level=1]', '/setblock -105 250 -31 composter[level=2]', '/setblock -105 250 -30 composter[level=2]', '/setblock -105 250 -29 composter[level=2]', '/setblock -105 250 -28 composter[level=3]', '/setblock -105 250 -27 composter[level=2]', '/setblock -105 250 -26 composter[level=7]', '/setblock -105 250 -25 composter[level=1]', '/setblock -105 250 -24 composter[level=7]', '/setblock -105 250 -23 composter[level=1]', '/setblock -105 250 -22 composter[level=1]', '/setblock -105 250 -21 composter[level=2]', '/setblock -105 250 -20 composter[level=2]', '/setblock -105 250 -19 composter[level=2]', '/setblock -105 250 -18 composter[level=2]', '/setblock -105 250 -17 composter[level=3]', '/setblock -106 250 -76 composter[level=1]', '/setblock -106 250 -75 composter[level=2]', '/setblock -106 250 -74 composter[level=7]', '/setblock -106 250 -73 composter[level=1]', '/setblock -106 250 -72 composter[level=2]', '/setblock -106 250 -71 composter[level=2]', '/setblock -106 250 -70 composter[level=6]', '/setblock -106 250 -69 composter[level=1]', '/setblock -106 250 -68 composter[level=6]', '/setblock -106 250 -67 composter[level=1]', '/setblock -106 250 -66 composter[level=1]', '/setblock -106 250 -65 composter[level=2]', '/setblock -106 250 -64 composter[level=3]', '/setblock -106 250 -63 composter[level=2]', '/setblock -106 250 -62 composter[level=6]', '/setblock -106 250 -61 composter[level=1]', '/setblock -106 250 -60 composter[level=7]', '/setblock -106 250 -59 composter[level=1]', '/setblock -106 250 -58 composter[level=2]', '/setblock -106 250 -57 composter[level=2]', '/setblock -106 250 -56 composter[level=4]', '/setblock -106 250 -55 composter[level=2]', '/setblock -106 250 -54 composter[level=2]', '/setblock -106 250 -53 composter[level=2]', '/setblock -106 250 -52 composter[level=7]', '/setblock -106 250 -51 composter[level=1]', '/setblock -106 250 -50 composter[level=1]', '/setblock -106 250 -49 composter[level=2]', '/setblock -106 250 -48 composter[level=2]', '/setblock -106 250 -47 composter[level=3]', '/setblock -106 250 -46 composter[level=2]', '/setblock -106 250 -45 composter[level=2]', '/setblock -106 250 -44 composter[level=1]', '/setblock -106 250 -43 composter[level=2]', '/setblock -106 250 -42 composter[level=3]', '/setblock -106 250 -41 composter[level=2]', '/setblock -106 250 -40 composter[level=3]', '/setblock -106 250 -39 composter[level=2]', '/setblock -106 250 -38 composter[level=1]', '/setblock -106 250 -37 composter[level=2]', '/setblock -106 250 -36 composter[level=2]', '/setblock -106 250 -35 composter[level=2]', '/setblock -106 250 -34 composter[level=2]', '/setblock -106 250 -33 composter[level=3]', '/setblock -106 250 -32 composter[level=1]', '/setblock -106 250 -31 composter[level=2]', '/setblock -106 250 -30 composter[level=7]', '/setblock -106 250 -29 composter[level=1]', '/setblock -106 250 -28 composter[level=2]', '/setblock -106 250 -27 composter[level=2]', '/setblock -106 250 -26 composter[level=4]', '/setblock -106 250 -25 composter[level=2]', '/setblock -106 250 -24 composter[level=2]', '/setblock -106 250 -23 composter[level=2]', '/setblock -106 250 -22 composter[level=3]', '/setblock -106 250 -21 composter[level=2]', '/setblock -106 250 -20 composter[level=7]', '/setblock -106 250 -19 composter[level=1]', '/setblock -106 250 -18 composter[level=1]', '/setblock -106 250 -17 composter[level=2]', '/setblock -107 250 -76 composter[level=2]', '/setblock -107 250 -75 composter[level=2]', '/setblock -107 250 -74 composter[level=6]', '/setblock -107 250 -73 composter[level=1]', '/setblock -107 250 -72 composter[level=7]', '/setblock -107 250 -71 composter[level=1]', '/setblock -107 250 -70 composter[level=7]', '/setblock -107 250 -69 composter[level=1]', '/setblock -107 250 -68 composter[level=1]', '/setblock -107 250 -67 composter[level=2]', '/setblock -107 250 -66 composter[level=2]', '/setblock -107 250 -65 composter[level=3]', '/setblock -107 250 -64 composter[level=2]', '/setblock -107 250 -63 composter[level=2]', '/setblock -107 250 -62 composter[level=1]', '/setblock -107 250 -61 composter[level=2]', '/setblock -107 250 -60 composter[level=3]', '/setblock -107 250 -59 composter[level=2]', '/setblock -107 250 -58 composter[level=7]', '/setblock -107 250 -57 composter[level=1]', '/setblock -107 250 -56 composter[level=2]', '/setblock -107 250 -55 composter[level=2]', '/setblock -107 250 -54 composter[level=4]', '/setblock -107 250 -53 composter[level=2]', '/setblock -107 250 -52 composter[level=4]', '/setblock -107 250 -51 composter[level=2]', '/setblock -107 250 -50 composter[level=2]', '/setblock -107 250 -49 composter[level=2]', '/setblock -107 250 -48 composter[level=3]', '/setblock -107 250 -47 composter[level=2]', '/setblock -107 250 -46 composter[level=7]', '/setblock -107 250 -45 composter[level=1]', '/setblock -107 250 -44 composter[level=1]', '/setblock -107 250 -43 composter[level=2]', '/setblock -107 250 -42 composter[level=2]', '/setblock -107 250 -41 composter[level=2]', '/setblock -107 250 -40 composter[level=2]', '/setblock -107 250 -39 composter[level=3]', '/setblock -107 250 -38 composter[level=1]', '/setblock -107 250 -37 composter[level=2]', '/setblock -107 250 -36 composter[level=7]', '/setblock -107 250 -35 composter[level=1]', '/setblock -107 250 -34 composter[level=2]', '/setblock -107 250 -33 composter[level=2]', '/setblock -107 250 -32 composter[level=6]', '/setblock -107 250 -31 composter[level=1]', '/setblock -107 250 -30 composter[level=6]', '/setblock -107 250 -29 composter[level=1]', '/setblock -107 250 -28 composter[level=1]', '/setblock -107 250 -27 composter[level=2]', '/setblock -107 250 -26 composter[level=3]', '/setblock -107 250 -25 composter[level=2]', '/setblock -107 250 -24 composter[level=1]', '/setblock -107 250 -23 composter[level=2]', '/setblock -107 250 -22 composter[level=2]', '/setblock -107 250 -21 composter[level=3]', '/setblock -107 250 -20 composter[level=2]', '/setblock -107 250 -19 composter[level=2]', '/setblock -107 250 -18 composter[level=2]', '/setblock -107 250 -17 composter[level=2]', '/setblock -108 250 -76 composter[level=2]', '/setblock -108 250 -75 composter[level=3]', '/setblock -108 250 -74 composter[level=1]', '/setblock -108 250 -73 composter[level=2]', '/setblock -108 250 -72 composter[level=3]', '/setblock -108 250 -71 composter[level=2]', '/setblock -108 250 -70 composter[level=1]', '/setblock -108 250 -69 composter[level=2]', '/setblock -108 250 -68 composter[level=2]', '/setblock -108 250 -67 composter[level=2]', '/setblock -108 250 -66 composter[level=7]', '/setblock -108 250 -65 composter[level=1]', '/setblock -108 250 -64 composter[level=7]', '/setblock -108 250 -63 composter[level=1]', '/setblock -108 250 -62 composter[level=1]', '/setblock -108 250 -61 composter[level=2]', '/setblock -108 250 -60 composter[level=2]', '/setblock -108 250 -59 composter[level=3]', '/setblock -108 250 -58 composter[level=2]', '/setblock -108 250 -57 composter[level=2]', '/setblock -108 250 -56 composter[level=1]', '/setblock -108 250 -55 composter[level=2]', '/setblock -108 250 -54 composter[level=3]', '/setblock -108 250 -53 composter[level=2]', '/setblock -108 250 -52 composter[level=3]', '/setblock -108 250 -51 composter[level=2]', '/setblock -108 250 -50 composter[level=1]', '/setblock -108 250 -49 composter[level=2]', '/setblock -108 250 -48 composter[level=2]', '/setblock -108 250 -47 composter[level=2]', '/setblock -108 250 -46 composter[level=2]', '/setblock -108 250 -45 composter[level=3]', '/setblock -108 250 -44 composter[level=1]', '/setblock -108 250 -43 composter[level=2]', '/setblock -108 250 -42 composter[level=7]', '/setblock -108 250 -41 composter[level=1]', '/setblock -108 250 -40 composter[level=2]', '/setblock -108 250 -39 composter[level=2]', '/setblock -108 250 -38 composter[level=4]', '/setblock -108 250 -37 composter[level=2]', '/setblock -108 250 -36 composter[level=2]', '/setblock -108 250 -35 composter[level=2]', '/setblock -108 250 -34 composter[level=7]', '/setblock -108 250 -33 composter[level=1]', '/setblock -108 250 -32 composter[level=1]', '/setblock -108 250 -31 composter[level=2]', '/setblock -108 250 -30 composter[level=2]', '/setblock -108 250 -29 composter[level=3]', '/setblock -108 250 -28 composter[level=2]', '/setblock -108 250 -27 composter[level=2]', '/setblock -108 250 -16 gold_block']

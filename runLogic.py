@@ -31,7 +31,7 @@ def runBeforeManualCorrections(door, pistonLayout='original', logging=False):
 
         log += f'layout numbered rules: {layoutNumberedRules}\n'
 
-        writeToFile(layoutNumberedRules, 'algorithmOutput.txt')
+        writeToFile(str(layoutNumberedRules).replace(' ', '\n'), 'algorithmOutput.txt')
 
     except Exception as e:
         if logging:

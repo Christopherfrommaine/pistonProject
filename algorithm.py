@@ -54,7 +54,7 @@ class State:
                 self.observers[observer] = 'o'
                 self.p[observer] = ' '
 
-        else:
+        elif isinstance(move, int):
             # Piston Move
             assert isinstance(move, int)
             assert move <= -2
@@ -92,10 +92,16 @@ class State:
                     break
 
     # Helper Functions
-
     def applyMoves(self, moves):
         for move in moves:
             self.applyMove(move)
+
+    def applyCustomMove(self, move):
+        self.applyMove(str(move))
+
+    def applyCustomMoves(self, moves):
+        for move in moves:
+            self.applyCustomMove(move)
 
     def getTopmostChar(self, char, below):
         o = float('-infinity')

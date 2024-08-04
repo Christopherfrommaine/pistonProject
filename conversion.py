@@ -31,7 +31,7 @@ def applyCorrections(moves, state):
                 else:
                     o += [(i,)]
                     break
-        else:
+        elif isinstance(m, int):
             # Piston Moves TODO
             if m >= -6 or m % 2 == 0:
                 o += [m]
@@ -39,8 +39,9 @@ def applyCorrections(moves, state):
                 if state.p[m + 1] == ' ':
                     o += [m + 1]
                 else:
-                    o += 'manualinterventionneededhere'
+                    o += ['manualinterventionneededhere']
                     print(f'shoot! the lower piston pushing doesnt work out easily. Manual intervention needed around {len(o)}\nwell... um, here is you piston state: {state.fullRepr()}, \n and here are your output moves so far: {o}')
-
+        elif isinstance(m, str):
+            o += [m]
         state.applyMove(m)
     return o

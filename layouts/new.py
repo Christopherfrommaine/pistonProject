@@ -1,3 +1,5 @@
+# TODO
+
 def toLayoutMove(moves):
     o = []
     for m in moves:
@@ -5,7 +7,7 @@ def toLayoutMove(moves):
             # Observer Move
             observer, = m
             o += [18 + observer]
-        elif isinstance(m, int):
+        else:
             # Piston Move
             if -6 <= m <= -2:
                 o += [12 + m]
@@ -14,11 +16,6 @@ def toLayoutMove(moves):
                     o += [(18 + m) // 2]
                 else:
                     raise Exception('Input move not supported for layout: odd-valued move for low pistons')
-        elif isinstance(m, str):
-            try:
-                o += [int(m)]
-            except Exception:
-                pass
     o += [48]  # End run code
     return o
 

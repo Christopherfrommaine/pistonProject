@@ -38,5 +38,5 @@ def readMovesFromFile(path):
 
 def writeToMinecraftDatapack(commands, homeDirectory="C:/users/chris", worldName="24xInfinity Door 2-21-23"):
     o = ''.join(command + '\n' for command in commands).replace('/', '')
-    path = homeDirectory + "/AppData/Roaming/.minecraft/saves/" + worldName + "/datapacks/sendcommands/data/send/functions/undelayedcommands.mcfunction"
+    path = homeDirectory + "/AppData/Roaming/.minecraft/saves/" + worldName + "/datapacks/sendcommands/data/send/functions/delayedcommands.mcfunction"
     writeToFile(o, path)

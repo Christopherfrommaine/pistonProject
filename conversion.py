@@ -28,11 +28,12 @@ def applyCorrections(moves, state):
             for i in range(observer, -2):
                 if state.p[i] == ' ' or i == observer:
                     o += [(i,)]
+                    if state.p[i + 1] == ' ':
+                        break
                 else:
                     o += [(i,)]
                     break
         elif isinstance(m, int):
-            # Piston Moves TODO
             if m >= -6 or m % 2 == 0:
                 o += [m]
             else:

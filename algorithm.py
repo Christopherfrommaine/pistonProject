@@ -144,7 +144,7 @@ def moveBlockDown(b, state):
 
                 # Optimization:
                 blocksToMove = (b - 2) - state.getTopmostPiston(below=b)
-                if blocksToMove >= 3:
+                if blocksToMove >= 2:
                     numPistons = 0
                     i = None
                     for i in range(b - 2, min(state.p.keys()), -1):
@@ -154,6 +154,8 @@ def moveBlockDown(b, state):
                             break
                     for j in range(i, b, 2):
                         powerPiston(j, state)
+                        # TODO: fix this shit
+                        moveBlockDown(b, state)
                 else:
                     while (topmostPiston := state.getTopmostPiston(below=b)) != b - 2:
                         moveBlockUp(topmostPiston, state)
@@ -164,21 +166,32 @@ def moveBlockDown(b, state):
 def moveBlockUp(b, state):
     assert isinstance(state, State)
     topmostPiston = state.getTopmostPiston(below=b)
+    topmostObserver = state.getTopmostObserver(below=b)
+    if topmostObserver > topmostPiston:
+        while (topmostObserver := state.getTopmostObserver(below=b)) != state.getTopUnusedObserver() + 1:
+            moveBlockDown(topmostObserver, state)
+        state.applyMove((topmostObserver,))
 
     match b - topmostPiston:
         case 1:
             powerPiston(topmostPiston, state)
+        case 2:
+            moveBlockUp(topmostPiston, state)
+            powerPiston(topmostPiston + 1, state)
         case _:
-            topmostObserver = state.getTopmostObserver(below=b)
-            if topmostObserver != float('-infinity') and topmostObserver > topmostPiston:
-                while (topmostObserver := state.getTopmostObserver(below=b)) != state.getTopUnusedObserver() + 1:
-                    moveBlockDown(topmostObserver, state)
-                state.applyMove((state.getTopUnusedObserver() + 1,))
+            # while (topmostPiston := state.getTopmostPiston(below=b)) != b - 1:
+            #     moveBlockUp(topmostPiston, state)
+            # powerPiston(topmostPiston, state)
 
-            while (topmostPiston := state.getTopmostPiston(below=b)) != b - 1:
-                moveBlockUp(topmostPiston, state)
-            powerPiston(topmostPiston, state)
-
+            numPistons = 0
+            i = None
+            for i in range(b - 1, min(state.p.keys()), -1):
+                if state.p[i] == 'p':
+                    numPistons += 1
+                if numPistons > (b - i) / 2:
+                    break
+            for j in range(i, b, 2):
+                powerPiston(j, state)
 
 def powerPiston(piston, state):
     assert isinstance(state, State)
@@ -204,9 +217,14 @@ def powerPiston(piston, state):
                     moveBlockDown(topmostObserver, state)
                 state.applyMove((state.getTopUnusedObserver() + 1,))
                 powerPiston(piston, state)
+
+                # # Optimized:  MAKES IT WORSE????????? HOW????
+                # moveBlockDown(topmostObserver, state)
+                # moveBlockUp(topmostObserver, state)
             case 2:
                 moveBlockUp(topmostObserver, state)
             case _:
+                # Todo: could be optimized
                 moveBlockUp(topmostObserver, state)
                 powerPiston(piston, state)
 
@@ -215,6 +233,10 @@ def powerPiston(piston, state):
         powerPiston(piston, state)
 
     elif topmostPiston > topmostObserver:
+
+        if len(state.moves) > 4300:
+            pass
+
         # Moving pistons out of the way for observer
         moveBlockDown(topmostPiston, state)
         powerPiston(piston, state)

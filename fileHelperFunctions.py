@@ -1,3 +1,7 @@
+projectDirectory = 'C:/users/chris/pycharmProjects/pistonProject/'
+minecraftDirectory = 'C:/users/chris/AppData/Roaming/.minecraft/'
+
+
 def writeToFile(string, path):
     with open(path, 'w') as file:
         file.write(str(string))
@@ -36,7 +40,7 @@ def readMovesFromFile(path):
 
     return [int(tok) for tok in o]
 
-def writeToMinecraftDatapack(commands, homeDirectory="C:/users/chris", worldName="24xInfinity Door 2-21-23"):
+def writeToMinecraftDatapack(commands, worldName="24xInfinity Door 2-21-23"):
     o = ''.join(command + '\n' for command in commands).replace('/', '')
-    path = homeDirectory + "/AppData/Roaming/.minecraft/saves/" + worldName + "/datapacks/sendcommands/data/send/functions/delayedcommands.mcfunction"
+    path = minecraftDirectory + "saves/" + worldName + "/datapacks/sendcommands/data/send/functions/delayedcommands.mcfunction"
     writeToFile(o, path)

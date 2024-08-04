@@ -35,14 +35,14 @@ def runBeforeManualCorrections(door, pistonLayout='original', logging=False):
 
     except Exception as e:
         if logging:
-            writeToFile(log, 'debugging/log.txt')
+            writeToFile(log, projectDirectory + 'debugging/log.txt')
         raise e
 
     if logging:
-        writeToFile(log, 'debugging/log.txt')
+        writeToFile(log, projectDirectory + 'debugging/log.txt')
 
 def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromFilePath='algorithmOutput.txt'):
-    log = readFromFile('debugging/log.txt')
+    log = readFromFile(projectDirectory + 'debugging/log.txt')
 
     try:
         # Get Moves from File
@@ -59,9 +59,9 @@ def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromF
 
     except Exception as e:
         if logging:
-            writeToFile(log, 'debugging/log.txt')
+            writeToFile(log, projectDirectory + 'debugging/log.txt')
         raise e
 
     if logging:
-        writeToFile(log, 'debugging/log.txt')
+        writeToFile(log, projectDirectory + 'debugging/log.txt')
 

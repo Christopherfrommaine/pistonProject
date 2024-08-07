@@ -27,7 +27,16 @@ lowerDoor.applyCustomMoves([  # More Efficient Large Piston Movement
 
     3, 4, 5, 6, 8] + [10] * 30)
 
-lowerDoor.applyCustomMove(48)  # Debugging Pause
+# lowerDoor.applyCustomMoves([  # More Efficient Large Piston Movement
+#     12,
+#     7, 13, 12,
+#     6, 14, 13, 12,
+#     5, 5, 15, 14, 13, 12,
+#
+#     3, 4, 5, 6, 8] + [10] * 30)
+
+
+# lowerDoor.applyCustomMove(72)  # Debugging Pause
 
 # Remaking Door from Custom State
 lowerDoorOld = lowerDoor
@@ -36,5 +45,9 @@ lowerDoor.moves = lowerDoorOld.moves
 
 moveBlockTo(10, -2, lowerDoor)
 
+firstMoves = lowerDoor.moves[:200]
+lowerDoor = lowerDoor.originalState
+lowerDoor.applyMoves(firstMoves)
+
 if __name__ == '__main__':
-    runWithoutManualCorrection(lowerDoor, logging=True)
+    runWithoutManualCorrection(lowerDoor, 'new', logging=True)

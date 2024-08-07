@@ -41,8 +41,14 @@ def runBeforeManualCorrections(door, pistonLayout='original', logging=False):
     if logging:
         writeToFile(log, projectDirectory + 'debugging/log.txt')
 
-def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromFilePath='algorithmOutput.txt'):
+def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromFilePath='algorithmOutput.txt', worldName=None):
     log = readFromFile(projectDirectory + 'debugging/log.txt')
+
+    if worldName is None:
+        if pistonLayout == 'original':
+            worldName = '24xInfinity Door 2-21-23'
+        elif pistonLayout == 'new':
+            worldName = 'Piston Door Algorithem'
 
     try:
         # Get Moves from File
@@ -55,7 +61,7 @@ def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromF
 
         log += f'outputted commands: {commands}\n'
 
-        writeToMinecraftDatapack(commands)
+        writeToMinecraftDatapack(commands, worldName)
 
     except Exception as e:
         if logging:
@@ -64,4 +70,3 @@ def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromF
 
     if logging:
         writeToFile(log, projectDirectory + 'debugging/log.txt')
-

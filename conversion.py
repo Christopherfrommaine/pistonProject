@@ -1,10 +1,12 @@
-import layouts.original
+from layouts import original, new
 
 
 def toLayoutMoves(moves, layout):
     match layout:
         case 'original':
-            return layouts.original.toLayoutMove(moves)
+            return original.toLayoutMoves(moves)
+        case 'new':
+            return new.toLayoutMoves(moves)
         case _:
             raise Exception('unsupported layout')
 
@@ -12,7 +14,9 @@ def toLayoutMoves(moves, layout):
 def toLayoutCommands(moves, layout, *args):
     match layout:
         case 'original':
-            return layouts.original.toLayoutCommands(moves, *args)
+            return original.toLayoutCommands(moves, *args)
+        case 'new':
+            return new.toLayoutCommands(moves, *args)
         case _:
             raise Exception('unsupported layout')
 

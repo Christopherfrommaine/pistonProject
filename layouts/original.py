@@ -1,4 +1,4 @@
-def toLayoutMove(moves):
+def toLayoutMoves(moves):
     o = []
     for m in moves:
         if isinstance(m, tuple):

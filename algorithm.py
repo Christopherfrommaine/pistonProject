@@ -138,28 +138,28 @@ def moveBlockDown(b, state):
             case 2:
                 powerPiston(topmostPiston, state)
             case _:
-                # while (topmostPiston := state.getTopmostPiston(below=b)) != b - 2:
-                #    moveBlockUp(topmostPiston, state)
-                # moveBlockDown(b, state)
+                while (topmostPiston := state.getTopmostPiston(below=b)) != b - 2:
+                    moveBlockUp(topmostPiston, state)
+                moveBlockDown(b, state)
 
                 # Optimization:
-                blocksToMove = (b - 2) - state.getTopmostPiston(below=b)
-                if blocksToMove >= 2:
-                    numPistons = 0
-                    i = None
-                    for i in range(b - 2, min(state.p.keys()), -1):
-                        if state.p[i] == 'p':
-                            numPistons += 1
-                        if numPistons >= (b - i) / 2:
-                            break
-                    for j in range(i, b, 2):
-                        powerPiston(j, state)
-                        # TODO: fix this shit
-                        moveBlockDown(b, state)
-                else:
-                    while (topmostPiston := state.getTopmostPiston(below=b)) != b - 2:
-                        moveBlockUp(topmostPiston, state)
-                    moveBlockDown(b, state)
+                # blocksToMove = (b - 2) - state.getTopmostPiston(below=b)
+                # if blocksToMove >= 2:
+                #     numPistons = 0
+                #     i = None
+                #     for i in range(b - 2, min(state.p.keys()), -1):
+                #         if state.p[i] == 'p':
+                #             numPistons += 1
+                #         if numPistons >= (b - i) / 2:
+                #             break
+                #     for j in range(i, b, 2):
+                #         powerPiston(j, state)
+                #         # TODO: fix this shit
+                #         moveBlockDown(b, state)
+                # else:
+                #     while (topmostPiston := state.getTopmostPiston(below=b)) != b - 2:
+                #         moveBlockUp(topmostPiston, state)
+                #     moveBlockDown(b, state)
 
 
 

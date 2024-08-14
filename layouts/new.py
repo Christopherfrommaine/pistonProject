@@ -25,26 +25,41 @@ def toLayoutMoves(moves):
     return o
 
 
-def toLayoutCommands(moves, xoffset=0, zoffset=0):
-    print(str(moves).replace(' ', '\n'))
-    # discs = [numtodisc[0]]
-    discs = []
+def toLayoutCommands(moves, logging=False):
+    log = []
+
+    # At begin of first cart
+    discs = [numtodisc[0], numtodisc[0]]
+
     for m in moves:
+        log += [[m % 8, m // 8]]
         discs += [numtodisc[m % 8], numtodisc[m // 8]]
 
+    if logging:
+        from fileHelperFunctions import logString
+        logString('Disc Signal Strength Pairs: ' + str(log))
+        logString('Discs: ' + str(discs))
+
     minecarts = [[]]
+
     disci = 0
     while disci != len(discs):
-        if len(minecarts[-1]) >= 24:
-            minecarts[-1] += [numtodisc[0], numtodisc[0]]
-            # if len(minecarts) % 2:
-            #     disci -= 2  # Operation skipped on odd-valued minecarts due to a bug in the redstone
-            minecarts += [[]]
+        if len(minecarts[-1]) >= 26:
+
+            # At end of each cart
+            # minecarts[-1] += [numtodisc[0]]
+
+            # At begin of each cart
+            minecarts += [[numtodisc[0], numtodisc[0]]]
         minecarts[-1].append(discs[disci])
         disci += 1
-    minecarts[0] = [numtodisc[0]] + minecarts[0]
-    print([len(mine) for mine in minecarts])
-    print(minecarts)
+
+    # First Minecart
+    minecarts[0].pop(0)
+
+    if logging:
+        from fileHelperFunctions import logString
+        logString('Minecarts: ' + str(minecarts))
 
     o = []
     for minecartList in minecarts:

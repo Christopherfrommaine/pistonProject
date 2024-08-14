@@ -13,6 +13,10 @@ def readFromFile(path):
     return text
 
 
+def logString(string, path=projectDirectory + 'debugging/log.txt'):
+    writeToFile(readFromFile(path) + string + '\n', path)
+
+
 def readMovesFromFile(path):
     source = readFromFile(path)
 

@@ -2,12 +2,15 @@ from fileHelperFunctions import *
 import conversion
 
 
-def runWithoutManualCorrection(door, pistonLayout='original', logging=False):
+def runWithoutManualCorrection(door, pistonLayout='original', logging=False, worldName=None):
     runBeforeManualCorrections(door, pistonLayout, logging)
-    runAfterManaualCorrections(pistonLayout, logging)
+    runAfterManaualCorrections(pistonLayout, logging, worldName=worldName)
 
 
 def runBeforeManualCorrections(door, pistonLayout='original', logging=False):
+    if logging:
+        writeToFile('', projectDirectory + 'debugging/log.txt')
+
     log = ''
     if logging:
         odoor = door.originalState
@@ -35,14 +38,14 @@ def runBeforeManualCorrections(door, pistonLayout='original', logging=False):
 
     except Exception as e:
         if logging:
-            writeToFile(log, projectDirectory + 'debugging/log.txt')
+            logString(log)
         raise e
 
     if logging:
-        writeToFile(log, projectDirectory + 'debugging/log.txt')
+        logString(log)
 
 def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromFilePath='algorithmOutput.txt', worldName=None):
-    log = readFromFile(projectDirectory + 'debugging/log.txt')
+    log = ''
 
     if worldName is None:
         if pistonLayout == 'original':
@@ -57,7 +60,7 @@ def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromF
         log += f'manually corrected moves: {manuallyCorrectedMoves}\n'
 
         # Layout Conversion
-        commands = conversion.toLayoutCommands(manuallyCorrectedMoves, pistonLayout)
+        commands = conversion.toLayoutCommands(manuallyCorrectedMoves, pistonLayout, logging)
 
         log += f'outputted commands: {commands}\n'
 
@@ -65,8 +68,8 @@ def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromF
 
     except Exception as e:
         if logging:
-            writeToFile(log, projectDirectory + 'debugging/log.txt')
+            logString(log)
         raise e
 
     if logging:
-        writeToFile(log, projectDirectory + 'debugging/log.txt')
+        logString(log)

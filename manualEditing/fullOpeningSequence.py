@@ -45,9 +45,9 @@ lowerDoor.moves = lowerDoorOld.moves
 
 moveBlockTo(10, -2, lowerDoor)
 
-firstMoves = lowerDoor.moves[:200]
+firstMoves = lowerDoor.moves[:100]
 lowerDoor = lowerDoor.originalState
 lowerDoor.applyMoves(firstMoves)
 
 if __name__ == '__main__':
-    runWithoutManualCorrection(lowerDoor, 'new', logging=True)
+    runWithoutManualCorrection(lowerDoor, 'new', logging=True, worldName='Piston Door Algorithem')

@@ -1,5 +1,16 @@
+from fileHelperFunctions import logString
+
 numtodisc= ['stal', '13', 'cat', 'blocks', 'chirp', 'far', 'mall', 'mellohi', 'stal', 'strad', 'ward', '11', 'wait', 'pigstep', 'otherside', '5']
 
+
+def flatten(l):
+    o = []
+    for i in l:
+        if isinstance(i, list):
+            o += i
+        else:
+            o.append(i)
+    return o
 
 def toLayoutMoves(moves):
     o = []
@@ -26,46 +37,43 @@ def toLayoutMoves(moves):
 
 
 def toLayoutCommands(moves, logging=False):
-    log = []
-
-    # At begin of first cart
-    discs = [numtodisc[0], numtodisc[0]]
-
-    for m in moves:
-        log += [[m % 8, m // 8]]
-        discs += [numtodisc[m % 8], numtodisc[m // 8]]
-
+    valuePairs = [[m % 8, m //8] for m in moves]
+    
     if logging:
-        from fileHelperFunctions import logString
-        logString('Disc Signal Strength Pairs: ' + str(log))
-        logString('Discs: ' + str(discs))
+        logString(f'valuePairs: {valuePairs}')
+    
+    # First Cart Begin
+    cart = [0]
+    
+    cartLog = []
+    minecarts = []
+    i = 0
+    while i < len(valuePairs):
+        cart += [valuePairs[i]]
+        i += 1
 
-    minecarts = [[]]
+        if len(flatCart := flatten(cart)) >= 25:
+            
+            # Cart End
+            flatCart += []
 
-    disci = 0
-    while disci != len(discs):
-        if len(minecarts[-1]) >= 26:
+            minecarts.append(flatCart)
+            cartLog.append(cart)
 
-            # At end of each cart
-            # minecarts[-1] += [numtodisc[0]]
-
-            # At begin of each cart
-            minecarts += [[numtodisc[0], numtodisc[0]]]
-        minecarts[-1].append(discs[disci])
-        disci += 1
-
-    # First Minecart
-    minecarts[0].pop(0)
-
+            # Cart Begin
+            cart = [0, 0, 0, 0]
+    
     if logging:
-        from fileHelperFunctions import logString
-        logString('Minecarts: ' + str(minecarts))
+        logString(f'Cart Log: {cartLog}')
+        logString(f'Minecarts: {minecarts}')
 
     o = []
-    for minecartList in minecarts:
+    for minecartValues in minecarts:
+        discList = [numtodisc[val] for val in minecartValues]
+
         nbt = ''
-        for discIndex in range(len(minecartList)):
-            nbt += '{' + f'id:"minecraft:music_disc_{minecartList[discIndex]}",Count:1b,Slot:{discIndex}' + '},'
+        for discIndex in range(len(discList)):
+            nbt += '{' + f'id:"minecraft:music_disc_{discList[discIndex]}",Count:1b,Slot:{discIndex}' + '},'
         nbt = nbt[:-1]
 
         o.append('/summon minecraft:chest_minecart -272 -9 -80 {Items:[' + nbt + ']}')

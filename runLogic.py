@@ -62,7 +62,7 @@ def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromF
         # Layout Conversion
         commands = conversion.toLayoutCommands(manuallyCorrectedMoves, pistonLayout, logging)
 
-        log += f'outputted commands: {commands}\n'
+        log += f'outputted commands: ' + str(commands) + '\n'
 
         writeToMinecraftDatapack(commands, worldName)
 

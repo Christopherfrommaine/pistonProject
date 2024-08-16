@@ -1,4 +1,4 @@
-from layouts import original, new
+from layouts import original, new, shulker
 
 
 def toLayoutMoves(moves, layout):
@@ -7,6 +7,8 @@ def toLayoutMoves(moves, layout):
             return original.toLayoutMoves(moves)
         case 'new':
             return new.toLayoutMoves(moves)
+        case 'shulker':
+            return shulker.toLayoutMoves(moves)
         case _:
             raise Exception('unsupported layout')
 
@@ -17,6 +19,8 @@ def toLayoutCommands(moves, layout, *args):
             return original.toLayoutCommands(moves, *args)
         case 'new':
             return new.toLayoutCommands(moves, *args)
+        case 'shulker':
+            return shulker.toLayoutCommands(moves, *args)
         case _:
             raise Exception('unsupported layout')
 

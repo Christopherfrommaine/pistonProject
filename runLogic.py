@@ -29,6 +29,15 @@ def runBeforeManualCorrections(door, pistonLayout='original', logging=False):
 
         log += f'corrected moves: {correctedMoves}\n'
 
+        # Find and apply simplifications
+        # prevSimplifiedMoves = correctedMoves
+        # simplifiedMoves = None
+        # simpi = 0
+        # while prevSimplifiedMoves != simplifiedMoves and simpi < len(prevSimplifiedMoves) - 1:
+        #     moves = prevSimplifiedMoves[:simpi] + prevSimplifiedMoves[(simpi + 1):]
+            
+
+
         # Numerical Layout Translation
         layoutNumberedRules = conversion.toLayoutMoves(correctedMoves, pistonLayout)
 
@@ -52,6 +61,8 @@ def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromF
             worldName = '24xInfinity Door 2-21-23'
         elif pistonLayout == 'new':
             worldName = 'Piston Door Algorithem'
+        elif pistonLayout == 'shulker':
+            worldName = 'Piston Door Algorithem'
 
     try:
         # Get Moves from File
@@ -68,7 +79,7 @@ def runAfterManaualCorrections(pistonLayout='original', logging=False, readFromF
 
     except Exception as e:
         if logging:
-            logString(log)
+            logString(log) 
         raise e
 
     if logging:

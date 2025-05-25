@@ -27,15 +27,17 @@ lowerDoor.applyCustomMoves([  # More Efficient Large Piston Movement
 
     3, 4, 5, 6, 8] + [10] * 30)
 
+lowerDoor.applyCustomMoves([37, 35])
+
 
 # Remaking Door from Custom State
 lowerDoorOld = lowerDoor
-lowerDoor = State('ppppp p p p p pofpo po po p bbbbbbbbbbbb ', '    o')  # Extra 'o' added cuz it breaks otherwise
+lowerDoor = State('ppppp p p p p pofpo po po p bbbbbbbbbbbb    ', '    o')  # Extra 'o' added cuz it breaks otherwise
 lowerDoor.moves = lowerDoorOld.moves
 
 moveBlockTo(10, -2, lowerDoor)
 
-firstMoves = lowerDoor.moves
+firstMoves = lowerDoor.moves[:300]
 lowerDoor = lowerDoor.originalState
 lowerDoor.applyMoves(firstMoves)
 

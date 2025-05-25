@@ -1,5 +1,5 @@
-projectDirectory = 'C:/users/chris/pycharmProjects/pistonProject/'
-minecraftDirectory = 'C:/users/chris/AppData/Roaming/.minecraft/'
+projectDirectory = '/home/chris/Programming/Python/pistonProject/'
+minecraftDirectory = '/home/chris/.minecraft/'
 
 
 def writeToFile(string, path):
@@ -44,7 +44,19 @@ def readMovesFromFile(path):
 
     return [int(tok) for tok in o]
 
-def writeToMinecraftDatapack(commands, worldName="24xInfinity Door 2-21-23"):
-    o = ''.join(command + '\n' for command in commands).replace('/', '')
-    path = minecraftDirectory + "saves/" + worldName + "/datapacks/sendcommands/data/send/functions/delayedcommands.mcfunction"
+def writeToMinecraftDatapack(commands, worldName):
+    dppath = minecraftDirectory + "saves/" + worldName + "/datapacks/sendcommands/data/send/functions/"
+
+    commandi = 0
+    for command in commands:
+        path = dppath + "f" + str(commandi) + ".mcfunction"
+        writeToFile(command.replace('/', ''), path)
+        commandi += 1
+
+    o = ''.join(("schedule function send:f" + str(i) + " " + str(20 * 10 * i + 1) + "t\n") for i in range(commandi))
+    path = dppath + "mycommands.mcfunction"
+    writeToFile(o, path)
+
+    o = ''.join(("schedule clear send:f" + str(i) + "\n") for i in range(commandi))
+    path = dppath + "stop.mcfunction"
     writeToFile(o, path)

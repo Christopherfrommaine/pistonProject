@@ -1,0 +1,34 @@
+from .. import fileHelperFunctions
+
+
+t1 = fileHelperFunctions.readFromFile(fileHelperFunctions.minecraftDirectory + "logs/latest.log").split("\n")
+t2 = [t.split(':')[-1] for t in t1 if t and t[0] == "["]
+t3 = [t[5:] for t in t2 if len(t) > 4 and t[:4] == " [@]"]
+
+t4 = []
+started = False
+for t in t3:
+    if t == "start":
+        started = True
+        t4 = []
+    elif started:
+        t4.append(t)
+
+t5 = "".join(t + "," for t in t4).split("---,")
+if '' in t5:
+    t5.remove('')
+
+o1 = []
+for n in t5:
+    summ = 0
+
+    b = n.split(',')
+    b.remove('')
+    
+    for p in b:
+        i, v = p.split("; ")
+        summ += int(v) * (1 << (int(i) - 1))
+    
+    o1.append(summ)
+
+print(o1)

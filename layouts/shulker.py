@@ -20,7 +20,8 @@ def toLayoutMoves(moves):
         if isinstance(m, tuple):
             # Observer Move
             observer, = m
-            o += [9 - observer]
+            # o += [9 - observer]
+            o += [{-3: 15, -4: 14, -5: 13, -6: 12}[observer]]
         elif isinstance(m, int):
             # Piston Move
             if -6 <= m <= -2:
@@ -40,7 +41,10 @@ def toLayoutMoves(moves):
 
 def toLayoutCommands(moves, logging=False):
 
-    values = [0, 0, 0, 0]
+    # moves = moves[:100]
+
+    # values = [0, 0, 0, 0]
+    values = []
     for m in moves:
         values += [m // 8, m % 8]
 
@@ -51,21 +55,30 @@ def toLayoutCommands(moves, logging=False):
     while disci < len(discs):
         boxes[-1].append(discs[disci])
 
-        if len(boxes[-1]) == 26:
-            boxes[-1].append(numtodisc[0])
+        if len(boxes[-1]) == 24:
+            # boxes[-1].append(numtodisc[0])
             boxes.append([])
+            # boxes[-1].append(numtodisc[0])
+            # boxes[-1].append(numtodisc[0])
 
         disci += 1
+
+    if logging:
+        logString('boxes: ' + str(boxes))
 
     carts = [[]]
     boxi = 0
     while boxi < len(boxes):
         carts[-1].append(boxes[boxi])
 
-        if len(boxes[-1]) == 27:
+        if len(carts[-1]) == 27:
             carts.append([])
 
         boxi += 1
+
+
+    if logging:
+        logString('carts: ' + str(carts))
 
     o = []
     for cart in carts:

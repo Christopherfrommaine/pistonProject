@@ -43,10 +43,10 @@ def toLayoutCommands(moves, logging=False):
 
     # moves = moves[:100]
 
-    # values = [0, 0, 0, 0]
-    values = []
+    values = [0, 0]
     for m in moves:
         values += [m // 8, m % 8]
+    values += [9, 9]
 
     discs = [numtodisc[v] for v in values]
 

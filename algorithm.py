@@ -63,7 +63,7 @@ class State:
     def applyPowerPiston(self, piston):
         if self.p[piston] == 'p':
             if self.p[piston + 1] == ' ':
-                self.p[piston + 1], self.p[piston + 2] =self.p[piston + 2], self.p[piston + 1]
+                self.p[piston + 1], self.p[piston + 2] = self.p[piston + 2], self.p[piston + 1]
                 return
 
             maxBlockMoved = piston
@@ -142,42 +142,39 @@ def moveBlockDown(b, state):
                     moveBlockUp(topmostPiston, state)
                 moveBlockDown(b, state)
 
-                # Optimization:
-                # blocksToMove = (b - 2) - state.getTopmostPiston(below=b)
-                # if blocksToMove >= 2:
-                #     numPistons = 0
-                #     i = None
-                #     for i in range(b - 2, min(state.p.keys()), -1):
-                #         if state.p[i] == 'p':
-                #             numPistons += 1
-                #         if numPistons >= (b - i) / 2:
-                #             break
-                #     for j in range(i, b, 2):
-                #         powerPiston(j, state)
-                #         # TODO: fix this shit
-                #         moveBlockDown(b, state)
-                # else:
-                #     while (topmostPiston := state.getTopmostPiston(below=b)) != b - 2:
-                #         moveBlockUp(topmostPiston, state)
-                #     moveBlockDown(b, state)
-
-
-
 def moveBlockUp(b, state):
     assert isinstance(state, State)
     topmostPiston = state.getTopmostPiston(below=b)
     topmostObserver = state.getTopmostObserver(below=b)
     if topmostObserver > topmostPiston:
-        while (topmostObserver := state.getTopmostObserver(below=b)) != state.getTopUnusedObserver() + 1:
-            moveBlockDown(topmostObserver, state)
-        state.applyMove((topmostObserver,))
+        # Only need to move observers out of the way if they will do an unwanted pulse
+        if state.p[b] != 'p' or (state.p[b + 1] == ' ' and state.p[b + 1] == ' '):
+            while (topmostObserver := state.getTopmostObserver(below=b)) != state.getTopUnusedObserver() + 1:
+                moveBlockDown(topmostObserver, state)
+            state.applyMove((topmostObserver,))
+        else:
+            while (topmostObserver := state.getTopmostObserver(below=b)) < b - 1:
+                moveBlockUp(topmostObserver, state)
+            moveBlockUp(topmostObserver, state)
+            return
 
+    
     match b - topmostPiston:
         case 1:
             powerPiston(topmostPiston, state)
         case 2:
             moveBlockUp(topmostPiston, state)
             powerPiston(topmostPiston + 1, state)
+
+            
+
+        # case x if x > 5 and topmostPiston < 2:
+        #     moveBlockTo(topmostPiston, state.getTopUnusedObserver() + 1, state)
+        #     if state.p[state.getTopUnusedObserver()] != ' ':
+        #         moveBlockDown(topmostPiston - 1, state)
+        #     state.applyMove((state.getTopUnusedObserver(),))
+
+        #     raise NotImplementedError
         case _:
             # while (topmostPiston := state.getTopmostPiston(below=b)) != b - 1:
             #     moveBlockUp(topmostPiston, state)
@@ -233,10 +230,6 @@ def powerPiston(piston, state):
         powerPiston(piston, state)
 
     elif topmostPiston > topmostObserver:
-
-        if len(state.moves) > 4300:
-            pass
-
         # Moving pistons out of the way for observer
         moveBlockDown(topmostPiston, state)
         powerPiston(piston, state)
@@ -246,7 +239,7 @@ def moveBlockDownTo(bi, bf, state):
     for i in range(bi, bf, -1):
         moveBlockDown(i, state)
 
-def moveBlockUpN(bi, bf, state):
+def moveBlockUpTo(bi, bf, state):
     for i in range(bi, bf):
         moveBlockUp(i, state)
 
@@ -254,7 +247,7 @@ def moveBlockTo(bi, bf, state):
     if bf < bi:
         moveBlockDownTo(bi, bf, state)
     if bf > bi:
-        moveBlockDownTo(bi, bf, state)
+        moveBlockUpTo(bi, bf, state)
 
 
 if __name__ == "__main__":

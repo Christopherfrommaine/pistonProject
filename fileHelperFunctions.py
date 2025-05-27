@@ -6,7 +6,6 @@ def writeToFile(string, path):
     with open(path, 'w') as file:
         file.write(str(string))
 
-
 def readFromFile(path):
     with open(path, "r") as file:
         text = file.read()
@@ -24,7 +23,7 @@ def readMovesFromFile(path):
     temp = ''
     inComment = False
     for char in source:
-        if char == '#':
+        if char == '#' or (inComment and char == '\n'):
             inComment = not inComment
         elif not inComment:
             match char:
@@ -42,7 +41,12 @@ def readMovesFromFile(path):
                 case _:
                     temp += char
 
-    return [int(tok) for tok in o]
+    return [int(tok) for tok in o if tok != '']
+
+def moveFromFile(door, filename, newState):
+    newState.moves = door.moves
+    newState.applyCustomMoves(readMovesFromFile("sequence/" + filename))
+    return newState
 
 def writeToMinecraftDatapack(commands, worldName):
     dppath = minecraftDirectory + "saves/" + worldName + "/datapacks/sendcommands/data/send/functions/"

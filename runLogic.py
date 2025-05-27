@@ -1,13 +1,14 @@
 from fileHelperFunctions import *
 import conversion
+import simplification
 
 
-def runWithoutManualCorrection(door, pistonLayout='original', logging=False, worldName=None):
-    runBeforeManualCorrections(door, pistonLayout, logging)
+def runWithoutManualCorrection(door, pistonLayout='original', logging=False, worldName=None, simplification1=False, simplification2=False):
+    runBeforeManualCorrections(door, pistonLayout, logging, simplification1, simplification2)
     runAfterManaualCorrections(pistonLayout, logging, worldName=worldName)
 
 
-def runBeforeManualCorrections(door, pistonLayout='original', logging=False):
+def runBeforeManualCorrections(door, pistonLayout='original', logging=False, simplification1=False, simplification2=False):
     if logging:
         writeToFile('', projectDirectory + 'debugging/log.txt')
 
@@ -24,24 +25,27 @@ def runBeforeManualCorrections(door, pistonLayout='original', logging=False):
 
         log += f'original moves: {originalMoves}\n'
 
+        # Apply Simplifications First
+        simpMoves1 = simplification.simplifyUncorrectedMoves(originalMoves, door) if simplification1 else originalMoves
+
+        log += f'simp moves: {simpMoves1}\n'
+
         # Apply Corrections
-        correctedMoves = conversion.applyCorrections(originalMoves, door.originalState)
+        correctedMoves = conversion.applyCorrections(simpMoves1, door.originalState)
 
         log += f'corrected moves: {correctedMoves}\n'
 
-        # Find and apply simplifications
-        # prevSimplifiedMoves = correctedMoves
-        # simplifiedMoves = None
-        # simpi = 0
-        # while prevSimplifiedMoves != simplifiedMoves and simpi < len(prevSimplifiedMoves) - 1:
-        #     moves = prevSimplifiedMoves[:simpi] + prevSimplifiedMoves[(simpi + 1):]
-            
+        # Apply Simplifications Second
+        simpMoves2 = simplification.simplifyCorrectedMoves(correctedMoves) if simplification2 else correctedMoves
 
+        log += f'simp moves: {simpMoves2}\n'
 
         # Numerical Layout Translation
-        layoutNumberedRules = conversion.toLayoutMoves(correctedMoves, pistonLayout)
+        layoutNumberedRules = conversion.toLayoutMoves(simpMoves2, pistonLayout)
 
         log += f'layout numbered rules: {layoutNumberedRules}\n'
+
+        print(len(layoutNumberedRules))
 
         writeToFile(str(layoutNumberedRules).replace(' ', '\n'), 'algorithmOutput.txt')
 

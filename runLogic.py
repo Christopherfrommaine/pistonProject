@@ -3,12 +3,12 @@ import conversion
 import simplification
 
 
-def runWithoutManualCorrection(door, pistonLayout='original', logging=False, worldName=None, simplification1=False, simplification2=False):
-    runBeforeManualCorrections(door, pistonLayout, logging, simplification1, simplification2)
+def runWithoutManualCorrection(door, pistonLayout='original', logging=False, worldName=None, simplification1=False, simplification2=False, prnt=False):
+    runBeforeManualCorrections(door, pistonLayout, logging, simplification1, simplification2, prnt)
     runAfterManaualCorrections(pistonLayout, logging, worldName=worldName)
 
 
-def runBeforeManualCorrections(door, pistonLayout='original', logging=False, simplification1=False, simplification2=False):
+def runBeforeManualCorrections(door, pistonLayout='original', logging=False, simplification1=False, simplification2=False, prnt=False):
     if logging:
         writeToFile('', projectDirectory + 'debugging/log.txt')
 
@@ -46,6 +46,8 @@ def runBeforeManualCorrections(door, pistonLayout='original', logging=False, sim
         log += f'layout numbered rules: {layoutNumberedRules}\n'
 
         print(len(layoutNumberedRules))
+        if prnt:
+            print(layoutNumberedRules)
 
         writeToFile(str(layoutNumberedRules).replace(' ', '\n'), 'algorithmOutput.txt')
 

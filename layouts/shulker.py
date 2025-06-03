@@ -55,11 +55,8 @@ def toLayoutCommands(moves, logging=False):
     while disci < len(discs):
         boxes[-1].append(discs[disci])
 
-        if len(boxes[-1]) == 24:
-            # boxes[-1].append(numtodisc[0])
+        if len(boxes[-1]) == 26:
             boxes.append([])
-            # boxes[-1].append(numtodisc[0])
-            # boxes[-1].append(numtodisc[0])
 
         disci += 1
 

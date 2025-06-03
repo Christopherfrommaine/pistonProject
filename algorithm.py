@@ -7,8 +7,13 @@ class State:
                 if pistonState[i] == 'f':
                     zeroOffset = -i
                     break
+        if zeroOffset is None:
+            for i in range(len(pistonState)):
+                if pistonState[i].isupper():
+                    zeroOffset = -i
+                    break
 
-        self.p = {i + zeroOffset: pistonState[i] if pistonState[i] != 'f' else ' ' for i in range(len(pistonState))}
+        self.p = {i + zeroOffset: pistonState[i].lower() if pistonState[i] != 'f' else ' ' for i in range(len(pistonState))}
         self.p.update({max(self.p.keys()) + 1: ' '})  # Adding whitespace
         self.p.update({max(self.p.keys()) + 1: ' '})  # Adding whitespace
 

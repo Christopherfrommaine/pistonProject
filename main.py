@@ -5,4 +5,4 @@ door = State('pppppppppppppppppppppppppppppppp  f    b             ', 'ooooooooo
 
 moveBlockTo(5, 0, door)
 moveBlockTo(-1, -3, door)  # Puts pistons back nicely
-runWithoutManualCorrection(door, 'shulker', logging=True)
+runWithoutManualCorrection(door, 'shulker', logging=True, prnt=True)

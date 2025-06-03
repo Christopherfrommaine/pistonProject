@@ -26,8 +26,11 @@ for n in t5:
     b.remove('')
     
     for p in b:
-        i, v = p.split("; ")
-        summ += int(v) * (1 << (int(i) - 1))
+        try:
+            i, v = p.split("; ")
+            summ += int(v) * (1 << (int(i) - 1))
+        except Exception:
+            pass
     
     o1.append(summ)
 

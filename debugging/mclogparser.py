@@ -1,6 +1,5 @@
 from .. import fileHelperFunctions
 
-
 t1 = fileHelperFunctions.readFromFile(fileHelperFunctions.minecraftDirectory + "logs/latest.log").split("\n")
 t2 = [t.split(':')[-1] for t in t1 if t and t[0] == "["]
 t3 = [t[5:] for t in t2 if len(t) > 4 and t[:4] == " [@]"]

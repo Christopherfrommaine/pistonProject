@@ -1,6 +1,7 @@
 from fileHelperFunctions import *
 import conversion
 import simplification
+from  algorithm import State
 
 
 def runWithoutManualCorrection(door, pistonLayout='original', logging=False, worldName=None, simplification1=False, simplification2=False, prnt=False):
@@ -8,19 +9,21 @@ def runWithoutManualCorrection(door, pistonLayout='original', logging=False, wor
     runAfterManaualCorrections(pistonLayout, logging, worldName=worldName)
 
 
-def runBeforeManualCorrections(door, pistonLayout='original', logging=False, simplification1=False, simplification2=False, prnt=False):
+def runBeforeManualCorrections(door: State, pistonLayout='original', logging=False, simplification1=False, simplification2=False, prnt=False):
     if logging:
         writeToFile('', projectDirectory + 'debugging/log.txt')
 
     log = ''
-    if logging:
-        odoor = door.originalState
-        log += str(odoor) + '\n'
-        for m in door.moves:
-            odoor.applyMove(m)
-            log += str(odoor) + '\n'
+    logErrorPostfix = ''
 
     try:
+        odoor = door.originalState
+        log += f'{odoor}\n'
+        
+        for movei, move in enumerate(door.moves):
+            odoor.applyMove(move)
+            log += f'{odoor} | {movei} | {move}\n'
+
         originalMoves = door.moves
 
         log += f'original moves: {originalMoves}\n'
@@ -53,7 +56,7 @@ def runBeforeManualCorrections(door, pistonLayout='original', logging=False, sim
 
     except Exception as e:
         if logging:
-            logString(log)
+            logString(log + logErrorPostfix)
         raise e
 
     if logging:

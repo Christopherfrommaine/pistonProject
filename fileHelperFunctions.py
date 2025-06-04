@@ -1,3 +1,6 @@
+from copy import deepcopy
+# from algorithm import State
+
 projectDirectory = '/home/chris/Programming/Python/pistonProject/'
 minecraftDirectory = '/home/chris/.minecraft/'
 
@@ -44,9 +47,8 @@ def readMovesFromFile(path):
     return [int(tok) for tok in o if tok != '']
 
 def moveFromFile(door, filename, newState):
-    newState.moves = door.moves
-    newState.applyCustomMoves(readMovesFromFile("sequence/" + filename))
-    return newState
+    door.applyCustomMoves(readMovesFromFile("sequence/" + filename))
+    door.applyMove(newState)
 
 def writeToMinecraftDatapack(commands, worldName):
     dppath = minecraftDirectory + "saves/" + worldName + "/datapacks/sendcommands/data/send/functions/"
@@ -57,7 +59,7 @@ def writeToMinecraftDatapack(commands, worldName):
         writeToFile(command.replace('/', ''), path)
         commandi += 1
 
-    o = ''.join(("schedule function send:f" + str(i) + " " + str(20 * 10 * i + 1) + "t\n") for i in range(commandi))
+    o = ''.join(("schedule function send:f" + str(i) + " " + str(20 * 0.5 * i + 1) + "t\n") for i in range(commandi))
     path = dppath + "mycommands.mcfunction"
     writeToFile(o, path)
 

@@ -1,6 +1,8 @@
+from copy import deepcopy
+
 class State:
     def __init__(self, pistonState='pppppppppppppppppppppppp  f                  b ', observerState='oooo', zeroOffset=None):
-        self._originalInputs = (pistonState, observerState, zeroOffset)
+        self._originalInputs = deepcopy((pistonState, observerState, zeroOffset))
         
         if zeroOffset is None:
             for i in range(len(pistonState)):
@@ -27,6 +29,8 @@ class State:
         newp = self.p.copy()
         if newp[0] == ' ':
             newp[0] = 'f'
+        else:
+            newp[0] = newp[0].upper()
         return ''.join(newp.values())
 
     def fullRepr(self):
@@ -58,12 +62,17 @@ class State:
 
                 self.observers[observer] = 'o'
                 self.p[observer] = ' '
-
         elif isinstance(move, int):
             # Piston Move
             assert isinstance(move, int)
             assert move <= -2
             self.applyPowerPiston(move)
+        elif isinstance(move, State):
+            self.setNewState(deepcopy(move))
+        elif isinstance(move, str):
+            pass  # Custom Move
+        else:
+            assert False  # All moves should be one of the above types
 
     def applyPowerPiston(self, piston):
         if self.p[piston] == 'p':
@@ -100,6 +109,10 @@ class State:
     def applyMoves(self, moves):
         for move in moves:
             self.applyMove(move)
+    
+    def setNewState(self, newState):
+        self.p = newState.p
+        self.observers = newState.observers
 
     def applyCustomMove(self, move):
         self.applyMove(str(move))

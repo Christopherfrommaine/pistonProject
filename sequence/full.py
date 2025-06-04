@@ -3,21 +3,23 @@ from runLogic import runWithoutManualCorrection
 from fileHelperFunctions import moveFromFile
 
 # Closing
-door = State('pppppppppppppppppppppppppppppppp  f          b     ', 'ooooooooooooo')
+door = State('pppppppppppppppppppppppppppppppp  f          b     ', 'ooooo')
 
-# door = moveFromFile(door, "closing/first_blocks.txt", State(
-#     'ppppp p p p p pofpo po po p bbbbbbbbbbbbb    ', '    ooooooooo'
-# ))
-# 
-# moveBlockTo(8, -3, door)
-# door.applyMove((-3,))
+moveFromFile(door, "closing/first_blocks.txt", State(
+    'ppppp p p p p pofpo po po p bbbbbbbbbbbbb    ', '    o'
+))
 
-# door = moveFromFile(door, "closing/optimized_top_piston.txt", State(
-#     'ppppp p p p po pO po po pp  bbbbbbbbbbbbb    ', '    ooooooooo'
-# ))
+moveBlockTo(8, -3, door)
 
-# moveBlockTo(9, -3, door)
+moveFromFile(door, "closing/optimized_top_piston.txt", State(
+    'ppppp p p p po pO po po pp  bbbbbbbbbbbbb    ', '    o'
+))
+
+moveBlockTo(9, -3, door)
+
+moveFromFile(door, "closing/last_blocks.txt", State(
+    'pppppppppppppp  fbbbbbbbbbbbbbbbbbbbbbbbb    ', '    ooooooooo'
+))
 
 
-# door.moves = door.moves[:10000]  # For debugging
 runWithoutManualCorrection(door, 'shulker', logging=True)

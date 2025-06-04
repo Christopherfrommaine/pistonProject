@@ -1,4 +1,5 @@
 from layouts import original, new, shulker
+from algorithm import State
 
 
 def toLayoutMoves(moves, layout):
@@ -49,8 +50,13 @@ def applyCorrections(moves, state):
                     o += [m + 1]
                 else:
                     o += ['manualinterventionneededhere']
+                    assert False
                     print(f'shoot! the lower piston pushing doesnt work out easily. Manual intervention needed around {len(o)}\nwell... um, here is you piston state: {state.fullRepr()}, \n and here are your output moves so far: {o}')
         elif isinstance(m, str):
             o += [m]
+        elif isinstance(m, State):
+            pass
+        else:
+            assert False
         state.applyMove(m)
     return o

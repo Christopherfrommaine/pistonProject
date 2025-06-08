@@ -23,6 +23,10 @@ def toLayoutMoves(moves):
             # o += [9 - observer]
             o += [{-3: 15, -4: 14, -5: 13, -6: 12}[observer]]
         elif isinstance(m, int):
+            if m == 8 * 9:
+                o += [m]
+                continue
+
             # Piston Move
             if -6 <= m <= -2:
                 o += [12 + m]
@@ -47,6 +51,9 @@ def toLayoutCommands(moves, logging=False):
     for m in moves:
         values += [m // 8, m % 8]
     values += [9, 9]
+
+    if logging:
+        logString('values: ' + str(values))
 
     discs = [numtodisc[v] for v in values]
 

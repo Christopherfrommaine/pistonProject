@@ -25,6 +25,11 @@ def simplifyCorrectedMoves(moves):
         ([-6, -4, -2, -7], [-7]),
     ])
 
+def repLayoutMoves(moves):
+    return matchAndReplaceAll(moves, [
+        ([7, 9], [49]),
+        ([6, 8, 10], [50]),
+    ])
 
 def simplifyUncorrectedMoves(moves, state: State):
     o = []

@@ -4,12 +4,12 @@ import simplification
 from  algorithm import State
 
 
-def runWithoutManualCorrection(door, pistonLayout='original', logging=False, worldName=None, simplification1=False, simplification2=False, prnt=False):
-    runBeforeManualCorrections(door, pistonLayout, logging, simplification1, simplification2, prnt)
+def runWithoutManualCorrection(door, pistonLayout='original', logging=False, worldName=None, simplification1=False, simplification2=False, prnt=False, rep=True):
+    runBeforeManualCorrections(door, pistonLayout, logging, simplification1, simplification2, prnt, rep)
     runAfterManaualCorrections(pistonLayout, logging, worldName=worldName)
 
 
-def runBeforeManualCorrections(door: State, pistonLayout='original', logging=False, simplification1=False, simplification2=False, prnt=False):
+def runBeforeManualCorrections(door: State, pistonLayout='original', logging=False, simplification1=False, simplification2=False, prnt=False, rep=True):
     if logging:
         writeToFile('', projectDirectory + 'debugging/log.txt')
 
@@ -41,18 +41,21 @@ def runBeforeManualCorrections(door: State, pistonLayout='original', logging=Fal
         # Apply Simplifications Second
         simpMoves2 = simplification.simplifyCorrectedMoves(correctedMoves) if simplification2 else correctedMoves
 
-        log += f'simp moves: {simpMoves2}\n'
+        log += f'simp moves 2: {simpMoves2}\n'
 
         # Numerical Layout Translation
         layoutNumberedRules = conversion.toLayoutMoves(simpMoves2, pistonLayout)
 
         log += f'layout numbered rules: {layoutNumberedRules}\n'
 
-        print(len(layoutNumberedRules))
-        if prnt:
-            print(layoutNumberedRules)
+        # Apply Door Replacements
+        replacedRules = simplification.repLayoutMoves(layoutNumberedRules) if rep else layoutNumberedRules
 
-        writeToFile(str(layoutNumberedRules).replace(' ', '\n'), 'algorithmOutput.txt')
+        print(len(replacedRules))
+        if prnt:
+            print(replacedRules)
+
+        writeToFile(str(replacedRules).replace(' ', '\n'), 'algorithmOutput.txt')
 
     except Exception as e:
         if logging:

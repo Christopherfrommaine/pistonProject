@@ -1,25 +1,127 @@
-from algorithm import State, moveBlockTo
+from algorithm import State, moveBlockTo, retractCustom
 from runLogic import runWithoutManualCorrection
 from fileHelperFunctions import moveFromFile
+
+# TODO: yo dawg, there ain't no wire for 46?
 
 # Closing
 door = State('pppppppppppppppppppppppppppppppp  f          b     ', 'ooooo')
 
-moveFromFile(door, "closing/first_blocks.txt", State(
-    'ppppp p p p p pofpo po po p bbbbbbbbbbbbb    ', '    o'
+# moveFromFile(door, "closing/first_blocks.txt", State(
+#     'ppppp p p p p pofpo po po p bbbbbbbbbbbbb    ', '    o'
+# ))
+# 
+# moveBlockTo(8, -3, door)
+# 
+# moveFromFile(door, "closing/optimized_top_piston.txt", State(
+#     'ppppp p p p po pO po po pp  bbbbbbbbbbbbb    ', '    o'
+# ))
+# 
+# moveBlockTo(9, -3, door)
+# 
+# moveFromFile(door, "closing/last_blocks.txt", State(
+#     'pppppppppppppp  fbbbbbbbbbbbbbbbbbbbbbbbb    ', 'ooooo'
+# ))
+# 
+# # Stop
+# door.applyMove(8 * 9)
+# print('before: ', len(door.moves))
+# 
+# # Opening
+# ## Unoptimized retractions
+# moveBlockTo(1, -1, door)
+# retractCustom([11, 17, 18], door)
+# 
+# moveBlockTo(2, -1, door)
+# retractCustom([11, 17, 18], door)
+# 
+# moveBlockTo(3, -1, door)
+# retractCustom([11, 17, 18], door)
+# 
+# moveBlockTo(4, -1, door)
+# retractCustom([11, 17, 18], door)
+# 
+# moveBlockTo(5, -1, door)
+# retractCustom([11, 17, 18], door)
+# 
+# moveBlockTo(6, -1, door)
+# retractCustom([11, 17, 18], door)
+# 
+# moveBlockTo(7, -1, door)
+# retractCustom([11, 17, 18, 19, 22], door)
+# 
+# moveBlockTo(8, -1, door)
+# retractCustom([11, 17, 18, 19, 22], door)
+# 
+# # 9th
+# moveFromFile(door, "opening/9th_piston_optimized.txt", State(
+#     'ppppppp p p p pofpo po pb bbbbbbbbbbbbbb    ', '   oo'
+# ))
+# moveBlockTo(8, -1, door)
+# moveBlockTo(-2, -3, door)
+# retractCustom([11, 17, 18, 19, 22], door)
+# 
+# # 10th
+# moveFromFile(door, "opening/10th_piston_optimized.txt", State(
+#     'ppppppp p p po pO po po pb bbbbbbbbbbbbbb    ', '    o'
+# ))
+# moveBlockTo(8, -3, door) # Move piston down
+# ## 9th again
+# moveFromFile(door, "opening/9th_piston_optimized.txt", State(
+#     'ppppppp p p p pofpo po pb  bbbbbbbbbbbbb    ', '   oo'
+# ))
+# moveBlockTo(8, -1, door)
+# moveBlockTo(-2, -3, door)
+# retractCustom([11, 17, 18, 19, 22], door)
+# 
+# 
+# # 11th
+# moveFromFile(door, "opening/11th_piston_optimized.txt", State(
+#     'ppppp p p pp po Po po po pb bbbbbbbbbbbbb    ', '    o'
+# ))
+# moveBlockTo(9, -3, door) # Move piston down   # OOOOOF
+# # 10th again
+# moveFromFile(door, "opening/10th_piston_optimized.txt", State(
+#     'ppppppp p p po pO po po pb  bbbbbbbbbbbbb    ', '    o'
+# ))
+# moveBlockTo(8, -3, door) # Move piston down
+# ## 9th again
+# moveFromFile(door, "opening/9th_piston_optimized.txt", State(
+#     'ppppppp p p p pofpo po pb   bbbbbbbbbbbb    ', '   oo'
+# ))
+# moveBlockTo(8, -1, door)
+# moveBlockTo(-2, -3, door)
+# retractCustom([11, 17, 18, 19, 22], door)
+# 
+# 
+# # 12th
+# moveFromFile(door, "opening/11th_piston_optimized.txt", State(
+#     'ppppp p p p p pofpo po po pb bbbbbbbbbbbb    ', '    o'
+# ))
+# moveBlockTo(10, -3, door) # Move piston down   # OOOOOOOOOOOOF
+# # 11th again
+# moveFromFile(door, "opening/11th_piston_optimized.txt", State(
+#     'ppppp p p pp po Po po po pb bbbbbbbbbbbbb    ', '    o'
+# ))
+# moveBlockTo(9, -3, door) # Move piston down   # OOOOOF
+# # 10th again
+# moveFromFile(door, "opening/10th_piston_optimized.txt", State(
+#     'ppppppp p p po pO po po pb  bbbbbbbbbbbbb    ', '    o'
+# ))
+# moveBlockTo(8, -3, door) # Move piston down
+# ## 9th again
+# moveFromFile(door, "opening/9th_piston_optimized.txt", State(
+#     'ppppppp p p p pofpo po pb   bbbbbbbbbbbb    ', '   oo'
+# ))
+# moveBlockTo(8, -1, door)
+# moveBlockTo(-2, -3, door)
+# retractCustom([11, 17, 18, 19, 22], door)
+
+
+# UPPER
+moveFromFile(door, 'opening/upper_full.txt', State(
+    'pppppppppppppp  f bbbbbbbbbbb            ', 'ooooo'
 ))
 
-moveBlockTo(8, -3, door)
 
-moveFromFile(door, "closing/optimized_top_piston.txt", State(
-    'ppppp p p p po pO po po pp  bbbbbbbbbbbbb    ', '    o'
-))
-
-moveBlockTo(9, -3, door)
-
-moveFromFile(door, "closing/last_blocks.txt", State(
-    'pppppppppppppp  fbbbbbbbbbbbbbbbbbbbbbbbb    ', '    ooooooooo'
-))
-
-
-runWithoutManualCorrection(door, 'shulker', logging=True)
+runWithoutManualCorrection(door, 'shulker', logging=True, rep=False)

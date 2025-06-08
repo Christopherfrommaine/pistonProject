@@ -43,6 +43,10 @@ def applyCorrections(moves, state):
                     o += [(i,)]
                     break
         elif isinstance(m, int):
+            if m == 8 * 9:
+                o += [m]
+                continue
+
             if m >= -6 or m % 2 == 0:
                 o += [m]
             else:
@@ -50,7 +54,6 @@ def applyCorrections(moves, state):
                     o += [m + 1]
                 else:
                     o += ['manualinterventionneededhere']
-                    assert False
                     print(f'shoot! the lower piston pushing doesnt work out easily. Manual intervention needed around {len(o)}\nwell... um, here is you piston state: {state.fullRepr()}, \n and here are your output moves so far: {o}')
         elif isinstance(m, str):
             o += [m]

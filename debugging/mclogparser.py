@@ -12,6 +12,8 @@ for t in t3:
         t4 = []
     elif started:
         t4.append(t)
+if not started:
+    t4 = t3
 
 t5 = "".join(t + "," for t in t4).split("---,")
 if '' in t5:
@@ -33,4 +35,12 @@ for n in t5:
     
     o1.append(summ)
 
-print(o1)
+olen = len(o1)
+crop = len(o1)
+if crop > 100:
+    crop = 100 + crop % 100
+final = o1[-crop:]
+
+num63 = sum(i for i in o1 if i == 63)
+
+print(olen, num63, final)

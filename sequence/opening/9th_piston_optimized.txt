@@ -1,0 +1,11 @@
+# Starting in '...ppp pp f' and 'oooo' OR
+# Starting in '...ppppp  f' and 'oooo'
+
+# Observer Interleaving
+8, 15,
+7, 14, 15,
+6, 13, 14, 15,
+
+4, 5, 6, 8,
+10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+# Ends up in 

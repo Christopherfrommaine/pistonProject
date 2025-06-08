@@ -1,8 +1,8 @@
 from algorithm import State, moveBlockTo
 from runLogic import runWithoutManualCorrection
 
-door = State('pppppppppppppppppppppppppppppppp  f    b             ', 'ooooooooooooo')
+door = State('pppppppppppppppppppppppppppppppp  f        b         ', 'ooooooooooooo')
 
-moveBlockTo(5, 0, door)
+moveBlockTo(9, 0, door)
 moveBlockTo(-1, -3, door)  # Puts pistons back nicely
-runWithoutManualCorrection(door, 'shulker', logging=True, prnt=True)
+runWithoutManualCorrection(door, 'shulker', logging=True)

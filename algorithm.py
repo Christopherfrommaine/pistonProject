@@ -1,4 +1,5 @@
 from copy import deepcopy
+from fileHelperFunctions import moveFromFile
 
 class State:
     def __init__(self, pistonState='pppppppppppppppppppppppp  f                  b ', observerState='oooo', zeroOffset=None):
@@ -39,6 +40,8 @@ class State:
             reversed(self.observers.values())) + '  f\n'
 
     def __repr__(self):
+        if self.moves and self.moves[-1] == -1:
+            return '-----'
         return self.basicReprWithF()
 
     @property
@@ -63,6 +66,9 @@ class State:
                 self.observers[observer] = 'o'
                 self.p[observer] = ' '
         elif isinstance(move, int):
+            if move == 8 * 9:
+                return
+
             # Piston Move
             assert isinstance(move, int)
             assert move <= -2
@@ -136,8 +142,7 @@ class State:
         return max(i for i in self.observers.keys() if self.observers[i] != ' ')
 
 
-def moveBlockDown(b, state):
-    assert isinstance(state, State)
+def moveBlockDown(b, state: State):
 
     topmostObserver = state.getTopmostObserver(below=b)
     topmostPiston = state.getTopmostPiston(below=b)
@@ -208,8 +213,8 @@ def moveBlockUp(b, state):
             for j in range(i, b, 2):
                 powerPiston(j, state)
 
-def powerPiston(piston, state):
-    assert isinstance(state, State)
+def powerPiston(piston, state: State):
+    
 
     if piston <= -2:
         if piston < -6 and piston % 2:
@@ -266,6 +271,16 @@ def moveBlockTo(bi, bf, state):
         moveBlockDownTo(bi, bf, state)
     if bf > bi:
         moveBlockUpTo(bi, bf, state)
+
+def retractCustom(customRetractionMoves, state: State):
+    assert state.p[-1] == 'b'
+    state.applyCustomMoves(customRetractionMoves)
+
+    # essentially doing this:
+    # state.p[-1] = ' '
+    newState = State(state.basicReprWithF(), ''.join(state.observers.values()))
+    newState.p[-1] = ' '
+    state.applyMove(newState)
 
 
 if __name__ == "__main__":

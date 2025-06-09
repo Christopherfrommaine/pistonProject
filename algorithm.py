@@ -272,8 +272,9 @@ def moveBlockTo(bi, bf, state):
     if bf > bi:
         moveBlockUpTo(bi, bf, state)
 
-def retractCustom(customRetractionMoves, state: State):
-    assert state.p[-1] == 'b'
+def retractCustom(customRetractionMoves, state: State, assrt=True):
+    if assrt:
+        assert state.p[-1] == 'b'
     state.applyCustomMoves(customRetractionMoves)
 
     # essentially doing this:

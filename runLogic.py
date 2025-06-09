@@ -1,15 +1,16 @@
 from fileHelperFunctions import *
 import conversion
 import simplification
+import simplify2
 from  algorithm import State
 
 
-def runWithoutManualCorrection(door, pistonLayout='original', logging=False, worldName=None, simplification1=False, simplification2=False, prnt=False, rep=True):
-    runBeforeManualCorrections(door, pistonLayout, logging, simplification1, simplification2, prnt, rep)
+def runWithoutManualCorrection(door, pistonLayout='original', logging=False, worldName=None, simplification1=False, simplification2=False, prnt=False, rep=True, CARS=False):
+    runBeforeManualCorrections(door, pistonLayout, logging, simplification1, simplification2, prnt, rep, CARS)
     runAfterManaualCorrections(pistonLayout, logging, worldName=worldName)
 
 
-def runBeforeManualCorrections(door: State, pistonLayout='original', logging=False, simplification1=False, simplification2=False, prnt=False, rep=True):
+def runBeforeManualCorrections(door: State, pistonLayout='original', logging=False, simplification1=False, simplification2=False, prnt=False, rep=True, CARS=False):
     if logging:
         writeToFile('', projectDirectory + 'debugging/log.txt')
 
@@ -30,6 +31,8 @@ def runBeforeManualCorrections(door: State, pistonLayout='original', logging=Fal
 
         # Apply Simplifications First
         simpMoves1 = simplification.simplifyUncorrectedMoves(originalMoves, door) if simplification1 else originalMoves
+
+        simpMoves1 = simplify2.repeatSimplification(simpMoves1, door.originalState, simplify2.contextAwareReplacementSimplification) if CARS else simpMoves1
 
         log += f'simp moves: {simpMoves1}\n'
 

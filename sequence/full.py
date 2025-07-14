@@ -217,9 +217,17 @@ moveBlockTo(8, 0, door)
 moveBlockTo(-1, -3, door)
 retractCustom([], door, assrt=False)
 
-print('len after lower opening 2: ', len(door.moves))
+print('len after lower opening 2: ', len1 := len(door.moves))
 
 print('number of manual moves: ', sum(1 if isinstance(m, str) else 0 for m in door.moves))
 
+
+from simplify2 import repeatSimplification, nAtATimePar
+for n in [10, 10000, 1000, 100, 10] * 0:
+    door.moves = repeatSimplification(door.moves, door.originalState, nAtATimePar(n), prnt=True, timeLimit=5*60)
+
+print('len after optimization: ', len2 := len(door.moves))
+
+print(f'{100 * (1 - (len2 / len1)):.1f}% Improvement during optimization!')
 
 runWithoutManualCorrection(door, 'shulker', logging=True, rep=False, CARS=False)

@@ -53,8 +53,7 @@ def applyCorrections(moves, state):
                 if state.p[m + 1] == ' ':
                     o += [m + 1]
                 else:
-                    o += ['manualinterventionneededhere']
-                    print(f'shoot! the lower piston pushing doesnt work out easily. Manual intervention needed around {len(o)}\nwell... um, here is you piston state: {state.fullRepr()}, \n and here are your output moves so far: {o}')
+                    assert False
         elif isinstance(m, str):
             o += [m]
         elif isinstance(m, State):

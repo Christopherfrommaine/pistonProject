@@ -50,7 +50,7 @@ def repeatSimplification(moves, originalState: State, simpFunc, prnt=False, time
         except AssertionError:
             return oldMoves
     if prnt:
-        print()
+        print("                            \r", end="")
 
     return moves
 
@@ -132,44 +132,66 @@ def nAtATimePar(n):
     return outputFunction
 
 def rmCommonPatterns(moves, originalState: State):
-    BUFFER = 5
+    # Example (first pattern):
+    """
+    if moves[i:i+3] == [i + k for i in [-4, -5, -3]]:
+            if strState(-5 + k, -3 + k) == 'ppp':
+                changed = True
+                testState.applyMoves([-5 + k, -3 + k])
+                i += 3
+                break
+    """
+
+    patterns = [
+        ([-6, -4, -8, -5, -3, -5, -8, -7, -6, (-4,), -6, -4], -8, 'pppppo', ' o', [-5, (-4,), -6, -4,]),
+        ([-6, -4, -8, -5, -3, -6, -4, -2], -8, 'ppppp', '', [-8, -6, -4, -2]),
+        ([-6, -4, -8, -6, -4], -8, 'pppp', '', [-8, -6, -4]),
+        ([-5, -3, -6, -4, -2], -6, 'pppp', '', [-6, -4, -2]),
+        ([-4, -5, -3], -5, 'ppp', '', [-5, -3]),
+        ([-2, -3], -3, 'pp', '', [-3]),
+        ([-2, -4], -4, 'ppp', '', [-4]),
+        
+    ]
     
     testState = deepcopy(originalState)
     def strState(start, end):
         return ''.join(testState.p[i] for i in range(start, end))
+    def addToMoveList(l, k):
+        o = []
+        for m in l:
+            if isinstance(m, int):
+                o.append(m + k)
+            elif isinstance(m, tuple):
+                p, = m
+                o.append((p + k,))
+            else:
+                assert False
+        return o
+    def beginsSame(s1, s2):
+        return all(s1[i] == s2[i] for i in range(min(len(s1), len(s2))))
 
     i = 0
-    while i < len(moves) - BUFFER:
+    while i < len(moves):
         changed = False
-        print(i)
 
-        # Example (first pattern):
-        """
-        if moves[i:i+3] == [i + k for i in [-4, -5, -3]]:
-                if strState(-5 + k, -3 + k) == 'ppp':
-                    changed = True
-                    testState.applyMoves([-5 + k, -3 + k])
-                    i += 3
-                    break
-        """
+        if i % (10 ** (len(str(len(moves))) - 2)) == 0:
+            print(f"  {100 * i / len(moves):.2f}% through step     ", end="\r")
 
-        patterns = [
-            ([-4, -5, -3], -5, 'ppp', [-5, -3]),
-            ([-6, -4, -8, -6, -4], -8, 'pppp', [-8, -6, -4]),
-            ([-2, -3], -3, 'pp', [-3]),
-            ([-2, -4], -4, 'ppp', [-4])
-        ]
+        if i == 0:
+            pass
         
+        obsState = ''.join(i for i in testState.observers.values())
         for pat in patterns:
-            originalMovesInput, originalStartInd, checkStr, originalMovesOutput = pat
+            originalMovesInput, originalStartInd, checkStr, checkObs, originalMovesOutput = pat
             for k in range(0, min(originalState.p.keys()), -1):
-                movesInput = [i + k for i in originalMovesInput]
+                movesInput = addToMoveList(originalMovesInput, k)
                 startInd = k + originalStartInd
                 endInd = startInd + len(checkStr)
-                movesOutput = [i + k for i in originalMovesOutput]
+                movesOutput = addToMoveList(originalMovesOutput, k)
                 ln = len(movesInput)
 
-                if moves[i:i + ln] == movesInput and strState(startInd, endInd) == checkStr:
+                if i + ln < len(moves) and moves[i:i + ln] == movesInput and strState(startInd, endInd) == checkStr and beginsSame(obsState, checkObs):
+
                     changed = True
                     testState.applyMoves(movesOutput)
                     i += ln
@@ -181,12 +203,6 @@ def rmCommonPatterns(moves, originalState: State):
         if not changed:
             testState.applyMove(moves[i])
             i += 1
-    
-
-    
-    while i < len(moves):
-        testState.applyMove(moves[i])
-        i += 1
     
     return testState.moves
 

@@ -1,4 +1,3 @@
-# Starting in '...ppp pp f' and 'oooo' OR
 # Starting in '...ppppp  f' and 'oooo'
 
 # Observer Interleaving

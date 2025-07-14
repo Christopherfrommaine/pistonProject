@@ -4,6 +4,7 @@ from fileHelperFunctions import moveFromFile, logString
 OPTIMIZED = False
 OPTIMIZED2 = False
 OPTIMIZED3 = False
+MANUAL_OPT = True
 
 class State:
     def __init__(self, pistonState='pppppppppppppppppppppppp  f                  b ', observerState='oooo', zeroOffset=None):
@@ -180,6 +181,38 @@ def compactify(state, below=float('infinity')):
             compactify(state, below)
 
 def moveBlockDown(b, state: State, destination=None):
+    if MANUAL_OPT:
+        import re
+        def extract_pattern_values(string, pattern):
+            regex_pattern = pattern.replace('*', '(.+?)')
+            match = re.match(regex_pattern, string)
+            if match:
+                return match.groups()
+            else:
+                return None
+
+
+        manualMatches = [
+            # ('general/5.txt',    '*ppppppp   f    p*',      'o*',   'p p pp po Po pp ',      '  oo'),  # Doesn't work for some reason
+            ('general/6.txt',    '*ppppppp   f     p*',     'o*',   'p p p p pofpo pp ',     '  oo'),
+            ('general/7.txt',    '*ppppppp   f      p*',    'o*',   'p p p po pO po pp ',    '   o'),
+            ('general/8.txt',  '*ppppppppp   f       p*',   'o*', 'p p p pp po Po po pp ',   '   o'),
+            ('general/9.txt',  '*ppppppppp   f        p*',  'o*', 'p p p p p pofpo po pp ',  '   o'),
+            ('general/10.txt', '*ppppppppp   f         p*', 'o*', 'p p p p po pO po po pp ', '    '),
+        ]
+
+        obsState = ''.join(i for i in state.observers.values())
+        for mm in manualMatches:
+            filename, stateMatch, obsMatch, outputState, outputObs = mm
+            if res := extract_pattern_values(str(state), stateMatch):
+                prelude, postlude = res
+                if extract_pattern_values(obsState, obsMatch):
+                    
+                    newState = State(prelude + outputState + postlude, outputObs + 'oooo')
+                    moveFromFile(state, filename, newState)
+                    return
+
+
     if OPTIMIZED3 and state.isCompact(b):
         i = b - 1
         neededPistons = 0
@@ -273,11 +306,11 @@ def moveBlockDown(b, state: State, destination=None):
                 case 2:
                     powerPiston(topmostPiston, state)
                 case _:
-                    # moveBlockUpTo(topmostPiston, b - 2, state)
-                    # moveBlockDown(b, state)
+                    moveBlockUpTo(topmostPiston, b - 2, state)
+                    moveBlockDown(b, state)
 
                     # Optimization
-                    pushUpToThenPower(topmostPiston, b - 2, state)
+                    # pushUpToThenPower(topmostPiston, b - 2, state)
 
 def moveBlockUp(b, state: State, destination=None):
 
@@ -347,6 +380,34 @@ def powerPiston(piston, state: State):
 
         return
 
+    if MANUAL_OPT:
+        import re
+        def extract_pattern_values(string, pattern):
+            regex_pattern = pattern.replace('*', '(.+?)')
+            match = re.match(regex_pattern, string)
+            if match:
+                return match.groups()
+            else:
+                return None
+
+
+        manualMatches = [
+            # ('general/power_5.txt', '*ppppppp   f    *',   'o*',   'p p po pO po ',   '   o'),
+            # ('general/power_6.txt', '*ppppppp   f     *',  'o*', 'p p pp po Po po ',  '   o'),
+            ('general/power_7.txt', '*ppppppp   f      *', 'o*', 'p p p p pofpo po ', '   o'),
+        ]
+
+        obsState = ''.join(i for i in state.observers.values())
+        for mm in manualMatches:
+            filename, stateMatch, obsMatch, outputState, outputObs = mm
+            if res := extract_pattern_values(str(state), stateMatch):
+                prelude, postlude = res
+                if extract_pattern_values(obsState, obsMatch):
+                    
+                    newState = State(prelude + outputState + postlude, outputObs + 'oooo')
+                    moveFromFile(state, filename, newState)
+                    return
+
     topmostObserver = state.getTopmostObserver(below=piston)
     topmostPiston = state.getTopmostPiston(below=piston)
 
@@ -384,6 +445,10 @@ def powerPiston(piston, state: State):
 
 def pushUpToThenPower(bi, bf, state: State):
     assert state.p[bi] == 'p'
+
+    moveBlockUpTo(bi, bf, state)
+    powerPiston(bf, state)
+    return
 
     def basicCase():
         moveBlockUp(bi, state, destination=bf)

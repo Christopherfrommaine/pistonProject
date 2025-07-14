@@ -264,8 +264,11 @@ def moveBlockDown(b, state: State, destination=None):
                 case 2:
                     powerPiston(topmostPiston, state)
                 case _:
-                    moveBlockUpTo(topmostPiston, b - 2, state)
-                    moveBlockDown(b, state)
+                    # moveBlockUpTo(topmostPiston, b - 2, state)
+                    # moveBlockDown(b, state)
+
+                    # Optimization
+                    pushUpToThenPower(topmostPiston, b - 2, state)
 
 def moveBlockUp(b, state: State, destination=None):
 
@@ -369,6 +372,44 @@ def powerPiston(piston, state: State):
         # Moving pistons out of the way for observer
         moveBlockDown(topmostPiston, state)
         powerPiston(piston, state)
+
+def pushUpToThenPower(bi, bf, state: State):
+    assert state.p[bi] == 'p'
+
+    def basicCase():
+        moveBlockUp(bi, state, destination=bf)
+        if bi + 1 < bf:
+            pushUpToThenPower(bi + 1, bf, state)
+        else:
+            powerPiston(bf, state)
+    
+    testState = State()
+    testState.p = deepcopy(state.p)
+    testState.observers = deepcopy(state.observers)
+
+    # Optimized Case
+    powerPiston(bi, testState)
+    # There hopefully is now a
+    # .....p op
+    #         ^ bi      ^ bf
+
+    # Goal:
+    # .....          pop 
+    #         ^ bi      ^ bf
+    # Then:
+    # .....          p op
+    #         ^ bi      ^ bf
+
+    # Check that the goal was actually acheived
+    if ''.join(testState.p[i] for i in range(bi - 3, bi)) == 'p o':
+
+        state.setNewState(testState)
+        state.moves += testState.moves
+
+        pushUpToThenPower(bi - 3, bf - 3, state)
+
+    else:
+        basicCase()
 
 
 def moveBlockDownTo(bi, bf, state: State):

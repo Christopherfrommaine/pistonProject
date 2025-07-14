@@ -222,9 +222,9 @@ print('len after lower opening 2: ', len1 := len(door.moves))
 print('number of manual moves: ', sum(1 if isinstance(m, str) else 0 for m in door.moves))
 
 
-from simplify2 import repeatSimplification, nAtATimePar
-for n in [10, 10000, 1000, 100, 10] * 0:
-    door.moves = repeatSimplification(door.moves, door.originalState, nAtATimePar(n), prnt=True, timeLimit=5*60)
+from simplify2 import repeatSimplification, nAtATimePar, nAtATime
+for n in [10, 1000, 100, 10, 10, 1]:
+    door.moves = repeatSimplification(door.moves, door.originalState, nAtATimePar(n) if n >= 100 else nAtATime(n), prnt=True, timeLimit=5*60)
 
 print('len after optimization: ', len2 := len(door.moves))
 

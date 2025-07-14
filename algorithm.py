@@ -52,7 +52,16 @@ class State:
     def originalState(self):
         return State(*self._originalInputs)
 
-    def applyMove(self, move):
+    def applyMove(self, move, strict=False):
+        # Strincter Asserts
+        if strict:
+            assert not any(self.p[i] == 'o' and self.p[i + 1] == 'o' for i in range(min(self.p.keys()), max(self.p.keys()) - 1))
+            if isinstance(move, tuple):
+                observer, = move
+                
+                if self.p[observer + 1] != ' ':
+                    assert False
+
         self.moves.append(move)
         if isinstance(move, tuple):
             # Observer move
@@ -116,9 +125,9 @@ class State:
                     break
 
     # Helper Functions
-    def applyMoves(self, moves):
+    def applyMoves(self, moves, strict=False):
         for move in moves:
-            self.applyMove(move)
+            self.applyMove(move, strict)
     
     def setNewState(self, newState):
         self.p = newState.p

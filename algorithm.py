@@ -13,14 +13,17 @@ class State:
         if zeroOffset is None:
             for i in range(len(pistonState)):
                 if pistonState[i] == 'f':
+                    if zeroOffset is not None:
+                        assert False
                     zeroOffset = -i
-                    break
         if zeroOffset is None:
             for i in range(len(pistonState)):
                 if pistonState[i].isupper():
+                    if zeroOffset is not None:
+                        assert False
                     zeroOffset = -i
-                    break
-
+        
+        pistonState = pistonState.strip()
         self.p = {i + zeroOffset: pistonState[i].lower() if pistonState[i] != 'f' else ' ' for i in range(len(pistonState))}
         self.p.update({max(self.p.keys()) + 1: ' '})  # Adding whitespace
         self.p.update({max(self.p.keys()) + 1: ' '})  # Adding whitespace
@@ -184,7 +187,10 @@ def moveBlockDown(b, state: State, destination=None):
     if MANUAL_OPT:
         import re
         def extract_pattern_values(string, pattern):
-            regex_pattern = pattern.replace('*', '(.+?)')
+            regex_pattern = pattern \
+                .replace('*', '(.+?)') \
+                .replace('~', '(.+)')
+
             match = re.match(regex_pattern, string)
             if match:
                 return match.groups()
@@ -193,12 +199,16 @@ def moveBlockDown(b, state: State, destination=None):
 
 
         manualMatches = [
-            # ('general/5.txt',    '*ppppppp   f    p*',      'o*',   'p p pp po Po pp ',      '  oo'),  # Doesn't work for some reason
-            ('general/6.txt',    '*ppppppp   f     p*',     'o*',   'p p p p pofpo pp ',     '  oo'),
-            ('general/7.txt',    '*ppppppp   f      p*',    'o*',   'p p p po pO po pp ',    '   o'),
-            ('general/8.txt',  '*ppppppppp   f       p*',   'o*', 'p p p pp po Po po pp ',   '   o'),
-            ('general/9.txt',  '*ppppppppp   f        p*',  'o*', 'p p p p p pofpo po pp ',  '   o'),
-            ('general/10.txt', '*ppppppppp   f         p*', 'o*', 'p p p p po pO po po pp ', '    '),
+            ('general/1.txt',      '*ppppp   fp~',          'o*',     'p pppo pP ',          ' ooo'),  # Doesn't work for some reason
+            ('general/2.txt',      '*ppppp   f p~',         'o*',     'p pp po Pp ',         ' ooo'),  # Doesn't work for some reason
+            ('general/3.txt',      '*ppppp   f  p~',        'o*',     'p p p pofpp ',        ' ooo'),  # Doesn't work for some reason
+            ('general/4.txt',      '*ppppp   f   p~',       'o*',     'p p po pO pp ',       '  oo'),  # Doesn't work for some reason
+            ('general/5.txt',    '*ppppppp   f    p~',      'o*',   'p p pp po Po pp ',      '  oo'),  # Doesn't work for some reason
+            ('general/6.txt',    '*ppppppp   f     p~',     'o*',   'p p p p pofpo pp ',     '  oo'),
+            ('general/7.txt',    '*ppppppp   f      p~',    'o*',   'p p p po pO po pp ',    '   o'),
+            ('general/8.txt',  '*ppppppppp   f       p~',   'o*', 'p p p pp po Po po pp ',   '   o'),
+            ('general/9.txt',  '*ppppppppp   f        p~',  'o*', 'p p p p p pofpo po pp ',  '   o'),
+            ('general/10.txt', '*ppppppppp   f         p~', 'o*', 'p p p p po pO po po pp ', '    '),
         ]
 
         obsState = ''.join(i for i in state.observers.values())
@@ -383,7 +393,10 @@ def powerPiston(piston, state: State):
     if MANUAL_OPT:
         import re
         def extract_pattern_values(string, pattern):
-            regex_pattern = pattern.replace('*', '(.+?)')
+            regex_pattern = pattern \
+                .replace('*', '(.+?)') \
+                .replace('~', '(.+)')
+            
             match = re.match(regex_pattern, string)
             if match:
                 return match.groups()
@@ -392,19 +405,25 @@ def powerPiston(piston, state: State):
 
 
         manualMatches = [
-            # ('general/power_5.txt', '*ppppppp   f    *',   'o*',   'p p po pO po ',   '   o'),
-            # ('general/power_6.txt', '*ppppppp   f     *',  'o*', 'p p pp po Po po ',  '   o'),
-            ('general/power_7.txt', '*ppppppp   f      *', 'o*', 'p p p p pofpo po ', '   o'),
+            (1, 'general/power_1.txt',     '*ppp   f~',       'o*',     'p p pof',       ' ooo'),
+            (2, 'general/power_2.txt',     '*ppp   f ~',      'o*',     'p po pO ',      '  oo'),
+            (3, 'general/power_3.txt',   '*ppppp   f  ~',     'o*',   'p pp po Po ',     '  oo'),
+            (4, 'general/power_4.txt',   '*ppppp   f   ~',    'o*',   'p p p pofpo ',    '  oo'),
+            (5, 'general/power_5.txt',   '*ppppp   f    ~',   'o*',   'p p po pO po ',   '   o'),
+            (6, 'general/power_6.txt', '*ppppppp   f     ~',  'o*', 'p p pp po Po po ',  '   o'),
+            (7, 'general/power_7.txt', '*ppppppp   f      ~', 'o*', 'p p p p pofpo po ', '   o'),
         ]
 
         obsState = ''.join(i for i in state.observers.values())
         for mm in manualMatches:
-            filename, stateMatch, obsMatch, outputState, outputObs = mm
-            if res := extract_pattern_values(str(state), stateMatch):
+            index, filename, stateMatch, obsMatch, outputState, outputObs = mm
+            if piston == index and (res := extract_pattern_values(str(state), stateMatch)):
                 prelude, postlude = res
+
                 if extract_pattern_values(obsState, obsMatch):
                     
                     newState = State(prelude + outputState + postlude, outputObs + 'oooo')
+                    newState.applyPowerPiston(piston)
                     moveFromFile(state, filename, newState)
                     return
 

@@ -1,0 +1,11 @@
+# Initial:
+# ...ppppp   fp
+
+5, 
+8, 15,
+
+8, 8,
+
+# Final:
+# ...p pppo pP 
+

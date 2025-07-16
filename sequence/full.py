@@ -13,6 +13,7 @@ moveFromFile(door, "closing/first_blocks.txt", State(
 
 moveBlockTo(8, -3, door)
 
+
 moveFromFile(door, "closing/optimized_top_piston.txt", State(
     'ppppp p p p po pO po po pp  bbbbbbbbbbbbb    ', '    o'
 ))
@@ -222,11 +223,11 @@ print('number of manual moves: ', sum(1 if isinstance(m, str) else 0 for m in do
 
 
 print('len before optimization: ', len1)
-from simplify2 import repeatSimplification, rmCommonPatterns
+from simplify2 import repeatSimplification, rmCommonPatterns, rmCommonPatternsNoK
+door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatternsNoK, prnt=True, timeLimit=600)
 door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatterns, prnt=True, timeLimit=600)
 len1 = 150572
 print('len after optimization: ', len2 := len(door.moves))
 print(f'{100 * (1 - (len2 / len1)):.1f}% Improvement during optimization! ({len2}/{len1})')
-
 
 runWithoutManualCorrection(door, 'shulker', logging=True, rep=False, CARS=False)

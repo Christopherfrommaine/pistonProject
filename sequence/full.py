@@ -216,7 +216,7 @@ moveFromFile(door, "opening/9th_piston_optimized.txt", State(
 ))
 moveBlockTo(8, 0, door)
 moveBlockTo(-1, -3, door)
-retractCustom([], door, assrt=False)
+# retractCustom([], door, assrt=False)
 
 print('len after lower opening 2: ', len1 := len(door.moves))
 print('number of manual moves: ', sum(1 if isinstance(m, str) else 0 for m in door.moves))

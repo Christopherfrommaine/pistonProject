@@ -37,8 +37,8 @@ for n in t5:
 
 olen = len(o1)
 crop = len(o1)
-if crop > 100:
-    crop = 100 + crop % 100
+# if crop > 100:
+#     crop = 100 + crop % 100
 final = o1[-crop:]
 
 num63 = sum(i for i in o1 if i == 63)

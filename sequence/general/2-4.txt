@@ -1,0 +1,12 @@
+# Initial:
+# ...pppppp    f po
+
+4,
+7, 14, 15,
+
+5, 7,
+
+9, 9, 
+
+# Final:
+# ...p p pp po Pp o

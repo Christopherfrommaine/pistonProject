@@ -4,8 +4,6 @@ in pkgs.mkShell {
   buildInputs = [
     
     pkgs.python3
-
-    pkgs.rustup
     
   ];
 }

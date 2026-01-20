@@ -5,23 +5,23 @@ from fileHelperFunctions import moveFromFile
 # TODO: yo dawg, there ain't no wire for 46?
 
 # Closing
-door = State('pppppppppppppppppppppppppppppppp  f          b     ', 'ooooo')
+door = State('pppppppppppppppppppppppppppppppp  f          b', 'ooooo')
 
 moveFromFile(door, "closing/first_blocks.txt", State(
-    'ppppp p p p p pofpo po po p bbbbbbbbbbbbb    ', '    o'
+    'ppppp p p p p pofpo po po p bbbbbbbbbbbbb', '    o'
 ))
 
 moveBlockTo(8, -3, door)
 
 
 moveFromFile(door, "closing/optimized_top_piston.txt", State(
-    'ppppp p p p po pO po po pp  bbbbbbbbbbbbb    ', '    o'
+    'ppppp p p p po pO po po pp  bbbbbbbbbbbbb', '    o'
 ))
 
 moveBlockTo(9, -3, door)
 
 moveFromFile(door, "closing/last_blocks.txt", State(
-    'pppppppppppppp  fbbbbbbbbbbbbbbbbbbbbbbbb    ', 'ooooo'
+    'pppppppppppppp  fbbbbbbbbbbbbbbbbbbbbbbbb', 'ooooo'
 ))
 
 # Stop
@@ -56,7 +56,7 @@ retractCustom([11, 17, 18, 19, 22], door)
 
 # 9th
 moveFromFile(door, "opening/9th_piston_optimized.txt", State(
-    'ppppppp p p p pofpo po pb bbbbbbbbbbbbbb    ', '   oo'
+    'ppppppp p p p pofpo po pb bbbbbbbbbbbbbb', '   oo'
 ))
 moveBlockTo(8, -1, door)
 moveBlockTo(-2, -3, door)
@@ -64,57 +64,27 @@ retractCustom([11, 17, 18, 19, 22], door)
 
 # 10th
 moveFromFile(door, "opening/10th_piston_optimized.txt", State(
-    'ppppppp p p po pO po po pb bbbbbbbbbbbbbb    ', '    o'
+    'ppppppp p p po pO po po pb bbbbbbbbbbbbbb', '    o'
 ))
-moveBlockTo(8, -3, door) # Move piston down
-## 9th again
-moveFromFile(door, "opening/9th_piston_optimized.txt", State(
-    'ppppppp p p p pofpo po pb  bbbbbbbbbbbbb    ', '   oo'
-))
-moveBlockTo(8, -1, door)
+moveBlockTo(9, -1, door)
 moveBlockTo(-2, -3, door)
 retractCustom([11, 17, 18, 19, 22], door)
-
 
 # 11th
 moveFromFile(door, "opening/11th_piston_optimized.txt", State(
-    'ppppp p p pp po Po po po pb bbbbbbbbbbbbb    ', '    o'
+    'ppppp p p pp po Po po po pb bbbbbbbbbbbbb', '    o'
 ))
-moveBlockTo(9, -3, door) # Move piston down   # OOOOOF
-# 10th again
-moveFromFile(door, "opening/10th_piston_optimized.txt", State(
-    'ppppppp p p po pO po po pb  bbbbbbbbbbbbb    ', '    o'
-))
-moveBlockTo(8, -3, door) # Move piston down
-## 9th again
-moveFromFile(door, "opening/9th_piston_optimized.txt", State(
-    'ppppppp p p p pofpo po pb   bbbbbbbbbbbb    ', '   oo'
-))
-moveBlockTo(8, -1, door)
+moveBlockTo(10, -1, door)
 moveBlockTo(-2, -3, door)
 retractCustom([11, 17, 18, 19, 22], door)
 
+# door.moves = []; print("WARNING!!!");
 
 # 12th
-moveFromFile(door, "opening/11th_piston_optimized.txt", State(
-    'ppppp p p p p pofpo po po pb bbbbbbbbbbbb    ', '    o'
+moveFromFile(door, "opening/12th_piston_optimized.txt", State(
+    'ppppp p p p p pofpo po po pb bbbbbbbbbbbb', '    o'
 ))
-moveBlockTo(10, -3, door) # Move piston down   # OOOOOOOOOOOOF
-# 11th again
-moveFromFile(door, "opening/11th_piston_optimized.txt", State(
-    'ppppp p p pp po Po po po pb bbbbbbbbbbbbb    ', '    o'
-))
-moveBlockTo(9, -3, door) # Move piston down   # OOOOOF
-# 10th again
-moveFromFile(door, "opening/10th_piston_optimized.txt", State(
-    'ppppppp p p po pO po po pb  bbbbbbbbbbbbb    ', '    o'
-))
-moveBlockTo(8, -3, door) # Move piston down
-## 9th again
-moveFromFile(door, "opening/9th_piston_optimized.txt", State(
-    'ppppppp p p p pofpo po pb   bbbbbbbbbbbb    ', '   oo'
-))
-moveBlockTo(8, -1, door)
+moveBlockTo(11, -1, door)
 moveBlockTo(-2, -3, door)
 retractCustom([11, 17, 18, 19, 22], door)
 
@@ -122,7 +92,7 @@ print('len after lower opening 1: ', len(door.moves))
 
 # UPPER
 moveFromFile(door, 'opening/upper_full.txt', State(
-    'pppppppppppppp  f bbbbbbbbbbb            ', 'ooooo'
+    'pppppppppppppp  f bbbbbbbbbbb', 'ooooo'
 ))  # omg this took so long and its all manual
 
 print('len after upper opening: ', len(door.moves))
@@ -156,71 +126,37 @@ retractCustom([11, 17, 18, 19], door)
 
 # 9th
 moveFromFile(door, "opening/9th_piston_optimized.txt", State(
-    'ppppppp p p p pofpo po pb bbbbbbbbbbbbbb    ', '   oo'
+    'ppppppp p p p pofpo po pb bbbbbbbbbbbbbb', '   oo'
 ))
 moveBlockTo(8, -1, door)
 moveBlockTo(-2, -3, door)
 retractCustom([11, 17, 18], door)
 
-# door.moves = []; print("WARNING!!!!! REMOVE THIS LINE FOR FULL")
-
 # 10th
 moveFromFile(door, "opening/10th_piston_optimized.txt", State(
-    'ppppppp p p po pO po po pb bbbbbbbbbbbbbb    ', '    o'
+    'ppppppp p p po pO po po pb bbbbbbbbbbbbbb', '    o'
 ))
-moveBlockTo(8, -3, door) # Move piston down
-## 9th again
-moveFromFile(door, "opening/9th_piston_optimized.txt", State(
-    'ppppppp p p p pofpo po pb  bbbbbbbbbbbbb    ', '   oo'
-))
-moveBlockTo(8, -1, door)
+moveBlockTo(9, -1, door)
 moveBlockTo(-2, -3, door)
 retractCustom([11, 17], door)
 
 
 # 11th
 moveFromFile(door, "opening/11th_piston_optimized.txt", State(
-    'ppppp p p pp po Po po po pb bbbbbbbbbbbbb    ', '    o'
+    'ppppp p p pp po Po po po pb bbbbbbbbbbbbb', '    o'
 ))
-moveBlockTo(9, -3, door) # Move piston down   # OOOOOF
-# 10th again
-moveFromFile(door, "opening/10th_piston_optimized.txt", State(
-    'ppppppp p p po pO po po pb  bbbbbbbbbbbbb    ', '    o'
-))
-moveBlockTo(8, -3, door) # Move piston down
-## 9th again
-moveFromFile(door, "opening/9th_piston_optimized.txt", State(
-    'ppppppp p p p pofpo po pb   bbbbbbbbbbbb    ', '   oo'
-))
-moveBlockTo(8, -1, door)
+moveBlockTo(10, -1, door)
 moveBlockTo(-2, -3, door)
 retractCustom([11], door)
 
 
 # 12th
 moveFromFile(door, "opening/12th_piston_optimized.txt", State(
-    'ppppp p p p p pofpo po po pb bbbbbbbbbbbb    ', '    o'
+    'ppppp p p p p pofpo po po pb bbbbbbbbbbbb', '    o'
 ))
-moveBlockTo(10, -3, door) # Move piston down   # OOOOOOOOOOOOF
-# 11th again
-moveFromFile(door, "opening/11th_piston_optimized.txt", State(
-    'ppppp p p pp po Po po po pb bbbbbbbbbbbbb    ', '    o'
-))
-moveBlockTo(9, -3, door) # Move piston down   # OOOOOF
-# 10th again
-moveFromFile(door, "opening/10th_piston_optimized.txt", State(
-    'ppppppp p p po pO po po pb  bbbbbbbbbbbbb    ', '    o'
-))
-moveBlockTo(8, -3, door) # Move piston down
-## 9th again
-moveFromFile(door, "opening/9th_piston_optimized.txt", State(
-    'ppppppp p p p pofpo po pb   bbbbbbbbbbbb    ', '   oo'
-))
-moveBlockTo(8, 0, door)
+moveBlockTo(11, 0, door)
 moveBlockTo(-1, -3, door)
 # retractCustom([], door, assrt=False)
-
-door.applyCustomMove(8 * 9)
 
 print('len after lower opening 2: ', len1 := len(door.moves))
 print('number of manual moves: ', sum(1 if isinstance(m, str) else 0 for m in door.moves))
@@ -230,7 +166,6 @@ print('len before optimization: ', len1)
 from simplify2 import repeatSimplification, rmCommonPatterns, rmCommonPatternsNoK
 door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatternsNoK, prnt=True, timeLimit=600)
 door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatterns, prnt=True, timeLimit=600)
-len1 = 150572
 print('len after optimization: ', len2 := len(door.moves))
 print(f'{100 * (1 - (len2 / len1)):.1f}% Improvement during optimization! ({len2}/{len1})')
 

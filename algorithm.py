@@ -7,7 +7,7 @@ OPTIMIZED3 = False
 MANUAL_OPT = True
 
 class State:
-    def __init__(self, pistonState='pppppppppppppppppppppppp  f                  b ', observerState='oooo', zeroOffset=None):
+    def __init__(self, pistonState='pppppppppppppppppppppppp  f                  b ', observerState='ooooo', zeroOffset=None):
         self._originalInputs = deepcopy((pistonState, observerState, zeroOffset))
         
         if zeroOffset is None:
@@ -57,6 +57,7 @@ class State:
         return State(*self._originalInputs)
 
     def applyMove(self, move, strict=False):
+
         # Strincter Asserts
         if strict:
             assert not any(self.p[i] == 'o' and self.p[i + 1] == 'o' for i in range(min(self.p.keys()), max(self.p.keys()) - 1))
@@ -150,6 +151,12 @@ class State:
             if self.p[i] == char and i < below:
                 o = i
         return o
+    def getBottommostChar(self, char, above):
+        o = float('infinity')
+        for i in reversed(self.p.keys()):
+            if self.p[i] == char and i > above:
+                o = i
+        return o
 
     def getTopmostPiston(self, below=float('infinity')):
         return self.getTopmostChar('p', below)
@@ -158,6 +165,10 @@ class State:
     def getTopUnusedObserver(self):
         """Returns the position of the topmost unused (i.e. not in the main stack) observer"""
         return max(i for i in self.observers.keys() if self.observers[i] != ' ')
+    def getTopUnusedObserverSpace(self):
+        """Returns the position of the topmost unused (i.e. not in the main stack) observer"""
+        return self.getTopUnusedObserver() + 1
+    
     
     def isCompactPistonwise(self, below=float('infinity')):
         return all(self.p[i] == 'p' for i in range(min(self.p.keys()), self.getTopmostPiston(below)))
@@ -199,21 +210,38 @@ def moveBlockDown(b, state: State, destination=None):
 
 
         manualMatches = [
-            ('general/1.txt',      '*ppppp   fp~',          'o*',     'p pppo pP ',          ' ooo'),  # Doesn't work for some reason
-            ('general/2.txt',      '*ppppp   f p~',         'o*',     'p pp po Pp ',         ' ooo'),  # Doesn't work for some reason
-            ('general/3.txt',      '*ppppp   f  p~',        'o*',     'p p p pofpp ',        ' ooo'),  # Doesn't work for some reason
-            ('general/4.txt',      '*ppppp   f   p~',       'o*',     'p p po pO pp ',       '  oo'),  # Doesn't work for some reason
-            ('general/5.txt',    '*ppppppp   f    p~',      'o*',   'p p pp po Po pp ',      '  oo'),  # Doesn't work for some reason
-            ('general/6.txt',    '*ppppppp   f     p~',     'o*',   'p p p p pofpo pp ',     '  oo'),
-            ('general/7.txt',    '*ppppppp   f      p~',    'o*',   'p p p po pO po pp ',    '   o'),
-            ('general/8.txt',  '*ppppppppp   f       p~',   'o*', 'p p p pp po Po po pp ',   '   o'),
-            ('general/9.txt',  '*ppppppppp   f        p~',  'o*', 'p p p p p pofpo po pp ',  '   o'),
-            ('general/10.txt', '*ppppppppp   f         p~', 'o*', 'p p p p po pO po po pp ', '    '),
+            ('general/1-3.txt',      '*ppppp   fp~',          'o*',     'p pppo pP ',          ' ooo'),
+            ('general/2-3.txt',      '*ppppp   f p~',         'o*',     'p pp po Pp ',         ' ooo'),
+            ('general/3-3.txt',      '*ppppp   f  p~',        'o*',     'p p p pofpp ',        ' ooo'),
+            ('general/4-3.txt',      '*ppppp   f   p~',       'o*',     'p p po pO pp ',       '  oo'),
+            ('general/5-3.txt',    '*ppppppp   f    p~',      'o*',   'p p pp po Po pp ',      '  oo'),
+            ('general/6-3.txt',    '*ppppppp   f     p~',     'o*',   'p p p p pofpo pp ',     '  oo'),
+            ('general/7-3.txt',    '*ppppppp   f      p~',    'o*',   'p p p po pO po pp ',    '   o'),
+            ('general/8-3.txt',  '*ppppppppp   f       p~',   'o*', 'p p p pp po Po po pp ',   '   o'),
+            ('general/9-3.txt',  '*ppppppppp   f        p~',  'o*', 'p p p p p pofpo po pp ',  '   o'),
+            ('general/10-3.txt', '*ppppppppp   f         p~', 'o*', 'p p p p po pO po po pp ', '    '),
+
+            ('general/1-4.txt',        '*pppp    fp~',          ' o*',       'p p po pP ',          '  oo'),
+            ('general/2-4.txt',      '*pppppp    f p~',         ' o*',     'p p pp po Pp ',         '  oo'),
+            ('general/3-4.txt',      '*pppppp    f  p~',        ' o*',     'p p p p pofpp ',        '  oo'),
+            ('general/4-4.txt',      '*pppppp    f   p~',       ' o*',     'p p p po pO pp ',       '   o'),
+            ('general/5-4.txt',    '*pppppppp    f    p~',      ' o*',   'p p p pp po Po pp ',      '   o'),
+            ('general/6-4.txt',    '*pppppppp    f     p~',     ' o*',   'p p p p p pofpo pp ',     '   o'),
+            ('general/7-4.txt',    '*pppppppp    f      p~',    ' o*',   'p p p p po pO po pp ',    '    '),
+            
+            ('general/1-5.txt',        '*ppppp     fp~',          '  o*',       'p p p po pP ',          '   o'),
+            # ('general/2-5.txt',      '*ppppppp     f p~',         '  o*',     'p p p p ppo Pp ',         '   o'),
+            ('general/3-5.txt',      '*ppppppp     f  p~',        '  o*',     'p p p p p pofpp ',        '   o'),
+            ('general/4-5.txt',      '*ppppppp     f   p~',       '  o*',     'p p p p po pO pp ',       '    '),
         ]
 
         obsState = ''.join(i for i in state.observers.values())
         for mm in manualMatches:
             filename, stateMatch, obsMatch, outputState, outputObs = mm
+            
+            assert len(stateMatch) - 2 == len(outputState)
+            assert len(list(i for i in stateMatch if i.lower() == 'p')) == len(list(i for i in outputState if i.lower() == 'p'))
+
             if res := extract_pattern_values(str(state), stateMatch):
                 prelude, postlude = res
                 if extract_pattern_values(obsState, obsMatch):
@@ -279,8 +307,8 @@ def moveBlockDown(b, state: State, destination=None):
         
         while observerPositions:
             op = observerPositions.pop()
-            moveBlockTo(op, state.getTopUnusedObserver() + 1, state)
-            state.applyMove((state.getTopUnusedObserver() + 1,))
+            moveBlockTo(op, state.getTopUnusedObserverSpace(), state)
+            state.applyMove((state.getTopUnusedObserverSpace(),))
         
         assert state.isCompact(b - 1)
         return
@@ -289,16 +317,16 @@ def moveBlockDown(b, state: State, destination=None):
     topmostPiston = state.getTopmostPiston(below=b)
 
     if topmostObserver > topmostPiston:
-        while (topmostObserver := state.getTopmostObserver(below=b)) != state.getTopUnusedObserver() + 1:
+        while (topmostObserver := state.getTopmostObserver(below=b)) != state.getTopUnusedObserverSpace():
             moveBlockDown(topmostObserver, state)
-        state.applyMove((state.getTopUnusedObserver() + 1,))
+        state.applyMove((state.getTopUnusedObserverSpace(),))
         moveBlockDown(b, state)
 
     else:
 
         # New Optimization
         if OPTIMIZED and (b > 0 or destination and destination > 0) and (topmostPiston <= state.getTopUnusedObserver() or destination):
-            moveBlockUpTo(topmostPiston, state.getTopUnusedObserver() + 1, state)
+            moveBlockUpTo(topmostPiston, state.getTopUnusedObserverSpace(), state)
             topmostPiston = state.getTopmostPiston(below=b)
         
             if state.p[topmostPiston - 1] != ' ':
@@ -334,7 +362,7 @@ def moveBlockUp(b, state: State, destination=None):
             pass
 
         else:
-            while (topmostObserver := state.getTopmostObserver(below=b)) != state.getTopUnusedObserver() + 1:
+            while (topmostObserver := state.getTopmostObserver(below=b)) != state.getTopUnusedObserverSpace():
                 moveBlockDown(topmostObserver, state)
             state.applyMove((topmostObserver,))
             moveBlockUp(b, state, destination)
@@ -433,9 +461,9 @@ def powerPiston(piston, state: State):
     if topmostObserver > topmostPiston:
         match piston - topmostObserver:
             case 1:
-                # while (topmostObserver := state.getTopmostObserver(below=piston)) != state.getTopUnusedObserver() + 1:
+                # while (topmostObserver := state.getTopmostObserver(below=piston)) != state.getTopUnusedObserverSpace():
                 #     moveBlockDown(topmostObserver, state)
-                # state.applyMove((state.getTopUnusedObserver() + 1,))
+                # state.applyMove((state.getTopUnusedObserverSpace(),))
                 # powerPiston(piston, state)
 
                 moveBlockDown(topmostObserver, state)
@@ -511,7 +539,7 @@ def moveBlockDownTo(bi, bf, state: State):
     topmostObserver = state.getTopmostObserver(below=bi)
 
     if OPTIMIZED2:  # Tune the zero value. May work better with different cutoff
-        if topmostPiston <= state.getTopUnusedObserver() + 1 and topmostObserver < -100000:
+        if topmostPiston <= state.getTopUnusedObserverSpace() and topmostObserver < -100000:
             
             i = bi - 1  # Starts two below due to decrementation later
             necesaryPistons = []
@@ -551,7 +579,7 @@ def moveBlockDownTo(bi, bf, state: State):
             numObservers = 0
             while numObservers < len(necesaryObservers):
                 nextPiston = existingPistons.pop()
-                moveBlockTo(nextPiston, state.getTopUnusedObserver() + 1, state)
+                moveBlockTo(nextPiston, state.getTopUnusedObserverSpace(), state)
                 state.applyMove((state.getTopUnusedObserver(),))
                 numObservers += 1
             

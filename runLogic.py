@@ -54,11 +54,10 @@ def runBeforeManualCorrections(door: State, pistonLayout='original', logging=Fal
         # Apply Door Replacements
         replacedRules = simplification.repLayoutMoves(layoutNumberedRules) if rep else layoutNumberedRules
 
-        print(len(replacedRules))
         if prnt:
             print(replacedRules)
 
-        writeToFile(str(replacedRules).replace(' ', '\n'), 'algorithmOutput.txt')
+        writeToFile(str(replacedRules), 'algorithmOutput.txt')
 
     except Exception as e:
         if logging:

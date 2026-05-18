@@ -1,4 +1,4 @@
-from .. import fileHelperFunctions
+import fileHelperFunctions
 
 t1 = fileHelperFunctions.readFromFile(fileHelperFunctions.minecraftDirectory + "logs/latest.log").split("\n")
 t2 = [t.split(':')[-1] for t in t1 if t and t[0] == "["]
@@ -24,7 +24,8 @@ for n in t5:
     summ = 0
 
     b = n.split(',')
-    b.remove('')
+    if '' in b:
+        b.remove('')
     
     for p in b:
         try:

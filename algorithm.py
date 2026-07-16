@@ -25,8 +25,9 @@ class State:
         
         pistonState = pistonState.strip()
         self.p = {i + zeroOffset: pistonState[i].lower() if pistonState[i] != 'f' else ' ' for i in range(len(pistonState))}
-        self.p.update({max(self.p.keys()) + 1: ' '})  # Adding whitespace
-        self.p.update({max(self.p.keys()) + 1: ' '})  # Adding whitespace
+        for _ in range(10):
+            self.p.update({max(self.p.keys()) + 1: ' '})  # Adding whitespace
+
 
         self.observers = {-3 - oi: observerState[oi] for oi in range(len(observerState))}
         self.moves = []

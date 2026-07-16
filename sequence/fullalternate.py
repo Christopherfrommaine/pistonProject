@@ -163,7 +163,7 @@ print('number of manual moves: ', sum(1 if isinstance(m, str) else 0 for m in do
 
 
 print('len before optimization: ', len1)
-from simplify2 import repeatSimplification, rmCommonPatterns, rmCommonPatternsNoK
+from simplify2 import *
 door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatternsNoK, prnt=True, timeLimit=600)
 door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatterns, prnt=True, timeLimit=600)
 print('len after optimization: ', len2 := len(door.moves))

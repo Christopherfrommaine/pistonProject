@@ -115,7 +115,7 @@ def toLayoutCommands(moves, logging=False):
         logunrawboxes = lambda boxes: logString('unraw boxes: \n   [' + '\n    '.join(str([disctonum.get(elem) for elem in box]) for box in boxes) + '\n]')
         logunrawboxes(boxes)
     
-    small_carts_test = True
+    small_carts_test = False
     if small_carts_test:
         print("SMALL CARTS TEST! INEFFICIENT PACKING.")
     
@@ -135,7 +135,7 @@ def toLayoutCommands(moves, logging=False):
             # carts.append([])
             carts[-1].append([numtodisc[8]] * (max_box_len + len(BOX_END)))
             carts.append([])
-        elif len(carts[-1]) == 26 or (small_carts_test and len(carts[-1]) >= 4):
+        elif len(carts[-1]) == 27 or (small_carts_test and len(carts[-1]) >= 4):
             carts.append([])
 
         boxi += 1

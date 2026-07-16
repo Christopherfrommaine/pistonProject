@@ -71,24 +71,37 @@ def nAtATime(n):
         finalState.applyMoves(moves)
 
         for i in range(cache, len(moves) - n, max(1, round(n / 1000))):
-            if predicateStrict(i, moves, n, originalState, finalState):
+            if predicateStrictNew(i, moves, n, originalState, finalState):
                 cache = i
                 return moves[:i] + moves[i + n:]
         cache = len(moves) - n
         return moves
     return outputFunction
 
-def predicate(i, moves, n, originalState, finalState):
+def predicateStrictNew(i, moves, n, originalState: State, finalState):
     # Check for custom moves
     for j in range(i, i + n):
-        if not isinstance(moves[j], int) and not isinstance(moves[j], tuple):
+        if not (isinstance(moves[j], int) or isinstance(moves[j], tuple)):
             return False
 
     newMoves = moves[:i] + moves[i + n:]
 
     odoor = deepcopy(originalState)
+    gooddoor = deepcopy(originalState)
+    i = 0
+    while not isinstance(moves[i], State):
+        gooddoor.applyMove(moves[i])
+        i += 1
+    
     try:
-        odoor.applyMoves(newMoves)
+        checked = False
+        for mi, m in enumerate(newMoves):
+            if mi >= n and isinstance(m, State) and (not checked):
+                assert odoor.fullRepr() == gooddoor.fullRepr()
+                checked = True
+            
+            odoor.applyMove(m, strict=True)
+            
         assert odoor.fullRepr() == finalState.fullRepr()
 
         applyCorrections(odoor.moves, odoor.originalState)
@@ -97,7 +110,29 @@ def predicate(i, moves, n, originalState, finalState):
         return False
 
     return True
-def predicateStrict(i, moves, n, originalState, finalState):
+def predicate(i, moves, n, originalState, finalState):
+    try:
+        # Check for custom moves
+        for j in range(i, i + n):
+            if not isinstance(moves[j], int) and not isinstance(moves[j], tuple):
+                return False
+
+        newMoves = moves[:i] + moves[i + n:]
+
+        odoor = deepcopy(originalState)
+        try:
+            odoor.applyMoves(newMoves)
+            assert odoor.fullRepr() == finalState.fullRepr()
+
+            applyCorrections(odoor.moves, odoor.originalState)  # usually crashes if there's still something wrong
+
+        except AssertionError:
+            return False
+
+        return True
+    except:
+        return False
+def predicateStrict(i, moves, n, originalState: State, finalState):
     # Check for custom moves
     for j in range(i, i + n):
         if not isinstance(moves[j], int):
@@ -124,7 +159,7 @@ def nAtATimePar(n):
         finalState = deepcopy(originalState)
         finalState.applyMoves(moves)
         
-        res = parallelCompute(predicateStrict, len(moves) - n, [moves, n, originalState, finalState])
+        res = parallelCompute(predicateStrictNew, len(moves) - n, [moves, n, originalState, finalState])
         
         if res:
             moves = moves[:res] + moves[res + n:]

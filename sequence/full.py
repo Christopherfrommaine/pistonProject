@@ -228,9 +228,9 @@ print('number of manual moves: ', sum(1 if isinstance(m, str) else 0 for m in do
 
 print('len before optimization: ', len1)
 from simplify2 import repeatSimplification, rmCommonPatterns, rmCommonPatternsNoK
-door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatternsNoK, prnt=True, timeLimit=600)
-door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatterns, prnt=True, timeLimit=600)
-len1 = 150572
+# door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatternsNoK, prnt=True, timeLimit=600)
+# door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatterns, prnt=True, timeLimit=600)
+# len1 = 150572  # before algorithmic optimizations I think
 print('len after optimization: ', len2 := len(door.moves))
 print(f'{100 * (1 - (len2 / len1)):.1f}% Improvement during optimization! ({len2}/{len1})')
 

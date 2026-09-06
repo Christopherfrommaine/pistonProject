@@ -36,6 +36,8 @@ for n in t5:
     
     o1.append(summ)
 
+fileHelperFunctions.writeToFile(str(o1).replace(' ', '\n'), "./debugging/parsedlog.txt")
+
 olen = len(o1)
 crop = len(o1)
 # if crop > 100:

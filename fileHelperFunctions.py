@@ -51,7 +51,7 @@ def moveFromFile(door, filename, newState):
     door.applyMove(newState)
 
 def writeToMinecraftDatapack(commands, worldName):
-    dppath = minecraftDirectory + "saves/" + worldName + "/datapacks/sendcommands/data/send/functions/"
+    dppath = minecraftDirectory + "saves/" + worldName + "/datapacks/sendcommands/data/send/function/"
 
     commandi = 0
     for command in commands:

@@ -48,7 +48,7 @@ def toLayoutMoves(moves):
 def toLayoutCommands(moves, logging=False):
 
     globalInitSeq = [0, 0]
-    shulkerBeginSeq = [0]
+    shulkerBeginSeq = [0, 0]
     shulkerEndSeq = [0, 0]
 
     values = globalInitSeq
@@ -74,7 +74,7 @@ def toLayoutCommands(moves, logging=False):
     while disci < len(discs):
         boxes[-1].append(discs[disci])
 
-        max_box_len = 1 + 2 * ((27 - len(BOX_INIT) - len(BOX_END)) // 2)
+        max_box_len = 2 * ((26 - len(BOX_INIT) - len(BOX_END)) // 2)
 
         # If going to stop
         # if discs[disci] == numtodisc[9]:
@@ -91,7 +91,7 @@ def toLayoutCommands(moves, logging=False):
         #     # Add a new box
         #     boxes.append(BOX_INIT.copy())
 
-        if len(boxes[-1]) == max_box_len:
+        if len(boxes[-1]) >= max_box_len:
             boxes[-1] += BOX_END.copy()
             boxes.append(BOX_INIT.copy())
 
@@ -177,13 +177,13 @@ def toLayoutCommands(moves, logging=False):
 
         for boxi, box in enumerate(cart):
             assert 0 <= boxi < 27
-            command += '{Slot:' + str(boxi) + 'b,id:"minecraft:shulker_box",Count:1b,tag:{BlockEntityTag: {Items: ['
+            command += '{Slot:' + str(boxi) + 'b,id:"minecraft:shulker_box",count:1,components:{"minecraft:container":['
 
             for disci, disc in enumerate(box):
                 assert 0 <= disci < 27
-                command += '{Slot:' + str(disci) + 'b,id:"minecraft:music_disc_' + disc + '",Count:1b},'
+                command += '{slot:' + str(disci) + ',item:{id:"minecraft:music_disc_' + disc + '",count:1}},'
 
-            command += ']}}},'
+            command += ']}},'
 
         command += ']}'
 

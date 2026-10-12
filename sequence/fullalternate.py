@@ -162,11 +162,8 @@ print('len after lower opening 2: ', len1 := len(door.moves))
 print('number of manual moves: ', sum(1 if isinstance(m, str) else 0 for m in door.moves))
 
 
-print('len before optimization: ', len1)
-from simplify2 import *
-door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatternsNoK, prnt=True, timeLimit=600)
-door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatterns, prnt=True, timeLimit=600)
-print('len after optimization: ', len2 := len(door.moves))
-print(f'{100 * (1 - (len2 / len1)):.1f}% Improvement during optimization! ({len2}/{len1})')
+# from simplify2 import fullSimplifyWorking
+# fullSimplifyWorking(door)
+
 
 runWithoutManualCorrection(door, 'shulker', logging=True, rep=False, CARS=False)

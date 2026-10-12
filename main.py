@@ -11,4 +11,7 @@ door.applyCustomMove(9 * 8)
 moveBlockTo(pos , 0, door)
 moveBlockTo(-1, -3, door)
 
+# from simplify2 import fullSimplifyWorking
+# fullSimplifyWorking(door)
+
 runWithoutManualCorrection(door, 'shulker', logging=True, rep=False, CARS=False)

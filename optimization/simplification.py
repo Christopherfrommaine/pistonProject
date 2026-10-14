@@ -1,6 +1,6 @@
 from copy import deepcopy
-from algorithm import State
-from conversion import applyCorrections
+from algorithm.algorithm import State
+from algorithm.conversion import applyCorrections
 
 def matchAndReplaceAll(moves, dict):
     i = 0

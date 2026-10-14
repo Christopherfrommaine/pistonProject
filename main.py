@@ -1,5 +1,5 @@
-from algorithm import State, moveBlockTo
-from runLogic import runWithoutManualCorrection
+from algorithm.algorithm import State, moveBlockTo
+from algorithm.runLogic import runWithoutManualCorrection
 
 door = State('ppppppppppppppppppppp  B                  ')
 

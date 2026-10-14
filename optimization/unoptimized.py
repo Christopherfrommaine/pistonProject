@@ -261,43 +261,34 @@ def moveBlockTo(bi, bf, state):
     if bf > bi:
         moveBlockUpTo(bi, bf, state)
 
-def moveUpToAndPower(bi, bf, state):
-    for i in range(bi, bf):
-        moveBlockUp(i, state)
-    powerPiston(bf, state)
-
 
 if __name__ == "__main__":
-    from fileHelperFunctions import logString
+    from algorithm.fileHelperFunctions import logString
     from time import time_ns
-    import simplify2
-    from rust_simplify import run_moves_through_rust
-
     begin1 = time_ns()
-    door1 = State('pppppppppp  f    b  ')
-    moveBlockDownTo(5, -2, door1)
+    log = ''
 
-    door1.moves = run_moves_through_rust(door1.moves)
+    door = State('pppppppppp  f    b  ')
+    moveBlockDownTo(5, -2, door)
+    l1 = len(door.moves)
     end1 = time_ns()
 
     # Display
-    odoor = door1.originalState
-    for m in door1.moves:
+    odoor = door.originalState
+    for m in door.moves:
         odoor.applyMove(m)
-        print(f'{odoor} | {m}\n')
-    
+        log += f'{odoor} | {m}\n'
+    log += '----'
+
     # Large
     begin2 = time_ns()
-    door2 = State('pppppppppppppppppppppppppp  f         b  ')
-    moveBlockDownTo(10, -2, door2)
-    # door2.moves = simplify2.repeatSimplification(door2.moves, door2.originalState, simplify2.oneAtATime, prnt=True, timeLimit=100)
-    door2.moves = run_moves_through_rust(door2.moves)
+    door = State('pppppppppppppppppppppppppp  f         b  ')
+    moveBlockDownTo(10, -2, door)
+    l2 = len(door.moves)
     end2 = time_ns()
 
-    l1 = len(door1.moves)
-    l2 = len(door2.moves)
-    print('---')
+    print(log)
     print(f'{l1}/386, {l2}/16595')
-    print(f'{100*(1-(l1 + l2)/(386+16595)):.2f}% Improvement!')
-    print(f'Took {0.000001 * (end1 - begin1):.2f}ms, {0.000001 * (end2 - begin2):.2f}ms')
+    print(f'{100*(1-(l1 + l2)/(386+16595))}% Improvement!')
+    # print(f'Took {0.000001 * (end1 - begin1):.2f}ms, {0.000001 * (end2 - begin2):.2f}ms')
 

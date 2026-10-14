@@ -1,6 +1,6 @@
-from algorithm import State, moveBlockTo, retractCustom
-from runLogic import runWithoutManualCorrection
-from fileHelperFunctions import moveFromFile
+from algorithm.algorithm import State, moveBlockTo, retractCustom
+from algorithm.runLogic import runWithoutManualCorrection
+from algorithm.fileHelperFunctions import moveFromFile
 
 # TODO: yo dawg, there ain't no wire for 46?
 

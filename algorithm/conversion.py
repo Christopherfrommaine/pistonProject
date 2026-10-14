@@ -1,5 +1,5 @@
-from layouts import original, new, shulker
-from algorithm import State
+from algorithm.layouts import new, original, shulker
+from algorithm.algorithm import State
 
 
 def toLayoutMoves(moves, layout):

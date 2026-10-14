@@ -1,5 +1,5 @@
-from algorithm import State, moveBlockTo
-from runLogic import runWithoutManualCorrection
+from algorithm.algorithm import State, moveBlockTo
+from algorithm.runLogic import runWithoutManualCorrection
 
 lowerDoor = State('pppppppppppppp  f' + ' ' * 24)
 # State doesn't really matter right now, as I will be manually changing it later

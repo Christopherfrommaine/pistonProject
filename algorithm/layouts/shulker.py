@@ -1,4 +1,4 @@
-from fileHelperFunctions import logString
+from algorithm.fileHelperFunctions import logString
 
 numtodisc = ['stal', '13', 'cat', 'blocks', 'chirp', 'far', 'mall', 'mellohi', 'stal', 'strad', 'ward', '11', 'wait',
              'pigstep', 'otherside', '5']

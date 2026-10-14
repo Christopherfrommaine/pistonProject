@@ -1,5 +1,5 @@
 from copy import deepcopy
-from fileHelperFunctions import moveFromFile, logString
+from algorithm.fileHelperFunctions import moveFromFile, logString
 
 OPTIMIZED = False
 OPTIMIZED2 = False

@@ -1,4 +1,4 @@
-import fileHelperFunctions
+import algorithm.fileHelperFunctions as fileHelperFunctions
 
 filename = fileHelperFunctions.minecraftDirectory + "logs/latest.log"
 filename = "/home/chris/.local/share/PrismLauncher/instances/1.21.1/minecraft/logs/latest.log";
@@ -38,7 +38,7 @@ for n in t5:
     
     o1.append(summ)
 
-fileHelperFunctions.writeToFile(str(o1).replace(' ', '\n'), "./debugging/parsedlog.txt")
+fileHelperFunctions.writeToFile(str(o1).replace(' ', '\n'), "./debugging/log_parsed.txt")
 
 olen = len(o1)
 crop = len(o1)

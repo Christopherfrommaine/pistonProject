@@ -1,7 +1,7 @@
 from copy import deepcopy
-from algorithm import State
+from algorithm.algorithm import State
 from time import time
-from conversion import applyCorrections
+from algorithm.conversion import applyCorrections
 
 cache = None
 

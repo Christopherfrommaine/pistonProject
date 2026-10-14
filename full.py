@@ -1,6 +1,6 @@
-from algorithm import State, moveBlockTo, retractCustom
-from runLogic import runWithoutManualCorrection
-from fileHelperFunctions import moveFromFile
+from algorithm.algorithm import State, moveBlockTo, retractCustom
+from algorithm.runLogic import runWithoutManualCorrection
+from algorithm.fileHelperFunctions import moveFromFile
 
 # TODO: yo dawg, there ain't no wire for 46?
 
@@ -227,7 +227,7 @@ print('number of manual moves: ', sum(1 if isinstance(m, str) else 0 for m in do
 
 
 print('len before optimization: ', len1)
-from simplify2 import repeatSimplification, rmCommonPatterns, rmCommonPatternsNoK
+from optimization.simplify2 import repeatSimplification, rmCommonPatterns, rmCommonPatternsNoK
 # door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatternsNoK, prnt=True, timeLimit=600)
 # door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatterns, prnt=True, timeLimit=600)
 # len1 = 150572  # before algorithmic optimizations I think

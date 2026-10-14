@@ -47,7 +47,7 @@ def readMovesFromFile(path):
     return [int(tok) for tok in o if tok != '']
 
 def moveFromFile(door, filename, newState):
-    door.applyCustomMoves(readMovesFromFile("sequence/" + filename))
+    door.applyCustomMoves(readMovesFromFile("algorithm/sequence/" + filename))
     door.applyMove(newState)
 
 def writeToMinecraftDatapack(commands, worldName):

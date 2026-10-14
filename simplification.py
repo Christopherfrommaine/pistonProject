@@ -16,7 +16,7 @@ def matchAndReplaceAll(moves, dict):
 
 def simplifyCorrectedMoves(moves):
     # Original: 34901
-
+ 
     return matchAndReplaceAll(moves, [
         ([-4, -5], [-5]),
         ([-5, -6], [-6]),

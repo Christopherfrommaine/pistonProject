@@ -349,7 +349,7 @@ def contextAwareReplacementSimplification(moves, originalState: State):
     return o
 
 def fullSimplifyWorking(door):
-    print('len before optimization: ', len1)
+    print('len before optimization: ', len1 := len(door.moves))
     door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatternsNoK, prnt=True, timeLimit=600)
     door.moves = repeatSimplification(door.moves, door.originalState, rmCommonPatterns, prnt=True, timeLimit=600)
     print('len after optimization: ', len2 := len(door.moves))

@@ -48,16 +48,22 @@ def toLayoutMoves(moves):
 def toLayoutCommands(moves, logging=False):
 
     globalInitSeq = [0, 0]
-    shulkerBeginSeq = [0, 0]
+    globalEndSeq = [0, 0]
+    shulkerInitSeq = [0, 0, 0]
     shulkerEndSeq = [0, 0]
+    afterPauseSeq = [0, 0] * 16
 
+    # Create value list
     values = globalInitSeq
     for m in moves:
         values += [m // 8, m % 8]
-        
+
+        # After pause, add some space
         if m == 9 * 8:
-            values += [0, 0] * 16
-    
+            values += afterPauseSeq
+    values += globalEndSeq
+
+    # Ending pause insertion
     if 9 not in values:
         print("Moves has no stop sequence 9. Appending [9, 0].")
         values += [9, 0]
@@ -65,81 +71,74 @@ def toLayoutCommands(moves, logging=False):
     if logging:
         logString('values: ' + str(values))
 
+    # convert values to discs
     discs = [numtodisc[v] for v in values]
 
-    BOX_INIT = [numtodisc[i] for i in shulkerBeginSeq]
+    # Generate disc shulker init and end sequences
+    BOX_INIT = [numtodisc[i] for i in shulkerInitSeq]
     BOX_END = [numtodisc[i] for i in shulkerEndSeq]
+
+    # Calculate maximum number of discs per box before the ending (MUST BE EVEN to ensure pairs are added)
+    max_box_len = 2 * ((25 - len(BOX_END)) // 2)
+    
+    # Separate discs into boxes
     boxes = [BOX_INIT.copy()]
     disci = 0
     while disci < len(discs):
+        # Add single disc
         boxes[-1].append(discs[disci])
 
-        max_box_len = 2 * ((26 - len(BOX_INIT) - len(BOX_END)) // 2)
-
-        # If going to stop
-        # if discs[disci] == numtodisc[9]:
-        #     # Finish off the box with [... 0, 9, 0, 0, 0, 0, END]
-        #     if len(boxes) + 4 <= max_box_len:
-        #         boxes[-1] += [numtodisc[8]] * 4
-        #     boxes[-1] += BOX_END.copy()
-            
-        #     # # Add a new box with [INIT, 0, 0, ... 0, 0, END]
-        #     # boxes.append(BOX_INIT.copy())
-        #     # boxes[-1] += [numtodisc[8]] * 4
-        #     # boxes[-1] += BOX_END.copy()
-
-        #     # Add a new box
-        #     boxes.append(BOX_INIT.copy())
-
-        if len(boxes[-1]) >= max_box_len:
+        # Box is full! Add new empty box
+        if len(boxes[-1]) > max_box_len:
             boxes[-1] += BOX_END.copy()
+            
             boxes.append(BOX_INIT.copy())
 
         disci += 1
-    
+
+    for box in boxes:
+        assert 0 <= len(box) <= 27, f"{box}, {len(box)}"
+
+    # Remove empty boxes
     while len(boxes[-1]) <= len(BOX_END + BOX_INIT):
         boxes.pop()
-    thing = False
-    while boxes[-1] == [numtodisc[8]] * len(boxes[-1]):
-        thing = True
-        boxes.pop()
-    if thing:
-        boxes.append([numtodisc[8]] * len(boxes[-1]))
-    
-    if len(boxes) >= 1:
-        boxes[-1] = boxes[-1] + ([0] * (len(boxes[-1]) - len(boxes[1])))
 
+    for boxi in range(len(boxes)):
+        boxes[boxi] += [discs[0]] * (27 - len(boxes[boxi]))
+
+    
     if logging:
         logString('boxes: ' + str(boxes))
-    if logging:
         logunrawboxes = lambda boxes: logString('unraw boxes: \n   [' + '\n    '.join(str([disctonum.get(elem) for elem in box]) for box in boxes) + '\n]')
         logunrawboxes(boxes)
-    
-    small_carts_test = False
+
+    # Set small carts test
+    small_carts_test = True
     if small_carts_test:
         print("SMALL CARTS TEST! INEFFICIENT PACKING.")
     
 
     assert(len(boxes) > 0)
+
+    # Generate carts from boxes
     carts = [[]]
     boxi = 0
     while boxi < len(boxes):
+
+        # Add single box
         carts[-1].append(boxes[boxi])
 
+        # If pausing, fill the rest of the box with zeros
         if numtodisc[9] in boxes[boxi]:
-            # boxi += 1
-            # carts[-1].append(boxes[boxi])
-            # if len(carts[-1]) <= 2:
-            #     carts[-1].append(boxes[boxi])
-            # carts.append([boxes[boxi]] * 3)
-            # carts.append([])
             carts[-1].append([numtodisc[8]] * (max_box_len + len(BOX_END)))
-            carts.append([])
-        elif len(carts[-1]) == 27 or (small_carts_test and len(carts[-1]) >= 4):
+
+        # If full, add new cart
+        if len(carts[-1]) >= 26 or (small_carts_test and len(carts[-1]) >= 4):
             carts.append([])
 
         boxi += 1
 
+    # Remove empty/trivial carts
     if len(carts[-1]) == 0:
         carts.pop()
     if len(carts[-1]) == 1 and all(i == numtodisc[8] for i in carts[-1][0]):
@@ -147,7 +146,7 @@ def toLayoutCommands(moves, logging=False):
 
     if logging:
         logString('carts: ' + str(carts))
-    if logging:
+
         logString('unraw carts: \n')
         for cart in carts:
             logunrawboxes(cart)

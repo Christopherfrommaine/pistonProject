@@ -30,7 +30,7 @@ def runBeforeManualCorrections(door: State, pistonLayout='original', logging=Fal
         log += f'original moves: {originalMoves}\n'
 
         # Apply Simplifications First
-        simpMoves1 = optimization.simplifyUncorrectedMoves(originalMoves, door) if simplification1 else originalMoves
+        simpMoves1 = simplification.simplifyUncorrectedMoves(originalMoves, door) if simplification1 else originalMoves
 
         simpMoves1 = simplify2.repeatSimplification(simpMoves1, door.originalState, simplify2.contextAwareReplacementSimplification) if CARS else simpMoves1
 
@@ -42,7 +42,7 @@ def runBeforeManualCorrections(door: State, pistonLayout='original', logging=Fal
         log += f'corrected moves: {correctedMoves}\n'
 
         # Apply Simplifications Second
-        simpMoves2 = optimization.simplifyCorrectedMoves(correctedMoves) if simplification2 else correctedMoves
+        simpMoves2 = simplification.simplifyCorrectedMoves(correctedMoves) if simplification2 else correctedMoves
 
         log += f'simp moves 2: {simpMoves2}\n'
 
@@ -52,7 +52,7 @@ def runBeforeManualCorrections(door: State, pistonLayout='original', logging=Fal
         log += f'layout numbered rules: {layoutNumberedRules}\n'
 
         # Apply Door Replacements
-        replacedRules = optimization.repLayoutMoves(layoutNumberedRules) if rep else layoutNumberedRules
+        replacedRules = simplification.repLayoutMoves(layoutNumberedRules) if rep else layoutNumberedRules
 
         if prnt:
             print(replacedRules)

@@ -248,14 +248,17 @@ def rmCommonPatternsNoK(moves, originalState: State, depth=100):
     # Example (first pattern):
     """
     if moves[i:i+3] == [i + k for i in [-4, -5, -3]]:
-            if strState(-5 + k, -3 + k) == 'ppp':
-                changed = True
-                testState.applyMoves([-5 + k, -3 + k])
-                i += 3
-                break
+        if strState(-5 + k, -3 + k) == 'ppp':
+            changed = True
+            testState.applyMoves([-5 + k, -3 + k])
+            i += 3
+            break
     """
     patterns = [
         ([-2, -3], -3, 'pp', '', [-3]),
+        ([-3, -4], -4, 'pp', '', [-4]),
+        ([-4, -5], -5, 'pp', '', [-5]),
+        ([-5, -6], -6, 'pp', '', [-6]),
         ([-10, -8, -6, -12, -10, -8, -5, -6, -4, -14, -5, -12, -10, -8, -5, -3], -13, 'ppppppp', '', [-14, -12, -10, -8, -5, -3]),
         ([-10, -8, -6, -12, -10, -8, -5, -6, -4, -14, -5, -12, -10, -8], -14, 'pppppppp', '', [-14, -12, -10, -8, -4]),
         ([-10, -8, -6, -12, -10, -8, -5, -6, -4], -11, 'ppppp', '', [-14, -12, -10, -8, -6, -4]),

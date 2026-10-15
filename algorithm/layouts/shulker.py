@@ -91,9 +91,8 @@ def toLayoutCommands(moves, logging=False):
         # Box is full! Add new empty box
         if len(boxes[-1]) > max_box_len:
             boxes[-1] += BOX_END.copy()
-            
             boxes.append(BOX_INIT.copy())
-
+        
         disci += 1
 
     for box in boxes:
@@ -105,6 +104,9 @@ def toLayoutCommands(moves, logging=False):
 
     for boxi in range(len(boxes)):
         boxes[boxi] += [discs[0]] * (27 - len(boxes[boxi]))
+
+    for box in boxes:
+        assert len(box) == 27, f"{box}, {len(box)}"
 
     
     if logging:
@@ -130,7 +132,7 @@ def toLayoutCommands(moves, logging=False):
 
         # If pausing, fill the rest of the box with zeros
         if numtodisc[9] in boxes[boxi]:
-            carts[-1].append([numtodisc[8]] * (max_box_len + len(BOX_END)))
+            carts[-1].append([numtodisc[8]] * 27)
 
         # If full, add new cart
         if len(carts[-1]) >= 26 or (small_carts_test and len(carts[-1]) >= 4):
@@ -138,9 +140,14 @@ def toLayoutCommands(moves, logging=False):
 
         boxi += 1
 
+    
+    for cart in carts:
+        while cart and all(disc == numtodisc[8] for disc in cart[0]):
+            del cart[0]
+
     # Remove empty/trivial carts
-    if len(carts[-1]) == 0:
-        carts.pop()
+    carts = [cart for cart in carts if len(cart)]
+
     if len(carts[-1]) == 1 and all(i == numtodisc[8] for i in carts[-1][0]):
         carts.pop()
 

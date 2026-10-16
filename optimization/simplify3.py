@@ -4,7 +4,7 @@ from time import time
 
 
 def simplify3working(door):
-    workingPasses = [passRmCommonPatternsNoK]
+    workingPasses = [passRmCommonPatternsNoK, passRmCommonPatterns]
     simplifyWithPasses(door, workingPasses)
 
 def simplifyWithPasses(door: State, passes):
@@ -28,6 +28,7 @@ def passRmCommonPatterns(door: State):
     door.moves = rmCommonPatterns(deepcopy(door.moves), door.originalState)
 
 # Tested, untrusted
+# tested on 4, 
 def passRmCommonPatternsNoK(door: State):
     door.moves = rmCommonPatternsNoK(deepcopy(door.moves), door.originalState)
 

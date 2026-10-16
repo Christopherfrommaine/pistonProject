@@ -49,9 +49,9 @@ def toLayoutCommands(moves, logging=False):
 
     globalInitSeq = [0, 0]
     globalEndSeq = [0, 0]
-    shulkerInitSeq = [0, 0, 0]
-    shulkerEndSeq = [0, 0]
-    afterPauseSeq = [0, 0] * 16
+    shulkerInitSeq = [0]
+    shulkerEndSeq = []
+    afterPauseSeq = [0, 0] * 1
 
     # Create value list
     values = globalInitSeq

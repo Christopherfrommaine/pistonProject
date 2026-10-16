@@ -88,11 +88,16 @@ def toLayoutCommands(moves, logging=False):
         # Add single disc
         boxes[-1].append(discs[disci])
 
+        if discs[disci] == numtodisc[9] and discs[disci + 1] == numtodisc[8]:
+            disci += 1
+            boxes[-1] += [numtodisc[0]] * (27 - len(boxes[-1]))
+            boxes.append(BOX_INIT.copy())
+        
         # Box is full! Add new empty box
         if len(boxes[-1]) > max_box_len:
             boxes[-1] += BOX_END.copy()
             boxes.append(BOX_INIT.copy())
-        
+
         disci += 1
 
     for box in boxes:
@@ -115,7 +120,7 @@ def toLayoutCommands(moves, logging=False):
         logunrawboxes(boxes)
 
     # Set small carts test
-    small_carts_test = True
+    small_carts_test = False
     if small_carts_test:
         print("SMALL CARTS TEST! INEFFICIENT PACKING.")
     
@@ -133,6 +138,8 @@ def toLayoutCommands(moves, logging=False):
         # If pausing, fill the rest of the box with zeros
         if numtodisc[9] in boxes[boxi]:
             carts[-1].append([numtodisc[8]] * 27)
+            carts[-1].append([numtodisc[8]] * 27)
+            carts.append([])
 
         # If full, add new cart
         if len(carts[-1]) >= 26 or (small_carts_test and len(carts[-1]) >= 4):
@@ -140,10 +147,10 @@ def toLayoutCommands(moves, logging=False):
 
         boxi += 1
 
-    
-    for cart in carts:
-        while cart and all(disc == numtodisc[8] for disc in cart[0]):
-            del cart[0]
+    # # Remove zero boxes from beginnging of carts
+    # for cart in carts:
+    #     while cart and all(disc == numtodisc[8] for disc in cart[0]):
+    #         del cart[0]
 
     # Remove empty/trivial carts
     carts = [cart for cart in carts if len(cart)]
@@ -165,6 +172,21 @@ def toLayoutCommands(moves, logging=False):
 
     if logging:
         logString("\n" + ("\n".join(str(i) for i in carts)) + "\n")
+
+    totalOutputDiscs = 0
+    totalOutputZeros = 0
+    thing = False
+    for cart in carts:
+        for box in cart:
+            totalOutputDiscs += len(box)
+            for i in range(0, len(box) - 1, 2):
+                if box[i] == 'stal' and box[i + 1] == 'stal':
+                    totalOutputZeros += 1
+                
+    print(f"Total output discs: {totalOutputDiscs}, {(100*totalOutputZeros/totalOutputDiscs):.2f}% are Padding")
+    
+    if totalOutputDiscs > 30000:
+        print(f"Reduced from naive by {100*((205011-totalOutputDiscs)/205011):.2f}%")
 
     o = []
     for cart in carts:

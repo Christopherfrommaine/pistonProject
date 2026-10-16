@@ -3,7 +3,7 @@ from algorithm.runLogic import runWithoutManualCorrection
 
 door = State('ppppppppppppppppppppp  B                  ')
 
-pos = 3
+pos = 4
 
 moveBlockTo(0, pos, door)
 moveBlockTo(pos  -2, -3, door)

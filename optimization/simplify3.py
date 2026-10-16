@@ -23,11 +23,11 @@ def simplifyWithPasses(door: State, passes):
 
 from optimization.simplify2 import rmCommonPatterns, rmCommonPatternsNoK
 
-# Untested
+# Tested, trusted
 def passRmCommonPatterns(door: State):
     door.moves = rmCommonPatterns(deepcopy(door.moves), door.originalState)
 
-# Untested
+# Tested, untrusted
 def passRmCommonPatternsNoK(door: State):
     door.moves = rmCommonPatternsNoK(deepcopy(door.moves), door.originalState)
 

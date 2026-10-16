@@ -161,9 +161,8 @@ moveBlockTo(-1, -3, door)
 print('len after lower opening 2: ', len1 := len(door.moves))
 print('number of manual moves: ', sum(1 if isinstance(m, str) else 0 for m in door.moves))
 
-
-# from simplify2 import fullSimplifyWorking
-# fullSimplifyWorking(door)
+from optimization.simplify3 import simplify3working
+simplify3working(door)
 
 
 runWithoutManualCorrection(door, 'shulker', logging=True, rep=False, CARS=False)

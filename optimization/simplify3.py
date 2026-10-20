@@ -11,7 +11,7 @@ def simplifyWithPasses(door: State, passes):
     print("before optimization: ", len1 := len(door.moves))
 
     begin = time()
-    for _ in range(10):
+    for _ in range(3):
         for pss in passes:
             pss(door)
     end = time()
@@ -31,6 +31,10 @@ def passRmCommonPatterns(door: State):
 # tested on 4, 
 def passRmCommonPatternsNoK(door: State):
     door.moves = rmCommonPatternsNoK(deepcopy(door.moves), door.originalState)
+
+def passThign(door: State):
+    from optimization.observerPostprocessing import postprocessForObservers
+    postprocessForObservers(deepcopy(door))
 
 
 

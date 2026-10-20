@@ -48,7 +48,7 @@ def toLayoutMoves(moves):
 def toLayoutCommands(moves, logging=False):
 
     globalInitSeq = [0, 0]
-    globalEndSeq = [0, 0]
+    globalEndSeq = []
     shulkerInitSeq = [0]
     shulkerEndSeq = []
     afterPauseSeq = [0, 0] * 1
@@ -79,7 +79,7 @@ def toLayoutCommands(moves, logging=False):
     BOX_END = [numtodisc[i] for i in shulkerEndSeq]
 
     # Calculate maximum number of discs per box before the ending (MUST BE EVEN to ensure pairs are added)
-    max_box_len = 2 * ((25 - len(BOX_END)) // 2)
+    max_box_len = 2 * ((25   - len(BOX_END)) // 2)
     
     # Separate discs into boxes
     boxes = [BOX_INIT.copy()]

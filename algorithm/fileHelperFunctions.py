@@ -18,6 +18,10 @@ def readFromFile(path):
 def logString(string, path=projectDirectory + 'debugging/log.txt'):
     writeToFile(readFromFile(path) + string + '\n', path)
 
+def algoLogString(string, path=projectDirectory + 'debugging/log_algo.txt'):
+    writeToFile(readFromFile(path) + string + '\n', path)
+writeToFile('', projectDirectory + 'debugging/log_algo.txt')
+
 
 def readMovesFromFile(path):
     source = readFromFile(path)

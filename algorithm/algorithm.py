@@ -5,6 +5,8 @@ OPTIMIZED = False
 OPTIMIZED2 = False
 OPTIMIZED3 = False
 MANUAL_OPT = True
+OPTOB = True
+OPTOBMAX = 0
 
 class State:
     def __init__(self, pistonState='pppppppppppppppppppppppp  f                  b ', observerState='ooooo', zeroOffset=None):
@@ -98,6 +100,9 @@ class State:
             pass  # Custom Move
         else:
             assert False  # All moves should be one of the above types
+
+        # from algorithm.fileHelperFunctions import algoLogString
+        # algoLogString(f"{self} | {''.join(self.observers[i] for i in range(min(self.observers.keys()), max(self.observers.keys()) - 1))} | {len(self.moves)} | {move}")
     
     def applyPowerPiston(self, piston):
         if self.p[piston] == 'p':
@@ -198,10 +203,18 @@ def compactify(state, below=float('infinity')):
 def moveBlockDown(b, state: State, destination=None):
     if MANUAL_OPT:
         import re
+
         def extract_pattern_values(string, pattern):
-            regex_pattern = pattern \
-                .replace('*', '(.+?)') \
-                .replace('~', '(.+)')
+            if OPTOB:
+                regex_pattern = pattern \
+                    .replace('*p', '(.+?)[pP]') \
+                    .replace('p~', '[pP](.+)') \
+                    .replace('o*', '[oO]([oO]+?)')
+                
+            else:
+                regex_pattern = pattern \
+                    .replace('*', '(.+?)') \
+                    .replace('~', '(.+)')
 
             match = re.match(regex_pattern, string)
             if match:
@@ -231,7 +244,7 @@ def moveBlockDown(b, state: State, destination=None):
             ('general/7-4.txt',    '*pppppppp    f      p~',    ' o*',   'p p p p po pO po pp ',    '    '),
             
             ('general/1-5.txt',        '*ppppp     fp~',          '  o*',       'p p p po pP ',          '   o'),
-            # ('general/2-5.txt',      '*ppppppp     f p~',         '  o*',     'p p p p ppo Pp ',         '   o'),
+            # ('general/2-5.txt',      '*ppppppp     f p~',         '  o*',     'p p p p ppo Pp ',         '   o'),  # suspicious...
             ('general/3-5.txt',      '*ppppppp     f  p~',        '  o*',     'p p p p p pofpp ',        '   o'),
             ('general/4-5.txt',      '*ppppppp     f   p~',       '  o*',     'p p p p po pO pp ',       '    '),
         ]
@@ -251,105 +264,63 @@ def moveBlockDown(b, state: State, destination=None):
                     moveFromFile(state, filename, newState)
                     return
 
-
-    if OPTIMIZED3 and state.isCompact(b):
-        i = b - 1
-        neededPistons = 0
-        neededObservers = 0
-        existingPistons = -1
-
-        observerPositions = []
-
-        sequencePosition = 'o'
-
-        while neededPistons > existingPistons or not neededPistons:
-            i -= 1
-
-            sequencePosition = {'o': 'p', 'p': ' ', ' ': ('o' if i > -2 else 'p')}[sequencePosition]
-
-            match sequencePosition:
-                case 'p':
-                    neededPistons += 1
-                case 'o':
-                    neededObservers += 1
-                    observerPositions.append(i)
-                case ' ':
-                    pass
-                case _:
-                    raise AssertionError
-            
-            match state.p[i]:
-                case 'p':
-                    existingPistons += 1
-                case 'o':
-                    raise AssertionError
-                case ' ':
-                    pass
-                case _:
-                    raise AssertionError
-
-        existingPistons -= neededObservers
-        # i -= 1
-
-        while neededObservers:
-            unusedObserver = state.getTopUnusedObserver()
-            state.applyMove(unusedObserver - 1)
-            state.applyMove((unusedObserver,))
-            neededObservers -= 1
-        
-        while existingPistons:
-            i += 1
-            if state.p[i] == 'p':
-                state.applyMove(i)
-                existingPistons -= 1
-
-        for _ in range(2 ** len(observerPositions) - 1):
-            state.applyMove(i)
-        
-        while observerPositions:
-            op = observerPositions.pop()
-            moveBlockTo(op, state.getTopUnusedObserverSpace(), state)
-            state.applyMove((state.getTopUnusedObserverSpace(),))
-        
-        assert state.isCompact(b - 1)
-        return
-
     topmostObserver = state.getTopmostObserver(below=b)
     topmostPiston = state.getTopmostPiston(below=b)
 
     if topmostObserver > topmostPiston:
-        while (topmostObserver := state.getTopmostObserver(below=b)) != state.getTopUnusedObserverSpace():
+
+        while True:
+            topmostObserver = state.getTopmostObserver(below=b)
+            topmostObserverSpace = state.getTopUnusedObserverSpace()
+
+            if OPTOB:
+                if topmostObserverSpace != -3:
+                    i = topmostObserver + 1
+                    maxkey = max(state.p.keys());
+                    while i < maxkey:
+                        if state.p[i] == 'o':
+                            if i > OPTOBMAX:
+                                topmostObserverSpace = -3
+                            break
+                        i += 1
+
+            if topmostObserver == topmostObserverSpace:
+                break
+
             moveBlockDown(topmostObserver, state)
-        state.applyMove((state.getTopUnusedObserverSpace(),))
+
+        topmostObserver = state.getTopmostObserver(below=b)
+        topmostObserverSpace = state.getTopUnusedObserverSpace()
+
+        if OPTOB:
+            if topmostObserverSpace != -3:
+                i = topmostObserver + 1
+                maxkey = max(state.p.keys())
+                while i < maxkey:
+                    if state.p[i] == 'o':
+                        if i > OPTOBMAX:
+                            topmostObserverSpace = -3
+                        break
+                    i += 1
+
+        state.applyMove((topmostObserverSpace,))
         moveBlockDown(b, state)
 
     else:
 
-        # New Optimization
-        if OPTIMIZED and (b > 0 or destination and destination > 0) and (topmostPiston <= state.getTopUnusedObserver() or destination):
-            moveBlockUpTo(topmostPiston, state.getTopUnusedObserverSpace(), state)
-            topmostPiston = state.getTopmostPiston(below=b)
         
-            if state.p[topmostPiston - 1] != ' ':
-                moveBlockDown(topmostPiston - 1, state)
-            
-            state.applyMove((state.getTopUnusedObserver(),))
-            
-            moveBlockUpTo(topmostPiston, b - 2, state)
+        match b - topmostPiston:
+            case 1:
+                moveBlockDown(topmostPiston, state)
+                moveBlockDown(b, state)
+            case 2:
+                powerPiston(topmostPiston, state)
+            case _:
+                moveBlockUpTo(topmostPiston, b - 2, state)
+                moveBlockDown(b, state)
 
-        else:
-            match b - topmostPiston:
-                case 1:
-                    moveBlockDown(topmostPiston, state)
-                    moveBlockDown(b, state)
-                case 2:
-                    powerPiston(topmostPiston, state)
-                case _:
-                    moveBlockUpTo(topmostPiston, b - 2, state)
-                    moveBlockDown(b, state)
-
-                    # Optimization
-                    # pushUpToThenPower(topmostPiston, b - 2, state)
+                # Optimization
+                # pushUpToThenPower(topmostPiston, b - 2, state)
 
 def moveBlockUp(b, state: State, destination=None):
 
@@ -380,20 +351,7 @@ def moveBlockUp(b, state: State, destination=None):
             powerPiston(topmostPiston + 1, state)
 
         case _:
-            # Optimization
-            if destination:
-                if all(state.p[i] == 'p' or state.p[i] == ' ' for i in range(min(state.p.keys()), destination - 1)):
-                    numPistons = 0
-                    i = None
-                    for i in range(destination - 1, min(state.p.keys()), -1):
-                        if state.p[i] == 'p':
-                            numPistons += 1
-                        if numPistons > (destination - i) / 2:
-                            break
-                    for j in range(i, destination, 2):
-                        powerPiston(j, state)
-                    return
-
+            
             # Normal
             numPistons = 0
             i = None
@@ -422,9 +380,16 @@ def powerPiston(piston, state: State):
     if MANUAL_OPT:
         import re
         def extract_pattern_values(string, pattern):
-            regex_pattern = pattern \
-                .replace('*', '(.+?)') \
-                .replace('~', '(.+)')
+            if OPTOB:
+                regex_pattern = pattern \
+                    .replace('*p', '(.+?)[pP]') \
+                    .replace('~', '(.+)') \
+                    .replace('o*', '[oO]([oO]+?)')
+            
+            else:
+                regex_pattern = pattern \
+                    .replace('*', '(.+?)') \
+                    .replace('~', '(.+)')
             
             match = re.match(regex_pattern, string)
             if match:
@@ -432,15 +397,17 @@ def powerPiston(piston, state: State):
             else:
                 return None
 
-
         manualMatches = [
-            (1, 'general/power_1.txt',     '*ppp   f~',       'o*',     'p p pof',       ' ooo'),
-            (2, 'general/power_2.txt',     '*ppp   f ~',      'o*',     'p po pO ',      '  oo'),
-            (3, 'general/power_3.txt',   '*ppppp   f  ~',     'o*',   'p pp po Po ',     '  oo'),
-            (4, 'general/power_4.txt',   '*ppppp   f   ~',    'o*',   'p p p pofpo ',    '  oo'),
-            (5, 'general/power_5.txt',   '*ppppp   f    ~',   'o*',   'p p po pO po ',   '   o'),
-            (6, 'general/power_6.txt', '*ppppppp   f     ~',  'o*', 'p p pp po Po po ',  '   o'),
-            (7, 'general/power_7.txt', '*ppppppp   f      ~', 'o*', 'p p p p pofpo po ', '   o'),
+            (1,  'general/power_1.txt',         '*ppp   f~',          'o*',       'p p pof',          ' ooo'),
+            (2,  'general/power_2.txt',         '*ppp   f ~',         'o*',       'p po pO ',         '  oo'),
+            (3,  'general/power_3.txt',       '*ppppp   f  ~',        'o*',     'p pp po Po ',        '  oo'),
+            (4,  'general/power_4.txt',       '*ppppp   f   ~',       'o*',     'p p p pofpo ',       '  oo'),
+            (5,  'general/power_5.txt',       '*ppppp   f    ~',      'o*',     'p p po pO po ',      '   o'),
+            (6,  'general/power_6.txt',     '*ppppppp   f     ~',     'o*',   'p p pp po Po po ',     '   o'),
+            (7,  'general/power_7.txt',     '*ppppppp   f      ~',    'o*',   'p p p p pofpo po ',    '   o'),
+            # (8,  'general/power_8.txt',     '*ppppppp   f       ~',   'o*',   'p p p po pO po po ',   '    '),
+            # (9,  'general/power_9.txt',   '*ppppppppp   f        ~',  'o*', 'p p p pp po Po po po ',  '    '),
+            # (10, 'general/power_10.txt',  '*ppppppppp   f         ~', 'o*', 'p p p p p po po po po ', '    '),
         ]
 
         obsState = ''.join(i for i in state.observers.values())
@@ -462,11 +429,6 @@ def powerPiston(piston, state: State):
     if topmostObserver > topmostPiston:
         match piston - topmostObserver:
             case 1:
-                # while (topmostObserver := state.getTopmostObserver(below=piston)) != state.getTopUnusedObserverSpace():
-                #     moveBlockDown(topmostObserver, state)
-                # state.applyMove((state.getTopUnusedObserverSpace(),))
-                # powerPiston(piston, state)
-
                 moveBlockDown(topmostObserver, state)
                 powerPiston(piston, state)
             case 2:
@@ -496,42 +458,42 @@ def pushUpToThenPower(bi, bf, state: State):
 
     moveBlockUpTo(bi, bf, state)
     powerPiston(bf, state)
-    return
-
-    def basicCase():
-        moveBlockUp(bi, state, destination=bf)
-        if bi + 1 < bf:
-            pushUpToThenPower(bi + 1, bf, state)
-        else:
-            powerPiston(bf, state)
     
-    testState = State()
-    testState.p = deepcopy(state.p)
-    testState.observers = deepcopy(state.observers)
 
-    # Optimized Case
-    powerPiston(bi, testState)
-    # There hopefully is now a
-    # .....p op
-    #         ^ bi      ^ bf
+    # def basicCase():
+    #     moveBlockUp(bi, state, destination=bf)
+    #     if bi + 1 < bf:
+    #         pushUpToThenPower(bi + 1, bf, state)
+    #     else:
+    #         powerPiston(bf, state)
+    
+    # testState = State()
+    # testState.p = deepcopy(state.p)
+    # testState.observers = deepcopy(state.observers)
 
-    # Goal:
-    # .....          pop 
-    #         ^ bi      ^ bf
-    # Then:
-    # .....          p op
-    #         ^ bi      ^ bf
+    # # Optimized Case
+    # powerPiston(bi, testState)
+    # # There hopefully is now a
+    # # .....p op
+    # #         ^ bi      ^ bf
 
-    # Check that the goal was actually acheived
-    if ''.join(testState.p[i] for i in range(bi - 3, bi)) == 'p o':
+    # # Goal:
+    # # .....          pop 
+    # #         ^ bi      ^ bf
+    # # Then:
+    # # .....          p op
+    # #         ^ bi      ^ bf
 
-        state.setNewState(testState)
-        state.moves += testState.moves
+    # # Check that the goal was actually acheived
+    # if ''.join(testState.p[i] for i in range(bi - 3, bi)) == 'p o':
 
-        pushUpToThenPower(bi - 3, bf - 3, state)
+    #     state.setNewState(testState)
+    #     state.moves += testState.moves
 
-    else:
-        basicCase()
+    #     pushUpToThenPower(bi - 3, bf - 3, state)
+
+    # else:
+    #     basicCase()
 
 
 def moveBlockDownTo(bi, bf, state: State):
